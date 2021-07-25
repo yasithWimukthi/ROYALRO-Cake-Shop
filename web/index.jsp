@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
-
+<%
+  String url = "";
+%>
+  <img src=<%=url%> />
   </body>
 </html>
