@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ROYALRO Cake Shop:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ROYALRO_Cake_Shop_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ROYALRO Cake Shop" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="ROYALRO Cake Shop/web/Web" />
+    </root>
+  </artifact>
+</component>

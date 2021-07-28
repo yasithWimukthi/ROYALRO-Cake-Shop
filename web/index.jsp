@@ -14,47 +14,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Dancing+Script" />
 </head>
 
 <body>
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-    <div class="container"><a class="navbar-brand" href="#">Company Name</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navcol-1">
+    <div class="container"><a class="navbar-brand" href="#">ROYALRO</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1" style="font-family: 'Dancing Script'; color:#975821 ;font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;" >
             <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-            </ul><span class="navbar-text actions"> <a class="login" href="#">Log In</a><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></span>
+                <li class="nav-item"><a class="nav-link active" href="#" style="color: brown">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" style="color: brown">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" style="color: brown">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" style="color: brown">Products</a></li>
+            </ul><span class="navbar-text actions"> <a class="login" href="#" style="color: brown">Log In</a><a class="btn btn-light action-button " role="button" href="#" style="background-color: #ffbdd4;color: brown">Sign Up</a></span>
         </div>
     </div>
 </nav>
 <section id="carousel">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
         <div class="carousel-inner">
-            <div class="carousel-item">
+            <div class="carousel-item active">
                 <div class="bg-light border rounded border-light pulse animated hero-nature carousel-hero jumbotron py-5 px-4">
-                    <h1 class="hero-title">Hero Nature</h1>
-                    <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                    <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                    <h1 class="hero-title">CAKE </h1>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p><a class="btn " role="button" href="#" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="bg-light border rounded border-light pulse animated hero-photography carousel-hero jumbotron py-5 px-4">
-                    <h1 class="hero-title">Hero Photography</h1>
-                    <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                    <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                    <h1 class="hero-title">DECORATIONS</h1>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p><a class="btn " role="button" href="#" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
                 </div>
             </div>
-            <div class="carousel-item active">
+            <div class="carousel-item ">
                 <div class="bg-light border rounded border-light pulse animated hero-technology carousel-hero jumbotron py-5 px-4">
-                    <h1 class="hero-title">Hero Technology</h1>
-                    <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                    <p><a class="btn btn-primary hero-button plat" role="button" href="#">Learn more</a></p>
+                    <h1 class="hero-title">REATAIL PRODUCTS</h1>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p class="hero-subtitle"></p>
+                    <p><a class="btn " role="button" href="#" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
+
                 </div>
             </div>
         </div>
-        <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
+        <div>
+            <a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span>
+            </a>
+        </div>
         <ol class="carousel-indicators">
             <li data-bs-target="#carousel-1" data-bs-slide-to="0"></li>
             <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
@@ -138,4 +157,6 @@
 </footer>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
+
+</body>
 </html>
