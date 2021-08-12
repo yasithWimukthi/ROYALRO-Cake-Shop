@@ -1,4 +1,10 @@
-<%-- Created by IntelliJ IDEA. --%>
+<%--
+  Created by IntelliJ IDEA.
+  User: Yasith Wimukthi
+  Date: 8/12/2021
+  Time: 10:16 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -76,7 +82,7 @@
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
-                <div class="box"><i class="fa fa-clock-o icon"></i>
+                <div class="box"><i class="fa fa-clock-o icon" ></i>
                     <h3 class="name">Always available</h3>
                     <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#">Learn more »</a>
                 </div>

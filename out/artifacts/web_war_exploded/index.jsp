@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
-                <div class="box"><i class="fa fa-clock-o icon"></i>
+                <div class="box"><i class="fa fa-clock-o icon" ></i>
                     <h3 class="name">Always available</h3>
                     <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p><a class="learn-more" href="#">Learn more »</a>
                 </div>
