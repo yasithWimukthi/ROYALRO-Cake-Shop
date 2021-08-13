@@ -28,41 +28,43 @@
                     </div>
                     <input class="form-control form-control" type="text" placeholder="Name">
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;">* Name is required.</div>
+                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;">* Name is required.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-envelope"></i></span>
                     </div>
                     <input class="form-control form-control" type="text" placeholder="E-mail">
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;">* E-mail is required.</div>
+                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;">* An valid E-mail is required.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-envelope"></i></span>
                     </div>
                     <input class="form-control form-control" type="text" placeholder="Mobile Number" >
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;">* Mobile number is required. Mobile number should contain 10 digits.</div>
+                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;">* Mobile number is required. Mobile number should contain 10 digits.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-envelope"></i></span>
                     </div>
                     <input class="form-control form-control" type="text" placeholder="Password" >
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;">* Password is required.</div>
+                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;">* Password is required.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-envelope"></i></span>
                     </div>
                     <input class="form-control form-control" type="text" placeholder="Password">
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;">* Password does not match.</div>
+                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;">* Password does not match.</div>
                 <div style="margin: 0 auto;margin-top: 10px;width: 60%;height: auto;">
                     <p><i class="fa fa-star" style="margin-right: 10px;"></i>Password must have at least 8 characters.</p>
                     <p><i class="fa fa-star" style="margin-right: 10px;"></i>Password must have at least an uppercase letter.</p>
                     <p><i class="fa fa-star" style="margin-right: 10px;"></i>Password must have at least a special character.</p>
                 </div>
-                <div style="margin: 0 auto;width: 50px;"><button class="btn btn-primary" type="button" style="margin: 0 auto;width: 150px;border-radius: 25px;background: var(--bs-orange);box-shadow: 1px 1px 8px var(--bs-gray-dark);">Button</button></div>
+                <div style="margin: 0 auto;width: 50px;">
+                    <button class="sign-up-btn" type="button" >Sign Up</button>
+                </div>
             </form>
         </div>
     </div>
