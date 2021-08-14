@@ -1,5 +1,9 @@
 package com.royalro.service;
 
+import com.royalro.model.Cake;
+
+import java.util.ArrayList;
+
 public interface ICakeService {
     public void addCake(
             String name,
@@ -9,4 +13,8 @@ public interface ICakeService {
             float price,
             float weight
     );
+
+    public ArrayList<Cake> getAllCakes();
+
+    public Cake searchCakeByName(String name);
 }
