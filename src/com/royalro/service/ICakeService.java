@@ -16,5 +16,5 @@ public interface ICakeService {
 
     public ArrayList<Cake> getAllCakes();
 
-    public Cake searchCakeByName(String name);
+    public ArrayList<Cake> searchCakeByName(String name);
 }
