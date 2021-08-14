@@ -1,6 +1,7 @@
 package com.royalro.model;
 
 public class Cake {
+    private int cakeId;
     private String name;
     private String imagePath;
     private String description;
@@ -66,5 +67,13 @@ public class Cake {
 
     public void setWeight(float weight) {
         this.weight = weight;
+    }
+
+    public int getCakeId() {
+        return cakeId;
+    }
+
+    public void setCakeId(int cakeId) {
+        this.cakeId = cakeId;
     }
 }

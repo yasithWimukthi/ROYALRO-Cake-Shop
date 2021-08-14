@@ -1,6 +1,7 @@
 package com.royalro.model;
 
 public class DecorationItem {
+    private int decorationId;
     private String name;
     private String category;
     private String description;
@@ -48,5 +49,9 @@ public class DecorationItem {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public int getDecorationId() {
+        return decorationId;
     }
 }

@@ -1,6 +1,7 @@
 package com.royalro.model;
 
 public class ProductItem {
+    private int productId;
     private String name;
     private String category;
     private String description;
@@ -86,5 +87,13 @@ public class ProductItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 }
