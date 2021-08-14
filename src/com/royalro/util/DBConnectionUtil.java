@@ -39,8 +39,6 @@ public class DBConnectionUtil {
 
             e.printStackTrace();
         }
-
-
         return conn;
     }
 
