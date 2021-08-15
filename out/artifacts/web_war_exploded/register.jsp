@@ -17,10 +17,11 @@
     <link rel="stylesheet" href="assets/css/sign-up-styles.css">
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 <section style="margin: 0px;height: 850px;background: url(&quot;assets/img/sign%20up%20background.png&quot;) center / cover no-repeat;padding-top: 0;">
     <div style="width: 70%;height: 70%;background: var(--bs-white);margin-top: 0;margin-bottom: 0;margin-right: auto;margin-left: auto;opacity: 0.67;filter: blur(0px);border-radius: 50px;transform: translateY(15%);padding-top: 15px;border-color: var(--bs-warning);border-bottom-color: var(--bs-red);">
         <div style="border-top-width: 0;">
-            <p style="text-align: center;font-family: Aclonica, sans-serif;color: var(--bs-dark);">Sign Up</p>
+            <p style="text-align: center;color: var(--bs-dark);font-size: large">Sign Up</p>
             <form method="post" action="SignUpServlet">
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
@@ -62,8 +63,10 @@
                     <p><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least an uppercase letter.</p>
                     <p><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least a special character.</p>
                 </div>
-                <div style="margin: 0 auto;width: 50px;">
-                    <button id="signUpBtn" class="sign-up-btn" type="button" >Sign Up</button>
+                <div style="margin: 0 auto;">
+                    <div style="text-align: center;">
+                       <button id="signUpBtn" class="sign-up-btn" type="button" >Sign Up</button>
+                    </div>
                 </div>
             </form>
         </div>
