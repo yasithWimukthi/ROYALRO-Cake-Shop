@@ -49,7 +49,11 @@
                         <div class="input-group-prepend">
                             <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-key"></i></span>
                         </div>
+
                         <input id="password-input" class="form-control form-control" type="text" placeholder="Password" onkeyup="onPasswordChange(this)" >
+
+                        <input id="password-input" class="form-control form-control" type="text" placeholder="Password" onkeypress="onPasswordChange(this)" >
+
                     </div>
                     <div id="password-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password is required.</div>
                     <div class="input-group" style="margin: 0 auto;width: 80%;">
@@ -61,8 +65,13 @@
                     <div id="password-confirm-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password does not match.</div>
                     <div style="margin: 0 auto;margin-top: 10px;width: 60%;height: auto;">
                         <p id="length-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least 8 characters.</p>
+
                         <p id="uppercase-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least an uppercase letter.</p>
                         <p id="special-char-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least a special character.</p>
+
+                        <p><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least an uppercase letter.</p>
+                        <p><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least a special character.</p>
+
                     </div>
                     <div style="margin: 0 auto;width: 50px;">
                         <button id="signUpBtn" class="sign-up-btn" type="submit" >Sign Up</button>

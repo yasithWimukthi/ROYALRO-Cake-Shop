@@ -18,7 +18,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<section style="margin: 0px;height: 850px;background: url(&quot;assets/img/sign%20up%20background.png&quot;) center / cover no-repeat;padding-top: 0;">
     <section style="margin: 0px;height: 850px;background: url(&quot;assets/img/sign%20up%20background.png&quot;) center / cover no-repeat;padding-top: 0;">
         <div style="width: 70%;height: 70%;background: var(--bs-white);margin-top: 0;margin-bottom: 0;margin-right: auto;margin-left: auto;opacity: 0.67;filter: blur(0px);border-radius: 50px;transform: translateY(15%);padding-top: 15px;border-color: var(--bs-warning);border-bottom-color: var(--bs-red);">
             <div style="border-top-width: 0;">
@@ -49,20 +48,27 @@
                         <div class="input-group-prepend">
                             <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-key"></i></span>
                         </div>
+
                         <input id="password-input" class="form-control form-control" type="text" placeholder="Password" onkeyup="onPasswordChange(this)" >
+
+
                     </div>
                     <div id="password-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password is required.</div>
                     <div class="input-group" style="margin: 0 auto;width: 80%;">
                         <div class="input-group-prepend">
                             <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-key"></i></span>
                         </div>
-                        <input id="password-confirm-input" class="form-control form-control" type="text" placeholder="Password" >
+
+                        <input id="password-confirm-input" class="form-control form-control" type="text" placeholder="Confirm Password" >
+
                     </div>
                     <div id="password-confirm-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password does not match.</div>
                     <div style="margin: 0 auto;margin-top: 10px;width: 60%;height: auto;">
                         <p id="length-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least 8 characters.</p>
+
                         <p id="uppercase-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least an uppercase letter.</p>
                         <p id="special-char-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least a special character.</p>
+
                     </div>
                     <div style="margin: 0 auto;width: 50px;">
                         <button id="signUpBtn" class="sign-up-btn" type="submit" >Sign Up</button>
