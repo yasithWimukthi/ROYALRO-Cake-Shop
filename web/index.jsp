@@ -18,19 +18,8 @@
 </head>
 
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 
-<nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-    <div class="container"><a class="navbar-brand" href="#">ROYALRO</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navcol-1" style="font-family: 'Dancing Script'; color:#975821 ;font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;" >
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link active" href="#" style="color: brown">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" style="color: brown">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" style="color: brown">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" style="color: brown">Products</a></li>
-            </ul><span class="navbar-text actions"> <a class="login" href="#" style="color: brown">Log In</a><a class="btn btn-light action-button " role="button" href="web/register.jsp" style="background-color: #ffbdd4;color: brown">Sign Up</a></span>
-        </div>
-    </div>
-</nav>
 <section id="carousel">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
         <div class="carousel-inner">
