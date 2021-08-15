@@ -21,49 +21,49 @@
     <div style="width: 70%;height: 70%;background: var(--bs-white);margin-top: 0;margin-bottom: 0;margin-right: auto;margin-left: auto;opacity: 0.67;filter: blur(0px);border-radius: 50px;transform: translateY(15%);padding-top: 15px;border-color: var(--bs-warning);border-bottom-color: var(--bs-red);">
         <div style="border-top-width: 0;">
             <p style="text-align: center;font-family: Aclonica, sans-serif;color: var(--bs-dark);">Sign Up</p>
-            <form method="post" action="SignUpServlet">
+            <form method="post" action="SignUpServlet" id="signUpForm">
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-user"></i></span>
                     </div>
                     <input id="name-input" class="form-control form-control" type="text" placeholder="Name">
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Name is required.</div>
+                <div id="name-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Name is required.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-envelope"></i></span>
                     </div>
                     <input id="email-input" class="form-control form-control" type="text" placeholder="E-mail">
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* An valid E-mail is required.</div>
+                <div id="email-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* An valid E-mail is required.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-phone" ></i></span>
                     </div>
                     <input id="mobile-input" class="form-control form-control" type="text" placeholder="Mobile Number" >
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Mobile number is required. Mobile number should contain 10 digits.</div>
+                <div id="mobile-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Mobile number is required. Mobile number should contain 10 digits.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-key"></i></span>
                     </div>
-                    <input id="password-input" class="form-control form-control" type="text" placeholder="Password" >
+                    <input id="password-input" class="form-control form-control" type="text" placeholder="Password" onkeypress="onPasswordChange(this)" >
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password is required.</div>
+                <div id="password-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password is required.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-key"></i></span>
                     </div>
-                    <input id="password-confirm-input" class="form-control form-control" type="text" placeholder="Password">
+                    <input id="password-confirm-input" class="form-control form-control" type="text" placeholder="Password" >
                 </div>
-                <div style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password does not match.</div>
+                <div id="password-confirm-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password does not match.</div>
                 <div style="margin: 0 auto;margin-top: 10px;width: 60%;height: auto;">
-                    <p><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least 8 characters.</p>
+                    <p id="length-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least 8 characters.</p>
                     <p><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least an uppercase letter.</p>
                     <p><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least a special character.</p>
                 </div>
                 <div style="margin: 0 auto;width: 50px;">
-                    <button id="signUpBtn" class="sign-up-btn" type="button" >Sign Up</button>
+                    <button id="signUpBtn" class="sign-up-btn" type="submit" >Sign Up</button>
                 </div>
             </form>
         </div>
