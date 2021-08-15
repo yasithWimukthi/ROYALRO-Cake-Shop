@@ -18,7 +18,6 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-<section style="margin: 0px;height: 850px;background: url(&quot;assets/img/sign%20up%20background.png&quot;) center / cover no-repeat;padding-top: 0;">
     <section style="margin: 0px;height: 850px;background: url(&quot;assets/img/sign%20up%20background.png&quot;) center / cover no-repeat;padding-top: 0;">
         <div style="width: 70%;height: 70%;background: var(--bs-white);margin-top: 0;margin-bottom: 0;margin-right: auto;margin-left: auto;opacity: 0.67;filter: blur(0px);border-radius: 50px;transform: translateY(15%);padding-top: 15px;border-color: var(--bs-warning);border-bottom-color: var(--bs-red);">
             <div style="border-top-width: 0;">
