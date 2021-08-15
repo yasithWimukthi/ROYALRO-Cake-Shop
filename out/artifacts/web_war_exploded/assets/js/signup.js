@@ -1,8 +1,21 @@
 const signUpForm = document.querySelector('#signUpForm');
+
+const passwordInput = document.querySelector('#password-input');
+
+let isLengthCorrect = false;
+let isIncludeUpperCase = false;
+let isIncludeSpecialChar = false;
+
+const tldEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const upperCaseRegex = /(.*[A-Z].*)/;
+const specialCharRegex = /(.*\W.*)/;
+
 const passwordInput = document.querySelector('#password-input')
 
 const tldEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
 
 
 signUpForm.addEventListener('submit', e =>{
@@ -56,6 +69,13 @@ signUpForm.addEventListener('submit', e =>{
         document.querySelector("#password-confirm-error").style.visibility="hidden";
         document.querySelector("#password-confirm-input").style.borderColor = "black";
     }
+
+
+    if (isIncludeSpecialChar && isIncludeUpperCase && isLengthCorrect){
+        e.preventDefault();
+    }
+
+
 })
 
 // passwordInput.addEventListener("", e=>{
@@ -66,10 +86,34 @@ signUpForm.addEventListener('submit', e =>{
 //     }
 // })
 
+
+const onPasswordChange = e =>{
+    if (document.querySelector('#password-input').value.trim().length >= 8){
+        document.querySelector('#length-check').style.color = "green";
+        isLengthCorrect = true;
+    }else{
+        document.querySelector('#length-check').style.color = "red";
+    }
+
+    if(upperCaseRegex.test(document.querySelector('#password-input').value.trim())){
+        document.querySelector('#uppercase-check').style.color = "green";
+        isIncludeUpperCase = true;
+    }else {
+        document.querySelector('#uppercase-check').style.color = "red";
+    }
+
+    if(specialCharRegex.test(document.querySelector('#password-input').value.trim())){
+        document.querySelector('#special-char-check').style.color = "green";
+        isIncludeSpecialChar = true;
+    }else {
+        document.querySelector('#special-char-check').style.color = "red";
+
+
 const onPasswordChange = e =>{
     if (document.querySelector('#password-input').value.trim().length >= 8){
         document.querySelector('#length-check').style.color = "green";
     }else{
         document.querySelector('#length-check').style.color = "red";
+
     }
 }
