@@ -81,7 +81,7 @@ public class ProductService implements IProductService{
         ArrayList<ProductItem> productList = new ArrayList<>();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.GET_ALL_PRODUCTS;
+            String sql = Queries.SEARCH_PRODUCT_BY_NAME;
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
 
