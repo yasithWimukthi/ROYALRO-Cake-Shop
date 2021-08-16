@@ -14,4 +14,5 @@ public class Queries {
     /*Queries for decorations management*/
     public static String ADD_DECORATION = "INSERT INTO decorations(name,imagePath,description,category,price) VALUES (?,?,?,?,?)";
     public static String GET_ALL_DECORATIONS = "SELECT * FROM decorations";
+    public static String SEARCH_DECORATIONS_BY_NAME = "SELECT * FROM decorations WHERE name LIKE ?";
 }

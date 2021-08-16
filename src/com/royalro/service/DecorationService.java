@@ -63,4 +63,33 @@ public class DecorationService implements IDecorationService{
         }
         return decorations;
     }
+
+    @Override
+    public ArrayList<DecorationItem> searchDecorationByName(String name) {
+        ArrayList<DecorationItem> decorations = new ArrayList<>();
+        DecorationItem decoration = new DecorationItem();
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.SEARCH_DECORATIONS_BY_NAME;
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                decoration.setCategory(resultSet.getString("category"));
+                decoration.setDescription(resultSet.getString("description"));
+                decoration.setImagePath(resultSet.getString("imagePath"));
+                decoration.setName(resultSet.getString("name"));
+                decoration.setPrice(resultSet.getFloat("price"));
+                decorations.add(decoration);
+            }
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return decorations;
+    }
 }
