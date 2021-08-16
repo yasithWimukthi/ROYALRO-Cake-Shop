@@ -24,5 +24,7 @@
     <orderEntry type="library" name="servlet-api.jar" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="animate.css" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="Dropify" level="application" />
   </component>
 </module>

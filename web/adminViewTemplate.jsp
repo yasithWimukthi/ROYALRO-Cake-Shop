@@ -23,7 +23,12 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
     <link rel="stylesheet" href="assets/css/Side-Swipe-Menu.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<body>
+
 
 <div>
 <div>
@@ -33,14 +38,16 @@
 <div class="container x-open-sidebar" style="max-width: 1350px">
     <div id="sidebar">
         <ul>
-            <li><a href="#">Home</a><a href="#">Link</a>
+            <li><a href="index.jsp">Home</a> </li>
+            <li><a href="#bannerformmodal"  data-bs-toggle="modal" data-bs-target="#addNew">Add New</a> </li>
+            <li><a href="#">Link</a></li>
                 <ul>
                     <li>Item 1</li>
                     <li>Item 2</li>
                     <li>Item 3</li>
                     <li>Item 4</li>
                 </ul>
-            </li>
+
         </ul>
     </div>
     <div class="main-content">
@@ -68,11 +75,59 @@
     </div>
 </div>
 </div>
+
+
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
 <script src="assets/js/Side-Swipe-Menu-1.js"></script>
 <script src="assets/js/Side-Swipe-Menu.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+
+
+<div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel" > Add New #</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <table class="table " >
+                        <tr>
+                            <td>Name:</td>
+                            <td><input type="text"  > </td>
+                            <td rowspan="3"><input type="file" ></td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <td><input type="number"  > </td>
+                        </tr>
+                        <tr>
+                        <td>Description:</td>
+                        <td><textarea></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div style="float: right">
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+<%--            <div class="modal-footer">--%>
+<%--                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>--%>
+<%--                <button type="button" class="btn btn-primary">Save</button>--%>
+<%--            </div>--%>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
