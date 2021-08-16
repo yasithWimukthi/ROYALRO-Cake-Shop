@@ -46,7 +46,7 @@ public class CakeService implements ICakeService{
 
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.ADD_CAKE;
+            String sql = Queries.GET_ALL_CAKES;
             preparedStatement = conn.prepareStatement(sql);
             Cake cake = new Cake();
 

@@ -1,5 +1,9 @@
 package com.royalro.service;
 
+import com.royalro.model.ProductItem;
+
+import java.util.ArrayList;
+
 public interface IProductService {
     public void addProduct(
             String name,
@@ -11,4 +15,6 @@ public interface IProductService {
             float price,
             int quantity
     );
+
+    public ArrayList<ProductItem> getAllProducts();
 }

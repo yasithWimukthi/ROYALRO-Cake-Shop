@@ -1,12 +1,16 @@
 package com.royalro.service;
 
+import com.royalro.model.Cake;
+import com.royalro.model.ProductItem;
 import com.royalro.util.DBConnectionUtil;
 import com.royalro.util.Queries;
 import com.royalro.util.QueryConstants;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ProductService implements IProductService{
 
@@ -37,5 +41,38 @@ public class ProductService implements IProductService{
         }finally {
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
+    }
+
+    @Override
+    public ArrayList<ProductItem> getAllProducts() {
+        ArrayList<ProductItem> productList = new ArrayList<>();
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.GET_ALL_PRODUCTS;
+            preparedStatement = conn.prepareStatement(sql);
+
+            ProductItem productItem = new ProductItem();
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                productItem.setProductId(resultSet.getInt("productId"));
+                productItem.setBrand(resultSet.getString("brand"));
+                productItem.setCategory(resultSet.getString("category"));
+                productItem.setCompanyCode(resultSet.getString("companyCode"));
+                productItem.setDescription(resultSet.getString("description"));
+                productItem.setImagePath(resultSet.getString("imagePath"));
+                productItem.setName(resultSet.getString("name"));
+                productItem.setPrice(resultSet.getFloat("price"));
+                productItem.setQuantity(resultSet.getInt("quantity"));
+                productList.add(productItem);
+            }
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return productList;
     }
 }

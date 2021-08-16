@@ -8,4 +8,5 @@ public class Queries {
 
     /*Queries for product item management*/
     public static String ADD_PRODUCT = "INSERT INTO PRODUCTS (name,category,description,brand,companyCode,imagePath,price,quantity) VALUES (?,?,?,?,?,?,?,?)" ;
+    public static String GET_ALL_PRODUCTS = "SELECT * FROM PRODUCTS";
 }
