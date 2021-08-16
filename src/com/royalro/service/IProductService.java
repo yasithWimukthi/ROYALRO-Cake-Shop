@@ -17,4 +17,6 @@ public interface IProductService {
     );
 
     public ArrayList<ProductItem> getAllProducts();
+
+    public ArrayList<ProductItem> searchProductByName(String name);
 }

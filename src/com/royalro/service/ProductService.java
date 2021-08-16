@@ -75,4 +75,38 @@ public class ProductService implements IProductService{
         }
         return productList;
     }
+
+    @Override
+    public ArrayList<ProductItem> searchProductByName(String name) {
+        ArrayList<ProductItem> productList = new ArrayList<>();
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.GET_ALL_PRODUCTS;
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+
+            ProductItem productItem = new ProductItem();
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                productItem.setProductId(resultSet.getInt("productId"));
+                productItem.setBrand(resultSet.getString("brand"));
+                productItem.setCategory(resultSet.getString("category"));
+                productItem.setCompanyCode(resultSet.getString("companyCode"));
+                productItem.setDescription(resultSet.getString("description"));
+                productItem.setImagePath(resultSet.getString("imagePath"));
+                productItem.setName(resultSet.getString("name"));
+                productItem.setPrice(resultSet.getFloat("price"));
+                productItem.setQuantity(resultSet.getInt("quantity"));
+                productList.add(productItem);
+            }
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return productList;
+    }
 }
