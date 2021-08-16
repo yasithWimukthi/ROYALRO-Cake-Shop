@@ -30,7 +30,7 @@
     <jsp:include page="header.jsp"></jsp:include>
 </div>
 <div class="main">
-<div class="container x-open-sidebar">
+<div class="container x-open-sidebar" style="max-width: 1350px">
     <div id="sidebar">
         <ul>
             <li><a href="#">Home</a><a href="#">Link</a>

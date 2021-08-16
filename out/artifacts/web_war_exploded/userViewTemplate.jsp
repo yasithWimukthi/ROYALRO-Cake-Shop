@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: shalitha
-  Date: 8/15/2021
-  Time: 7:57 PM
-  To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html>
 <html>
 
@@ -25,11 +18,9 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<div>
-<div>
-    <jsp:include page="header.jsp"></jsp:include>
-</div>
-<div class="main">
+<body>
+<jsp:include page="header.jsp"></jsp:include>
+<hr style="height: 0px;margin: 0px;margin-top: 47px;margin-bottom: 5px;">
 <div class="container x-open-sidebar" style="max-width: 1350px">
     <div id="sidebar">
         <ul>
@@ -51,22 +42,15 @@
             <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                 <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                     <div class="card-body">
-                        <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4><img class="d-flex" style="background-image: url(&quot;assets/img/image.png&quot;);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                        <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4><img class="d-flex mx-auto" style="background-image: url(&quot;assets/img/image.png&quot;);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                         <h6
                                 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                        <p class="card-text" style="color: rgb(95,95,95);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-info" type="button" style="margin-left: 21px;">Update</button>
-                        <button
-                                class="btn btn-danger" type="button" style="margin-left: 53px;">Delete</button>
-                    </div>
-                </div>
-
-
-
+                        <p class="card-text" style="color: rgb(95,95,95);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-light text-center d-xl-flex mx-auto justify-content-xl-center"
+                                                                                                                                                                                                                                                            type="button" style="margin-left: 0px;background-color: orange;color: rgb(255,255,255);">Add To Cart</button></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>

@@ -22,24 +22,7 @@
 </head>
 
 <body>
-<header>
 
-</header>
-<%--<nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="height: 56px;">--%>
-<%--    <div class="container">--%>
-<%--        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">--%>
-<%--            <span class="sr-only">Toggle navigation</span>--%>
-<%--            <span class="navbar-toggler-icon"></span>--%>
-<%--        </button>--%>
-<%--        <div class="collapse navbar-collapse text-right align-content-end" id="navcol-1" style="padding: 22px 1px;width: 97px;height: 26px;filter: grayscale(0%);">--%>
-
-<%--            <h4 class="text-center mx-auto" style="margin: 0px;width: 791px;height: 8px;"> </h4>--%>
-<%--            <a href="#" class="fa fa-shopping-cart shadow-none d-table-row ml-auto" style="font-size: 31px;filter: blur(0px) grayscale(0%);color: #51131d;opacity: 1;margin: -78px;" ></a>--%>
-<%--            <a  href="loginPage.jsp" class="fa fa-user-circle-o ml-auto" style="font-size: 29px;color: #521721;opacity: 1;margin: -31px;"></a>--%>
-
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</nav>--%>
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="height: 100px;">
     <div class="collapse navbar-collapse text-right" id="navcol-2" style="padding: 8px 18px;width: 927px;height: 140px;color: rgb(81,19,29);">
            <a href="index.jsp"><img src="assets/img/logo2.png" width="100px"  ></a>
