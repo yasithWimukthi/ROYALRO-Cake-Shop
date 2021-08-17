@@ -1,6 +1,6 @@
 package com.royalro.service;
 
-import com.royalro.model.Cake;
+import com.royalro.model.DecorationItem;
 import com.royalro.util.DBConnectionUtil;
 import com.royalro.util.Queries;
 import com.royalro.util.QueryConstants;
@@ -11,17 +11,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CakeService implements ICakeService{
-
+public class DecorationService implements IDecorationService{
     private static Connection conn;
 
     private PreparedStatement preparedStatement;
-
     @Override
-    public void addCake(String name, String imagePath, String description, String category, float price, float weight) {
+    public void addDecoration(String name, String category, String description, String imagePath, float price) {
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.ADD_CAKE;
+            String sql = Queries.ADD_DECORATION;
             preparedStatement = conn.prepareStatement(sql);
 
             preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
@@ -29,8 +27,6 @@ public class CakeService implements ICakeService{
             preparedStatement.setString(QueryConstants.COLUMN_THREE,description);
             preparedStatement.setString(QueryConstants.COLUMN_FOUR,category);
             preparedStatement.setFloat(QueryConstants.COLUMN_FIVE,price);
-            preparedStatement.setFloat(QueryConstants.COLUMN_SIX,weight);
-
             preparedStatement.execute();
 
         }catch (SQLException | ClassNotFoundException  e){
@@ -41,63 +37,59 @@ public class CakeService implements ICakeService{
     }
 
     @Override
-    public ArrayList<Cake> getAllCakes() {
-        ArrayList<Cake> cakeList = new ArrayList<Cake>();
+    public ArrayList<DecorationItem> getAllDecorations() {
+        ArrayList<DecorationItem> decorations = new ArrayList<>();
+        DecorationItem decoration = new DecorationItem();
 
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.GET_ALL_CAKES;
+            String sql = Queries.GET_ALL_DECORATIONS;
             preparedStatement = conn.prepareStatement(sql);
-            Cake cake = new Cake();
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
-                cake.setCakeId(resultSet.getInt("cakeId"));
-                cake.setName(resultSet.getString("name"));
-                cake.setCategory(resultSet.getString("category"));
-                cake.setImagePath(resultSet.getString("imagePath"));
-                cake.setDescription(resultSet.getString("description"));
-                cake.setPrice(resultSet.getFloat("price"));
-                cake.setWeight(resultSet.getFloat("weight"));
-                cakeList.add(cake);
+                decoration.setCategory(resultSet.getString("category"));
+                decoration.setDescription(resultSet.getString("description"));
+                decoration.setImagePath(resultSet.getString("imagePath"));
+                decoration.setName(resultSet.getString("name"));
+                decoration.setPrice(resultSet.getFloat("price"));
+                decorations.add(decoration);
             }
-
         }catch (SQLException | ClassNotFoundException  e){
             e.printStackTrace();
         }finally {
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
-        return cakeList;
+        return decorations;
     }
 
     @Override
-    public ArrayList<Cake> searchCakeByName(String name) {
-        ArrayList<Cake> cakeList = new ArrayList<Cake>();
+    public ArrayList<DecorationItem> searchDecorationByName(String name) {
+        ArrayList<DecorationItem> decorations = new ArrayList<>();
+        DecorationItem decoration = new DecorationItem();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.SEARCH_CAKE_BY_NAME;
+            String sql = Queries.SEARCH_DECORATIONS_BY_NAME;
             preparedStatement = conn.prepareStatement(sql);
+
             preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
-            Cake cake = new Cake();
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
-                cake.setCakeId(resultSet.getInt("cakeId"));
-                cake.setName(resultSet.getString("name"));
-                cake.setCategory(resultSet.getString("category"));
-                cake.setImagePath(resultSet.getString("imagePath"));
-                cake.setDescription(resultSet.getString("description"));
-                cake.setPrice(resultSet.getFloat("price"));
-                cake.setWeight(resultSet.getFloat("weight"));
-                cakeList.add(cake);
+                decoration.setCategory(resultSet.getString("category"));
+                decoration.setDescription(resultSet.getString("description"));
+                decoration.setImagePath(resultSet.getString("imagePath"));
+                decoration.setName(resultSet.getString("name"));
+                decoration.setPrice(resultSet.getFloat("price"));
+                decorations.add(decoration);
             }
+
         }catch (SQLException | ClassNotFoundException  e){
             e.printStackTrace();
         }finally {
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
-        return null;
+        return decorations;
     }
-
 }

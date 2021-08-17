@@ -65,10 +65,8 @@
                     <div id="password-confirm-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password does not match.</div>
                     <div style="margin: 0 auto;margin-top: 10px;width: 60%;height: auto;">
                         <p id="length-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least 8 characters.</p>
-
                         <p id="uppercase-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least an uppercase letter.</p>
                         <p id="special-char-check"><i class="fa fa-check" style="margin-right: 10px;"></i>Password must have at least a special character.</p>
-
                     </div>
                     <div style="margin: 0 auto;width: 50px;">
                         <button id="signUpBtn" class="sign-up-btn" type="submit" >Sign Up</button>
@@ -77,6 +75,7 @@
             </div>
         </div>
 </section>
+<jsp:include page="footer.jsp"></jsp:include>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/signup.js"></script>
 </body>
