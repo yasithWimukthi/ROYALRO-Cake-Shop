@@ -22,7 +22,7 @@
         <div style="width: 70%;height: 70%;background: var(--bs-white);margin-top: 0;margin-bottom: 0;margin-right: auto;margin-left: auto;opacity: 0.67;filter: blur(0px);border-radius: 50px;transform: translateY(15%);padding-top: 15px;border-color: var(--bs-warning);border-bottom-color: var(--bs-red);">
             <div style="border-top-width: 0;">
                 <p style="text-align: center;font-family: Aclonica, sans-serif;color: var(--bs-dark);">Sign Up</p>
-                <form method="post" action="SignUpServlet" id="signUpForm">
+                <form method="POST" action="SignUpServlet" id="signUpForm">
                     <div class="input-group" style="margin: 0 auto;width: 80%;">
                         <div class="input-group-prepend">
                             <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-user"></i></span>
