@@ -17,4 +17,16 @@ public interface ICakeService {
     public ArrayList<Cake> getAllCakes();
 
     public ArrayList<Cake> searchCakeByName(String name);
+
+    public void deleteCake(String id);
+
+    public void updateCake(
+            int id,
+            String name,
+            String imagePath,
+            String description,
+            String category,
+            float price,
+            float weight
+    );
 }
