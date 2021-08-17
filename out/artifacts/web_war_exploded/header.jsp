@@ -37,7 +37,7 @@
 
     </div>
     <a href="#" class="fa fa-shopping-cart shadow-none d-table-row ml-auto" style="font-size: 31px;filter: blur(0px) grayscale(0%);color: #51131d;opacity: 1;margin: 10px;" ></a>
-    <a  href="loginPage.jsp" class="fa fa-user-circle-o ml-auto" style="font-size: 31px;color: #521721;opacity: 1;margin: 5px;"></a>
+    <a  href="loginPage.jsp" class="fa fa-user-circle-o ml-auto" style="font-size: 31px;color: #521721;opacity: 1;margin: 5px; text-decoration: none"></a>
 
     </div>
 </nav>
