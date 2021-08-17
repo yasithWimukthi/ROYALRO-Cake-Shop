@@ -31,7 +31,7 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;height: 57px;width: 121px;">Cakes</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 167px;">Decorations</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">Items</a></li>
-                <li class="nav-item" role="presentation" style="width: 150px;"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 139px;">Contaxt Us</a></li>
+                <li class="nav-item" role="presentation" style="width: 150px;"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 139px;">Contact Us</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">About Us</a></li>
             </ul>
 
