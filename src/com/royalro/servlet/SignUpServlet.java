@@ -1,5 +1,7 @@
 package com.royalro.servlet;
 
+import com.royalro.service.UserAuthentication;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,8 @@ import java.io.IOException;
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        UserAuthentication ua = new UserAuthentication();
+        ua.createLogin("y@w.com","hhiu");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
