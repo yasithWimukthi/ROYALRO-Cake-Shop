@@ -72,7 +72,7 @@ public class CakeService implements ICakeService{
     }
 
     @Override
-    public ArrayList<Cake> searchCakeByName(String name) {
+        public ArrayList<Cake> searchCakeByName(String name) {
         ArrayList<Cake> cakeList = new ArrayList<Cake>();
         try {
             conn = DBConnectionUtil.getConnection();
@@ -98,6 +98,45 @@ public class CakeService implements ICakeService{
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
         return null;
+    }
+
+    @Override
+    public void deleteCake(String id) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.DELETE_CAKE;
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,id);
+            preparedStatement.execute();
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+    }
+
+    @Override
+    public void updateCake(int id, String name, String imagePath, String description, String category, float price, float weight) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.DELETE_CAKE;
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,imagePath);
+            preparedStatement.setString(QueryConstants.COLUMN_THREE,description);
+            preparedStatement.setString(QueryConstants.COLUMN_FOUR,category);
+            preparedStatement.setFloat(QueryConstants.COLUMN_FIVE,price);
+            preparedStatement.setFloat(QueryConstants.COLUMN_SIX,weight);
+            preparedStatement.setInt(QueryConstants.COLUMN_SEVEN,id);
+
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
     }
 
 }
