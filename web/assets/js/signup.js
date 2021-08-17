@@ -64,6 +64,8 @@ signUpForm.addEventListener('submit', e =>{
     }
 
     if (isIncludeSpecialChar && isIncludeUpperCase && isLengthCorrect){
+
+    }else{
         e.preventDefault();
     }
 })
