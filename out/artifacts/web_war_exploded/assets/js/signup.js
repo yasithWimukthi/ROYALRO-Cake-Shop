@@ -1,5 +1,4 @@
 const signUpForm = document.querySelector('#signUpForm');
-
 const passwordInput = document.querySelector('#password-input');
 
 let isLengthCorrect = false;
@@ -10,12 +9,6 @@ const tldEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const upperCaseRegex = /(.*[A-Z].*)/;
 const specialCharRegex = /(.*\W.*)/;
-
-const passwordInput = document.querySelector('#password-input')
-
-const tldEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
 
 
 signUpForm.addEventListener('submit', e =>{
@@ -70,12 +63,11 @@ signUpForm.addEventListener('submit', e =>{
         document.querySelector("#password-confirm-input").style.borderColor = "black";
     }
 
-
     if (isIncludeSpecialChar && isIncludeUpperCase && isLengthCorrect){
+
+    }else{
         e.preventDefault();
     }
-
-
 })
 
 // passwordInput.addEventListener("", e=>{
@@ -85,7 +77,6 @@ signUpForm.addEventListener('submit', e =>{
 //         document.querySelector('#length-check').style.color = "red";
 //     }
 // })
-
 
 const onPasswordChange = e =>{
     if (document.querySelector('#password-input').value.trim().length >= 8){
@@ -107,13 +98,5 @@ const onPasswordChange = e =>{
         isIncludeSpecialChar = true;
     }else {
         document.querySelector('#special-char-check').style.color = "red";
-
-
-const onPasswordChange = e =>{
-    if (document.querySelector('#password-input').value.trim().length >= 8){
-        document.querySelector('#length-check').style.color = "green";
-    }else{
-        document.querySelector('#length-check').style.color = "red";
-
     }
 }
