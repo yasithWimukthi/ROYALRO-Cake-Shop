@@ -19,7 +19,9 @@
 
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-
+<a href="adminViewTemplate.jsp" >View admin view</a>
+<a href="adminDashBoard.jsp" >View admin dashboard</a>
+<a href="userViewTemplate.jsp" >User View</a>
 <section id="carousel">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
         <div class="carousel-inner">
@@ -117,7 +119,34 @@
         </div>
     </div>
 </section>
-<jsp:include page="footer.jsp"></jsp:include>
+<footer class="footer-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-3 item">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Web design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Hosting</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 item">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 item text">
+                <h3>Company Name</h3>
+                <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+            </div>
+            <div class="col item social"><a href="#"><i class="icon ion-social-fb"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+        </div>
+        <p class="copyright">Company Name © 2021</p>
+    </div>
+</footer>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
 
