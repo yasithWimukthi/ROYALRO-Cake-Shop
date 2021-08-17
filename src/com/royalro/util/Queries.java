@@ -15,4 +15,7 @@ public class Queries {
     public static String ADD_DECORATION = "INSERT INTO decorations(name,imagePath,description,category,price) VALUES (?,?,?,?,?)";
     public static String GET_ALL_DECORATIONS = "SELECT * FROM decorations";
     public static String SEARCH_DECORATIONS_BY_NAME = "SELECT * FROM decorations WHERE name LIKE ?";
+
+    /*Queries for user authentication*/
+    public static String CREATE_LOGIN = "INSERT INTO LOGIN (email,password) VALUES (?,?)";
 }
