@@ -138,12 +138,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label >Price(LKR)</label>
-                                    <input type="text" class="form-control" id="price" placeholder="xxxx.xx " style="width: 20%" required>
+                                    <input type="text" class="form-control" id="price" placeholder="xxxx.xx " style="width: 50%" required>
 
                                 </div>
                                 <div class="form-group">
                                     <label >Weight(kg)</label>
-                                    <input type="text" class="form-control" id="weight" placeholder="1.5 " required style="width: 20%">
+                                    <input type="text" class="form-control" id="weight" placeholder="1.5 " required style="width: 50%">
                                 </div>
                                 <div class="form-group">
                                     <label >Catagory</label>
