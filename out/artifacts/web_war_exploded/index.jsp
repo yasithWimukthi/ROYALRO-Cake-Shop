@@ -20,8 +20,9 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <a href="adminViewTemplate.jsp" >View admin view</a>
-<a href="adminDashBoard.jsp" >View admin dashboard</a>
+<a href="adminDashboard.jsp" >View admin dashboard</a>
 <a href="userViewTemplate.jsp" >User View</a>
+
 <section id="carousel">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
         <div class="carousel-inner">
@@ -119,6 +120,7 @@
         </div>
     </div>
 </section>
+
 <footer class="footer-dark">
     <div class="container">
         <div class="row">
