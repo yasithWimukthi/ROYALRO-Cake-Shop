@@ -37,8 +37,8 @@
     </div>
     <%--    Search function--%>
     <div class="search-container" style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-        <input type="text" class="search-input" name="search-bar" placeholder="Search Cakes..." />
-        <button class="btn btn-light search-btn" type="button">
+        <input type="text" class="search-input" name="search-bar" placeholder="Search Cakes..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center" />
+        <button class="btn btn-light search-btn" type="button" style="background-color: white;">
             <i class="fa fa-search"></i>
         </button>
     </div>
@@ -79,7 +79,14 @@
                     <%--            then it will display all the categories--%>
                     <%--            under all the catgorieas shoul display related cakes--%>
                     <% for(int i=0; i<5 ;i++){%>
-                    <h2 style="width: 604px;/*background-image: linear-gradient(to right,red, yellow);*/background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));color: rgb(104,0,167);">Category</h2>
+                    <h2 style="width: 604px;
+                                background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
+                                color: #ffffff;
+                                margin-left: -5px;
+                                padding-left: 10px;
+                                font-family: serif;
+                                border-radius: 10px;">Category</h2>
+
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                         <%--                loop card from here--%>
                         <% for(int j=0; j<3 ;j++){%>
