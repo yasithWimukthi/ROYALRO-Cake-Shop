@@ -26,6 +26,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/file-upload.css">
 </head>
 <body>
 
@@ -129,7 +130,7 @@
             </div>
             <div class="modal-body">
                 <form action="#" method="post" enctype="multipart/form-data">
-                    <form>
+
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class="form-group">
@@ -163,8 +164,8 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="form-group">
-                                    <label >Image Upload</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    <div style="text-align: center;"><label >Image Upload</label></div>
+                                    <input type="file"   id="fileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
                                 </div>
                             </div>
                         </div>
@@ -177,30 +178,8 @@
 
 
                     </form>
-                    <%--                    <table class="table " >--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td>Name:</td>--%>
-                    <%--                            <td><input type="text"  > </td>--%>
-                    <%--                            <td rowspan="3"><input type="file" ></td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td>Price:</td>--%>
-                    <%--                            <td><input type="number"  > </td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr>--%>
-                    <%--                        <td>Description:</td>--%>
-                    <%--                        <td><textarea></textarea> </td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td colspan="3">--%>
-                    <%--                                <div style="float: right">--%>
-                    <%--                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>--%>
-                    <%--                                <button type="button" class="btn btn-primary">Save</button>--%>
-                    <%--                                </div>--%>
-                    <%--                            </td>--%>
-                    <%--                        </tr>--%>
-                    <%--                    </table>--%>
-                </form>
+
+
 
             </div>
             <%--            <div class="modal-footer">--%>
