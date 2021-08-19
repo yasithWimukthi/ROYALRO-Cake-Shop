@@ -65,7 +65,7 @@
                 </div>
                 <div style="margin: 0 auto;">
                     <div style="text-align: center;">
-                        <button id="signUpBtn" class="sign-up-btn" type="button" >Sign Up</button>
+                        <button id="signUpBtn" class="sign-up-btn" type="submit" >Sign Up</button>
                     </div>
                 </div>
             </form>
