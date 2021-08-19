@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/Side-Swipe-Menu.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/file-upload.css">
 </head>
@@ -63,10 +63,10 @@
             <div id="sidebar">
                 <ul>
                     <li><a href="index.jsp">Home</a> </li>
-                    <li><a href="#bannerformmodal"  data-bs-toggle="modal" data-bs-target="#addNewDeco">Add New Decoration</a> </li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewDeco">Add New Decoration</a> </li>
                     <li><a href="#" >Categories</a></li>
                     <li><a href="#">Reports</a></li>
-                    <li><a href="adminDashBoard.jsp">Admin Page</a></li>
+                    <li><a href="adminDashboard.jsp">Admin Page</a></li>
                 </ul>
             </div>
             <%--    Main area--%>
@@ -89,12 +89,13 @@
                                 border-radius: 10px;">Category</h2>
 
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
-                        <%--                loop card from here--%>
+                        <%--  loop card from here--%>
                         <% for(int j=0; j<3 ;j++){%>
-                        <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
+                        <div data-bs-toggle="modal" data-bs-target="#DecoDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
-                                    <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4><img class="d-flex" style="background-image: url(&quot;assets/img/image.png&quot;);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                    <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4>
+                                    <img class="d-flex" style="background-image: url(&quot;assets/img/image.png&quot;);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                     <h6
                                             class="text-muted card-subtitle mb-2">Subtitle</h6>
                                     <p class="card-text" style="color: rgb(95,95,95);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
@@ -259,12 +260,12 @@
     </div>
 </div>
 
-<%--Cake Details modal--%>
-<div class="modal fade" id="cakeDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<%--Decoration Details modal--%>
+<div class="modal fade" id="DecoDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Cake Details</h5>
+                <h5 class="modal-title" >Decoration Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </button>
             </div>
