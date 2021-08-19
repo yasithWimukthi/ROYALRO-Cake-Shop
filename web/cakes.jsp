@@ -373,26 +373,26 @@
                             <div class="form-group col-md-6">
                                 <div class="form-group">
                                     <label> Cake Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="name " required>
+                                    <input  type="text" class="form-control" id="update-name-input" placeholder="name " >
                                 </div>
+                                <div id="update-name-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid name.</div>
                                 <div class="form-group">
                                     <label>Price(LKR)</label>
-                                    <input type="text" class="form-control" id="price" placeholder="xxxx.xx "
+                                    <input type="text" class="form-control" id="update-price-input" placeholder="xxxx.xx "
                                            style="width: 20%" required>
-
                                 </div>
+                                <div id="update-price-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid price.</div>
                                 <div class="form-group">
                                     <label>Weight(kg)</label>
-                                    <input type="text" class="form-control" id="weight" placeholder="1.5 " required
-                                           style="width: 20%">
+                                    <input type="text" class="form-control" id="weight" placeholder="1.5 " style="width: 20%">
                                 </div>
                                 <div class="form-group">
                                     <label>Catagory</label>
-                                    <select name="catagory" id="catagory" class="form-control">
+                                    <select name="catagory" id="update-category-input" class="form-control">
                                         <option value="">-- SELECT CATAGORY --</option>
-                                        <option value="">Milk Chocolate</option>
-                                        <option value="">White Chocolate</option>
-                                        <option value="">Coffee Mocha</option>
+                                        <option value="Milk Chocolate">Milk Chocolate</option>
+                                        <option value="White Chocolate">White Chocolate</option>
+                                        <option value="Coffee Mocha">Coffee Mocha</option>
                                     </select>
 
                                 </div>
