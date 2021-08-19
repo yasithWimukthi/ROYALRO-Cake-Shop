@@ -272,6 +272,7 @@
     </div>
 </div>
 
+<jsp:include page="footer.jsp"></jsp:include>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
