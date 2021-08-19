@@ -26,6 +26,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/file-upload.css">
 </head>
 <body>
 
@@ -37,8 +38,8 @@
     </div>
     <%--    Search function--%>
     <div class="search-container" style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-        <input type="text" class="search-input" name="search-bar" placeholder="Search Cakes..." />
-        <button class="btn btn-light search-btn" type="button">
+        <input type="text" class="search-input" name="search-bar" placeholder="Search Cakes..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center" />
+        <button class="btn btn-light search-btn" type="button" style="background-color: white;">
             <i class="fa fa-search"></i>
         </button>
     </div>
@@ -79,7 +80,14 @@
                     <%--            then it will display all the categories--%>
                     <%--            under all the catgorieas shoul display related cakes--%>
                     <% for(int i=0; i<5 ;i++){%>
-                    <h2 style="width: 604px;/*background-image: linear-gradient(to right,red, yellow);*/background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));color: rgb(104,0,167);">Category</h2>
+                    <h2 style="width: 604px;
+                                background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
+                                color: #ffffff;
+                                margin-left: -5px;
+                                padding-left: 10px;
+                                font-family: serif;
+                                border-radius: 10px;">Category</h2>
+
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                         <%--                loop card from here--%>
                         <% for(int j=0; j<3 ;j++){%>
@@ -122,7 +130,7 @@
             </div>
             <div class="modal-body">
                 <form action="#" method="post" enctype="multipart/form-data">
-                    <form>
+
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <div class="form-group">
@@ -131,12 +139,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label >Price(LKR)</label>
-                                    <input type="text" class="form-control" id="price" placeholder="xxxx.xx " style="width: 20%" required>
+                                    <input type="text" class="form-control" id="price" placeholder="xxxx.xx " style="width: 50%" required>
 
                                 </div>
                                 <div class="form-group">
                                     <label >Weight(kg)</label>
-                                    <input type="text" class="form-control" id="weight" placeholder="1.5 " required style="width: 20%">
+                                    <input type="text" class="form-control" id="weight" placeholder="1.5 " required style="width: 50%">
                                 </div>
                                 <div class="form-group">
                                     <label >Catagory</label>
@@ -156,8 +164,8 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="form-group">
-                                    <label >Image Upload</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    <div style="text-align: center;"><label >Image Upload</label></div>
+                                    <input type="file"   id="fileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
                                 </div>
                             </div>
                         </div>
@@ -170,30 +178,8 @@
 
 
                     </form>
-                    <%--                    <table class="table " >--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td>Name:</td>--%>
-                    <%--                            <td><input type="text"  > </td>--%>
-                    <%--                            <td rowspan="3"><input type="file" ></td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td>Price:</td>--%>
-                    <%--                            <td><input type="number"  > </td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr>--%>
-                    <%--                        <td>Description:</td>--%>
-                    <%--                        <td><textarea></textarea> </td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td colspan="3">--%>
-                    <%--                                <div style="float: right">--%>
-                    <%--                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>--%>
-                    <%--                                <button type="button" class="btn btn-primary">Save</button>--%>
-                    <%--                                </div>--%>
-                    <%--                            </td>--%>
-                    <%--                        </tr>--%>
-                    <%--                    </table>--%>
-                </form>
+
+
 
             </div>
             <%--            <div class="modal-footer">--%>
