@@ -38,14 +38,14 @@
     </div>
     <%--    Search function--%>
     <div class="search-container" style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-        <input type="text" class="search-input" name="search-bar" placeholder="Search Decoration..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
+        <input type="text" class="search-input" name="search-bar" placeholder="Search Items..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
         <button class="btn btn-light search-btn" type="button" style="background-color: white;">
             <i class="fa fa-search"></i>
         </button>
     </div>
 
     <%--    main header--%>
-    <div style="text-align: center;"><h3 >Decoration Managment</h3></div>
+    <div style="text-align: center;"><h3 >Item Managment</h3></div>
 
     <%--    Navigation --%>
 
@@ -53,7 +53,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.jsp" style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
             <li class="breadcrumb-item"><a href="adminDashboard.jsp" style="text-decoration: none;color: #5c636a;"><span>Admin</span></a></li>
-            <li class="breadcrumb-item"><a href="DecorationManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Decoration Management</span></a></li>
+            <li class="breadcrumb-item"><a href="ItemManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Item Management</span></a></li>
         </ol>
     </div>
 
@@ -63,7 +63,7 @@
             <div id="sidebar">
                 <ul>
                     <li><a href="index.jsp">Home</a> </li>
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewDeco">Add New Decoration</a> </li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewDeco">Add New Item</a> </li>
                     <li><a href="#" >Categories</a></li>
                     <li><a href="#">Reports</a></li>
                     <li><a href="adminDashboard.jsp">Admin Page</a></li>

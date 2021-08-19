@@ -52,7 +52,7 @@
     <div style="margin-left: 10px;text-decoration: none; ">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.jsp" style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
-            <li class="breadcrumb-item"><a href="adminDashBoard.jsp" style="text-decoration: none;color: #5c636a;"><span>Admin</span></a></li>
+            <li class="breadcrumb-item"><a href="adminDashboard.jsp" style="text-decoration: none;color: #5c636a;"><span>Admin</span></a></li>
             <li class="breadcrumb-item"><a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Cake Management</span></a></li>
         </ol>
     </div>
@@ -66,7 +66,7 @@
                     <li><a href="#bannerformmodal"  data-bs-toggle="modal" data-bs-target="#addNewCake">Add New Cake</a> </li>
                     <li><a href="#" >Categories</a></li>
                     <li><a href="#">Reports</a></li>
-                    <li><a href="adminDashBoard.jsp">Admin Page</a></li>
+                    <li><a href="adminDashboard.jsp">Admin Page</a></li>
                 </ul>
             </div>
             <%--    Main area--%>
