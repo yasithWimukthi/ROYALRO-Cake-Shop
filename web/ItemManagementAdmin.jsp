@@ -103,7 +103,7 @@
                                     <h6
                                             class="text-muted card-subtitle mb-2">Subtitle</h6>
                                     <p class="card-text" style="color: rgb(95,95,95);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                                    <button class="btn btn-info" type="button" style="margin-left: 21px;" data-bs-toggle="modal" data-bs-target="#updateNewDeco">Update</button>
+                                    <button class="btn btn-info" type="button" style="margin-left: 21px;" data-bs-toggle="modal" data-bs-target="#updateItem">Update</button>
                                     <button class="btn btn-danger" type="button" style="margin-left: 53px;" data-bs-toggle="modal" data-bs-target="#deleteDeco">Delete</button>
                                 </div>
                             </div>
@@ -188,7 +188,6 @@
 
 
                 </form>
-
             </div>
 
         </div>
@@ -196,11 +195,11 @@
 </div>
 
 <%--update form--%>
-<div class="modal fade" id="updateNewDeco" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="no" style="text-align: center;"> Update Decoration Details</h3>
+                <h3 class="modal-title" id="no" style="text-align: center;"> Update Item Details</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -209,24 +208,36 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <div class="form-group">
-                                <label > Decoration Name</label>
-                                <input type="text" class="form-control" id="UpdateDecorationName" placeholder="name " required>
+                                <label > Item Name</label>
+                                <input type="text" class="form-control" id="UpdateItemName" placeholder="name " required>
                             </div>
                             <div class="form-group">
                                 <label >Price(LKR)</label>
-                                <input type="text" class="form-control" id="UpdateDecorationPrice" placeholder="xxxx.xx " style="width: 50%" required>
+                                <input type="text" class="form-control" id="updateItemPrice" placeholder="xxxx.xx " style="width: 50%" required>
 
                             </div>
-
                             <div class="form-group">
-                                <label >Catagory</label>
-                                <select name="catagory" id="UpdateDecorationCategory" class="form-control" >
-                                    <option value="">-- SELECT CATAGORY -- </option>
-                                    <option value="">CATAGORY2</option>
-                                    <option value="">CATAGORY3</option>
-                                    <option value="">CATAGORY4</option>
+                                <label >Category</label>
+                                <select name="category" id="UpdateItemCategory" class="form-control" >
+                                    <option value="">-- SELECT CATEGORY -- </option>
+                                    <option value="">CATEGORY2</option>
+                                    <option value="">CATEGORY3</option>
+                                    <option value="">CATEGORY4</option>
                                 </select>
 
+                            </div>
+                            <div class="form-group">
+                                <label >Qty.</label>
+                                <input type="number" class="form-control" id="UpdateQty" style="width: 50%" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label > Brand</label>
+                                <input type="text" class="form-control" id="UpdateBrand">
+                            </div>
+                            <div class="form-group">
+                                <label >Company code</label>
+                                <input type="text" class="form-control" id="UpdateCompanyCode">
                             </div>
                             <div class="form-group">
                                 <label >Description</label>
@@ -236,15 +247,19 @@
                         </div>
                         <div class="form-group col-md-6">
                             <div class="form-group">
-                                <div style="text-align: center;"><label >Change image</label></div>
-                                <input type="file"   id="UpdateFileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                <div style="text-align: center;"><label >Image Upload</label></div>
+                                <input type="file"   id="fileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
                             </div>
                         </div>
                     </div>
+
+
                     <div class="form-group" style="float: right; margin-top: 10px">
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>
                         <button type="button" class="btn btn-primary">Save</button>
                     </div>
+
+
                 </form>
             </div>
         </div>
