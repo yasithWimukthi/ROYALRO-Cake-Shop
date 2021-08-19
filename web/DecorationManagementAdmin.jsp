@@ -52,7 +52,7 @@
     <div style="margin-left: 10px;text-decoration: none; ">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.jsp" style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
-            <li class="breadcrumb-item"><a href="adminDashBoard.jsp" style="text-decoration: none;color: #5c636a;"><span>Admin</span></a></li>
+            <li class="breadcrumb-item"><a href="adminDashboard.jsp" style="text-decoration: none;color: #5c636a;"><span>Admin</span></a></li>
             <li class="breadcrumb-item"><a href="DecorationManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Decoration Management</span></a></li>
         </ol>
     </div>
@@ -63,7 +63,7 @@
             <div id="sidebar">
                 <ul>
                     <li><a href="index.jsp">Home</a> </li>
-                    <li><a href="#bannerformmodal"  data-bs-toggle="modal" data-bs-target="#addNewCake">Add New Decoration</a> </li>
+                    <li><a href="#bannerformmodal"  data-bs-toggle="modal" data-bs-target="#addNewDeco">Add New Decoration</a> </li>
                     <li><a href="#" >Categories</a></li>
                     <li><a href="#">Reports</a></li>
                     <li><a href="adminDashBoard.jsp">Admin Page</a></li>
@@ -121,11 +121,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
 
 <%--input from--%>
-<div class="modal fade" id="addNewCake" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addNewDeco" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel" style="text-align: center;"> Add New Cake</h3>
+                <h3 class="modal-title" id="inputDecoMainLabel" style="text-align: center;"> Add New Decoration</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -134,21 +134,18 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <div class="form-group">
-                                <label > Cake Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="name " required>
+                                <label > Decoration Name</label>
+                                <input type="text" class="form-control" id="DecorationName" placeholder="name " required>
                             </div>
                             <div class="form-group">
                                 <label >Price(LKR)</label>
-                                <input type="text" class="form-control" id="price" placeholder="xxxx.xx " style="width: 50%" required>
+                                <input type="text" class="form-control" id="DecorationPrice" placeholder="xxxx.xx " style="width: 50%" required>
 
                             </div>
-                            <div class="form-group">
-                                <label >Weight(kg)</label>
-                                <input type="text" class="form-control" id="weight" placeholder="1.5 " required style="width: 50%">
-                            </div>
+
                             <div class="form-group">
                                 <label >Catagory</label>
-                                <select name="catagory" id="catagory" class="form-control" >
+                                <select name="catagory" id="DecorationCategory" class="form-control" >
                                     <option value="">-- SELECT CATAGORY -- </option>
                                     <option value="">CATAGORY2</option>
                                     <option value="">CATAGORY3</option>
