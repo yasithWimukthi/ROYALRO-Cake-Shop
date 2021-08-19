@@ -63,7 +63,7 @@
             <div id="sidebar">
                 <ul>
                     <li><a href="index.jsp">Home</a> </li>
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewDeco">Add New Item</a> </li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewItem">Add New Item</a> </li>
                     <li><a href="#" >Categories</a></li>
                     <li><a href="#">Reports</a></li>
                     <li><a href="adminDashboard.jsp">Admin Page</a></li>
@@ -122,11 +122,11 @@
 
 
 <%--input from--%>
-<div class="modal fade" id="addNewDeco" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addNewItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="inputDecoMainLabel" style="text-align: center;"> Add New Decoration</h3>
+                <h3 class="modal-title" id="inputItemMainLabel" style="text-align: center;"> Add New Item</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -135,7 +135,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <div class="form-group">
-                                <label > Decoration Name</label>
+                                <label > Item Name</label>
                                 <input type="text" class="form-control" id="DecorationName" placeholder="name " required>
                             </div>
                             <div class="form-group">
@@ -143,16 +143,28 @@
                                 <input type="text" class="form-control" id="DecorationPrice" placeholder="xxxx.xx " style="width: 50%" required>
 
                             </div>
-
                             <div class="form-group">
-                                <label >Catagory</label>
-                                <select name="catagory" id="DecorationCategory" class="form-control" >
-                                    <option value="">-- SELECT CATAGORY -- </option>
-                                    <option value="">CATAGORY2</option>
-                                    <option value="">CATAGORY3</option>
-                                    <option value="">CATAGORY4</option>
+                                <label >Category</label>
+                                <select name="category" id="DecorationCategory" class="form-control" >
+                                    <option value="">-- SELECT CATEGORY -- </option>
+                                    <option value="">CATEGORY2</option>
+                                    <option value="">CATEGORY3</option>
+                                    <option value="">CATEGORY4</option>
                                 </select>
 
+                            </div>
+                            <div class="form-group">
+                                <label >Qty.</label>
+                                <input type="number" class="form-control" id="Qty" style="width: 50%" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label > Brand</label>
+                                <input type="text" class="form-control" id="Brand">
+                            </div>
+                            <div class="form-group">
+                                <label >Company code</label>
+                                <input type="text" class="form-control" id="CompanyCode">
                             </div>
                             <div class="form-group">
                                 <label >Description</label>
