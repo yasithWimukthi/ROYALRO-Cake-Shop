@@ -13,6 +13,7 @@
 
 <body style="background-image: url(&quot;assets/img/sign%20up%20background.png&quot;);background-position: center;background-repeat: no-repeat;background-size: cover;">
 <div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-xl-4 offset-xl-0" style="width: 380px;">
@@ -33,7 +34,7 @@
                 <div class="form-group">
                     <h2 class="text-center" style="margin-bottom: 10px;margin-top: 10px;font-size: 20px;padding: 10px;">Location </h2>
                 </div>
-                <div class="form-group"><iframe class="border rounded" allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDaEw6o8OhJvRQnTF3gI_tibMejtfasOlY&amp;q=Paris%2C+France&amp;zoom=15" width="100%" height="450" style="height: 545px;"></iframe></div>
+                <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=300&amp;height=500&amp;hl=en&amp;q=Sri Lanka, Colombo&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.fnfgo.com/">FNF Go</a></div><style>.mapouter{position:relative;text-align:right;width:600px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}.gmap_iframe {width:600px!important;height:400px!important;}</style></div>
             </div>
             <div class="col-md-4 col-xl-4 offset-xl-0">
                 <form class="border rounded" method="post" style="margin-top: 10px;background-color: rgba(255,255,255,0.41);padding: 10px;">
