@@ -43,10 +43,10 @@
                 <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                     <div class="card-body">
                         <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4><img class="d-flex mx-auto" style="background-image: url(&quot;assets/img/image.png&quot;);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                        <h6
-                                class="text-muted card-subtitle mb-2">Subtitle</h6>
-                        <p class="card-text" style="color: rgb(95,95,95);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-light text-center d-xl-flex mx-auto justify-content-xl-center"
-                                                                                                                                                                                                                                                            type="button" style="margin-left: 0px;background-color: orange;color: rgb(255,255,255);">Add To Cart</button></div>
+                        <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                        <p class="card-text" style="color: rgb(95,95,95);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <button class="btn btn-light text-center d-xl-flex mx-auto justify-content-xl-center"  type="button" style="margin-left: 0px;background-color: orange;color: rgb(255,255,255);">Add To Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
