@@ -71,9 +71,13 @@
             </div>
             <%--    Main area--%>
             <div class="main-content">
-                <div class="swipe-area" style="background-color: rgb(255,255,255);"></div><a id="sidebar-toggle" data-toggle=".container" href="#" style="background-color: #ed4dc0;"><span class="bar"></span><span class="bar" style="background-color: rgb(254,254,254);"></span><span class="bar"></span></a>
-                <div class="content"
-                     style="padding-left: 56px;">
+                <div class="swipe-area" style="background-color: rgb(255,255,255);"></div>
+                <a id="sidebar-toggle" data-toggle=".container" href="#" style="background-color: #ed4dc0;">
+                    <span class="bar"></span>
+                    <span class="bar" style="background-color: rgb(254,254,254);"></span>
+                    <span class="bar"></span>
+                </a>
+                <div class="content" style="padding-left: 56px;">
 
                     <%--            loop categories with cards--%>
                     <%--            get catagories from database and loop throug for each loop--%>
@@ -91,7 +95,7 @@
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                         <%--  loop card from here--%>
                         <% for(int j=0; j<3 ;j++){%>
-                        <div data-bs-toggle="modal" data-bs-target="#DecoDetails">
+                        <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4>
@@ -256,11 +260,11 @@
 </div>
 
 <%--Decoration Details modal--%>
-<div class="modal fade" id="DecoDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ItemDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Decoration Details</h5>
+                <h5 class="modal-title" >Item Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </button>
             </div>
