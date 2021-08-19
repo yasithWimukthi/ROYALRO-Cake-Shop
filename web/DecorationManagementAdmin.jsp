@@ -115,12 +115,7 @@
 
 
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/bs-init.js"></script>
-<script src="assets/js/Side-Swipe-Menu-1.js"></script>
-<script src="assets/js/Side-Swipe-Menu.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+
 
 <%--input from--%>
 <div class="modal fade" id="addNewDeco" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -276,6 +271,14 @@
         </div>
     </div>
 </div>
+
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/bs-init.js"></script>
+<script src="assets/js/Side-Swipe-Menu-1.js"></script>
+<script src="assets/js/Side-Swipe-Menu.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
 </body>
 
 </html>
