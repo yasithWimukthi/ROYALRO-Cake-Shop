@@ -95,7 +95,7 @@
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                         <%--                loop card from here--%>
                         <% for(int j=0; j<3 ;j++){%>
-                        <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
+                        <div data-bs-toggle="modal" data-bs-target="#DecorationDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4><img class="d-flex mx-auto" style="background-image: url(&quot;assets/img/image.png&quot;);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
@@ -120,11 +120,11 @@
 
 
 <%--Cake Details modal--%>
-<div class="modal fade" id="cakeDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="DecorationDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Cake Details</h5>
+                <h5 class="modal-title" >Decoration Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </button>
             </div>
