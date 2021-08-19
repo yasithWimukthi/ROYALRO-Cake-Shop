@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-8 col-xl-8" style="height: 400px;"><label class="text-center" style="font-size: 50px;margin-top: 30px;margin-left: 250px;"><strong>ABOUT US</strong></label>
                 <p class="text-justify" style="width: 600px;height: 320px;margin-top: 40px;font-size: 25px;">The Cake Factory had its beginning somewhere in 2005, when a family friend asked my sister Farah and I to do a "cookery demonstration" in their newly opened store. That little ad-hoc demonstration was followed by a sale of cakes-mainly
-                    Love Cake, which was a family favourite. The response we received was overwhelming and that gradually led us to idea of starting our own buisness.</p>
+                    *Love Cake, which was a family favourite. The response we received was overwhelming and that gradually led us to idea of starting our own buisness.</p>
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4"><img src="assets/img/MicrosoftTeams-image.png" style="width: 300px;height: 300px;margin-top: 100px;"></div>
         </div>
