@@ -111,7 +111,7 @@ updateCakeForm.addEventListener("submit", e =>{
     if (description.trim().length === 0){
         e.preventDefault();
         document.querySelector("#update-descriptionError").style.visibility="visible";
-        document.querySelector("#update-descriptionError").style.borderColor = "red"
+        document.querySelector("#update-description").style.borderColor = "red"
     }else{
         document.querySelector("#update-descriptionError").style.visibility="hidden";
         document.querySelector("#update-description").style.borderColor = "black";
