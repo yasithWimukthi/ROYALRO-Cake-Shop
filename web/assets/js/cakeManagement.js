@@ -64,62 +64,56 @@ button.addEventListener("click", e =>{
 })
 
 updateCakeForm.addEventListener("click", e =>{
-    const cakeName = document.querySelector("#nameInput").value;
-    const price = document.querySelector("#priceInput").value;
-    const weight = document.querySelector("#weightInput").value;
-    const category = document.querySelector("#categoryInput").value;
-    const description = document.querySelector("#description").value;
+    const cakeName = document.querySelector("#update-name-input").value;
+    const price = document.querySelector("#update-price-input").value;
+    const weight = document.querySelector("#update-weight-input").value;
+    const category = document.querySelector("#update-category-input").value;
+    const description = document.querySelector("#update-description").value;
     const image = document.querySelector("#image").value;
 
     if (cakeName.trim().length === 0){
         e.preventDefault();
-        document.querySelector("#nameError").style.visibility="visible";
-        document.querySelector("#nameInput").style.borderColor = "red"
+        document.querySelector("#update-name-error").style.visibility="visible";
+        document.querySelector("#update-name-input").style.borderColor = "red"
     }else{
-        document.querySelector("#nameError").style.visibility="hidden";
-        document.querySelector("#nameInput").style.borderColor = "black";
+        document.querySelector("#update-name-error").style.visibility="hidden";
+        document.querySelector("#update-name-input").style.borderColor = "black";
     }
 
     if (isNaN(price) || price.trim().length===0){
         e.preventDefault();
-        document.querySelector("#priceError").style.visibility="visible";
-        document.querySelector("#priceInput").style.borderColor = "red"
+        document.querySelector("#update-price-error").style.visibility="visible";
+        document.querySelector("#update-price-input").style.borderColor = "red"
     }else{
-        document.querySelector("#priceError").style.visibility="hidden";
-        document.querySelector("#priceInput").style.borderColor = "black";
+        document.querySelector("#update-price-error").style.visibility="hidden";
+        document.querySelector("#update-price-input").style.borderColor = "black";
     }
 
     if (isNaN(weight)|| weight.trim().length===0){
         e.preventDefault();
-        document.querySelector("#weightError").style.visibility="visible";
-        document.querySelector("#weightInput").style.borderColor = "red"
+        document.querySelector("#weightUpdateError").style.visibility="visible";
+        document.querySelector("#update-weight-input").style.borderColor = "red"
     }else{
-        document.querySelector("#weightError").style.visibility="hidden";
-        document.querySelector("#weightInput").style.borderColor = "black";
+        document.querySelector("#weightUpdateError").style.visibility="hidden";
+        document.querySelector("#update-weight-input").style.borderColor = "black";
     }
 
     if (category.trim().length === 0){
         e.preventDefault();
-        document.querySelector("#categoryError").style.visibility="visible";
-        document.querySelector("#categoryInput").style.borderColor = "red"
+        document.querySelector("#update-category-error").style.visibility="visible";
+        document.querySelector("#update-category-input").style.borderColor = "red"
     }else{
-        document.querySelector("#categoryError").style.visibility="hidden";
-        document.querySelector("#categoryInput").style.borderColor = "black";
+        document.querySelector("#update-category-error").style.visibility="hidden";
+        document.querySelector("#update-category-input").style.borderColor = "black";
     }
 
     if (description.trim().length === 0){
         e.preventDefault();
-        document.querySelector("#descriptionError").style.visibility="visible";
-        document.querySelector("#description").style.borderColor = "red"
+        document.querySelector("#update-descriptionError").style.visibility="visible";
+        document.querySelector("#update-descriptionn").style.borderColor = "red"
     }else{
-        document.querySelector("#descriptionError").style.visibility="hidden";
-        document.querySelector("#description").style.borderColor = "black";
+        document.querySelector("#update-descriptionError").style.visibility="hidden";
+        document.querySelector("#update-description").style.borderColor = "black";
     }
 
-    if (!image){
-        e.preventDefault();
-        document.querySelector("#imageError").style.visibility="visible";
-    }else{
-        document.querySelector("#imageError").style.visibility="hidden";
-    }
 })

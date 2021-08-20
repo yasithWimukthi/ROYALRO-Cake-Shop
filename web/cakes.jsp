@@ -384,8 +384,9 @@
                                 <div id="update-price-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid price.</div>
                                 <div class="form-group">
                                     <label>Weight(kg)</label>
-                                    <input type="text" class="form-control" id="weight" placeholder="1.5 " style="width: 20%">
+                                    <input type="text" class="form-control" id="update-weight-input" placeholder="1.5 " style="width: 20%">
                                 </div>
+                                <div id="weightUpdateError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid weight.</div>
                                 <div class="form-group">
                                     <label>Catagory</label>
                                     <select name="catagory" id="update-category-input" class="form-control">
@@ -395,7 +396,7 @@
                                         <option value="Coffee Mocha">Coffee Mocha</option>
                                     </select>
                                 </div>
-                                <div id="update-category-erro" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid category.</div>
+                                <div id="update-category-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid category.</div>
                                 <div class="form-group">
                                     <label>Description</label>
                                     <textarea class="form-control" id="update-description">
