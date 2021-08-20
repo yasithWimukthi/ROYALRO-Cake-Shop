@@ -342,7 +342,7 @@
 
                     <div class="form-group" style="float: right; margin-top: 10px">
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" id="su-bu">Save</button>
+                        <button type="submit" class="btn btn-primary" id="su-bu">Save</button>
                     </div>
 
 
@@ -379,7 +379,7 @@
                                 <div class="form-group">
                                     <label>Price(LKR)</label>
                                     <input type="text" class="form-control" id="update-price-input" placeholder="xxxx.xx "
-                                           style="width: 50%" required>
+                                           style="width: 50%" >
                                 </div>
                                 <div id="update-price-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid price.</div>
                                 <div class="form-group">
@@ -415,7 +415,7 @@
 
                         <div class="form-group" style="float: right; margin-top: 10px">
                             <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary" id="up-bu">Save</button>
+                            <button type="submit" class="btn btn-primary" id="up-bu">Save</button>
                         </div>
                     </form>
                 </form>

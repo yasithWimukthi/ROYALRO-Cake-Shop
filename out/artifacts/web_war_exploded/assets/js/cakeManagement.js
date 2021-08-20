@@ -3,7 +3,7 @@ const updateCakeForm = document.querySelector("#updateCakeForm");
 const button = document.querySelector('#su-bu');
 const upbu = document.querySelector('#up-bu');
 
-button.addEventListener("click", e =>{
+cakeForm.addEventListener("submit", e =>{
     const cakeName = document.querySelector("#nameInput").value;
     const price = document.querySelector("#priceInput").value;
     const weight = document.querySelector("#weightInput").value;
@@ -64,7 +64,7 @@ button.addEventListener("click", e =>{
     }
 })
 
-upbu.addEventListener("click", e =>{
+updateCakeForm.addEventListener("submit", e =>{
     const cakeName = document.querySelector("#update-name-input").value;
     const price = document.querySelector("#update-price-input").value;
     const weight = document.querySelector("#update-weight-input").value;
@@ -111,7 +111,7 @@ upbu.addEventListener("click", e =>{
     if (description.trim().length === 0){
         e.preventDefault();
         document.querySelector("#update-descriptionError").style.visibility="visible";
-        document.querySelector("#update-descriptionError").style.borderColor = "red"
+        document.querySelector("#update-description").style.borderColor = "red"
     }else{
         document.querySelector("#update-descriptionError").style.visibility="hidden";
         document.querySelector("#update-description").style.borderColor = "black";
