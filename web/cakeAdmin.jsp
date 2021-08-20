@@ -32,6 +32,14 @@
 </head>
 <body>
 
+<%
+    boolean isVisible = false;
+    try {
+        isVisible = (boolean)request.getAttribute("visible");
+    }catch (Exception e){
+        isVisible = false;
+    }
+%>
 
 <div>
     <div>
@@ -162,7 +170,7 @@
                                 </div>
                             </div>
 
-
+                            <%if (isVisible){%>
                             <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
                                 <div class="card shadow-lg" data-bs-hover-animate="pulse"
                                      style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
@@ -181,6 +189,7 @@
                                     </div>
                                 </div>
                             </div>
+                        <%}%>
                     </div>
 
                         <h2 style="width: 604px;
@@ -342,7 +351,7 @@
 
                     <div class="form-group" style="float: right; margin-top: 10px">
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" id="su-bu">Save</button>
+                        <button type="submit" class="btn btn-primary" id="su-bu">Save</button>
                     </div>
 
 
@@ -373,34 +382,36 @@
                             <div class="form-group col-md-6">
                                 <div class="form-group">
                                     <label> Cake Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="name " required>
+                                    <input  type="text" class="form-control" id="update-name-input" placeholder="name " >
                                 </div>
+                                <div id="update-name-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid name.</div>
                                 <div class="form-group">
                                     <label>Price(LKR)</label>
-                                    <input type="text" class="form-control" id="price" placeholder="xxxx.xx "
-                                           style="width: 20%" required>
-
+                                    <input type="text" class="form-control" id="update-price-input" placeholder="xxxx.xx "
+                                           style="width: 50%" >
                                 </div>
+                                <div id="update-price-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid price.</div>
                                 <div class="form-group">
                                     <label>Weight(kg)</label>
-                                    <input type="text" class="form-control" id="weight" placeholder="1.5 " required
-                                           style="width: 20%">
+                                    <input type="text" class="form-control" id="update-weight-input" placeholder="1.5 " style="width: 50%">
                                 </div>
+                                <div id="weightUpdateError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid weight.</div>
                                 <div class="form-group">
                                     <label>Catagory</label>
-                                    <select name="catagory" id="catagory" class="form-control">
+                                    <select name="catagory" id="update-category-input" class="form-control">
                                         <option value="">-- SELECT CATAGORY --</option>
-                                        <option value="">Milk Chocolate</option>
-                                        <option value="">White Chocolate</option>
-                                        <option value="">Coffee Mocha</option>
+                                        <option value="Milk Chocolate">Milk Chocolate</option>
+                                        <option value="White Chocolate">White Chocolate</option>
+                                        <option value="Coffee Mocha">Coffee Mocha</option>
                                     </select>
-
                                 </div>
+                                <div id="update-category-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid category.</div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control">
+                                    <textarea class="form-control" id="update-description">
                                      </textarea>
                                 </div>
+                                <div id="update-descriptionError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid description.</div>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="form-group">
@@ -413,7 +424,7 @@
 
                         <div class="form-group" style="float: right; margin-top: 10px">
                             <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary" id="up-bu">Save</button>
                         </div>
                     </form>
                 </form>
