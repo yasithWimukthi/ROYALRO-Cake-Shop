@@ -32,6 +32,14 @@
 </head>
 <body>
 
+<%
+    boolean isVisible = false;
+    try {
+        isVisible = (boolean)request.getAttribute("visible");
+    }catch (Exception e){
+        isVisible = false;
+    }
+%>
 
 <div>
     <div>
@@ -162,7 +170,7 @@
                                 </div>
                             </div>
 
-
+                            <%if (isVisible){%>
                             <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
                                 <div class="card shadow-lg" data-bs-hover-animate="pulse"
                                      style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
@@ -181,6 +189,7 @@
                                     </div>
                                 </div>
                             </div>
+                        <%}%>
                     </div>
 
                         <h2 style="width: 604px;
