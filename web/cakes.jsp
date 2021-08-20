@@ -394,13 +394,14 @@
                                         <option value="White Chocolate">White Chocolate</option>
                                         <option value="Coffee Mocha">Coffee Mocha</option>
                                     </select>
-
                                 </div>
+                                <div id="update-category-erro" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid category.</div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control">
+                                    <textarea class="form-control" id="update-description">
                                      </textarea>
                                 </div>
+                                <div id="update-descriptionError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid description.</div>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="form-group">
