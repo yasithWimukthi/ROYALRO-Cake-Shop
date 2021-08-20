@@ -379,12 +379,12 @@
                                 <div class="form-group">
                                     <label>Price(LKR)</label>
                                     <input type="text" class="form-control" id="update-price-input" placeholder="xxxx.xx "
-                                           style="width: 20%" required>
+                                           style="width: 50%" required>
                                 </div>
                                 <div id="update-price-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid price.</div>
                                 <div class="form-group">
                                     <label>Weight(kg)</label>
-                                    <input type="text" class="form-control" id="update-weight-input" placeholder="1.5 " style="width: 20%">
+                                    <input type="text" class="form-control" id="update-weight-input" placeholder="1.5 " style="width: 50%">
                                 </div>
                                 <div id="weightUpdateError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid weight.</div>
                                 <div class="form-group">
@@ -415,7 +415,7 @@
 
                         <div class="form-group" style="float: right; margin-top: 10px">
                             <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-primary" id="up-bu">Save</button>
                         </div>
                     </form>
                 </form>
