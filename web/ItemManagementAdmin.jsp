@@ -130,7 +130,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="AddItemServlet" method="post" id="itemForm">
+                <form action="AddItem" method="post" id="itemForm">
 
                     <div class="row">
                         <div class="form-group col-md-6">
