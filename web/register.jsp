@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/Icon-Input.css">
     <link rel="stylesheet" href="assets/css/Rounded-Button.css">
     <link rel="stylesheet" href="assets/css/sign-up-styles.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
