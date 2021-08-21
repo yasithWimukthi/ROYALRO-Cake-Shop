@@ -28,6 +28,8 @@ public class SignUpServlet extends HttpServlet {
         String mobile = request.getParameter("mobile");
         String password = request.getParameter("password");
 
+        auth.createLogin(email,password);
+        auth.signUp(name,email,mobile);
 
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
