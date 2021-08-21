@@ -31,7 +31,7 @@
 <hr>
 <div class="container" style="width: 100%;height: 100%;margin-left: 142px;margin-top: 98px;">
     <div class="row" style="margin: 29px;margin-top: -50px">
-        <div class="col-xl-2 offset-xl-1" style="margin: 0px;"><a href="CakeManagementAdmin.jsp"><img class="d-xl-flex" src="assets/img/1%20Cake.png" width="150"></a></div>
+        <div class="col-xl-2 offset-xl-1" style="margin: 0px;"><a href="cakeAdmin.jsp"><img class="d-xl-flex" src="assets/img/1%20Cake.png" width="150"></a></div>
         <div class="col offset-xl-1"><a href="DecorationManagementAdmin.jsp"><img src="assets/img/2%20Decorations.png" width="160"></a></div>
         <div class="col offset-xl-1"><a href="ItemManagementAdmin.jsp"><img src="assets/img/3%20Items.png" width="150"></a></div>
         <div class="col offset-xl-1"><a href="#"><img src="assets/img/4%20Orders.png" width="150"></a></div>
