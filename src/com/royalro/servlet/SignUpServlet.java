@@ -12,14 +12,23 @@ import java.io.IOException;
 
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
+
+    private UserAuthentication auth;
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        auth = new UserAuthentication();
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserAuthentication ua = new UserAuthentication();
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
+        response.setContentType("text/html");
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String mobile = request.getParameter("mobile");
+        String password = request.getParameter("password");
+
+
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);

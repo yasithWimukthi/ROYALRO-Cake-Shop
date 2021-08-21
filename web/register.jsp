@@ -28,31 +28,28 @@
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-user"></i></span>
                     </div>
-                    <input id="name-input" class="form-control form-control" type="text" placeholder="Name">
+                    <input id="name-input" class="form-control form-control" type="text" placeholder="Name" name="name">
                 </div>
                 <div id="name-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Name is required.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-envelope"></i></span>
                     </div>
-                    <input id="email-input" class="form-control form-control" type="text" placeholder="E-mail">
+                    <input id="email-input" class="form-control form-control" type="text" placeholder="E-mail" name="email">
                 </div>
                 <div id="email-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* An valid E-mail is required. Ex: xxxxxx@example.com</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-phone" ></i></span>
                     </div>
-                    <input id="mobile-input" class="form-control form-control" type="text" placeholder="Mobile Number" >
+                    <input id="mobile-input" class="form-control form-control" type="text" placeholder="Mobile Number" name="mobile" >
                 </div>
                 <div id="mobile-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Mobile number is required. Mobile number should contain 10 digits.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-key"></i></span>
                     </div>
-
-                    <input id="password-input" class="form-control form-control" type="text" placeholder="Password" onkeyup="onPasswordChange(this)" >
-
-
+                    <input id="password-input" class="form-control form-control" type="text" placeholder="Password" onkeyup="onPasswordChange(this)"  name="password">
                 </div>
                 <div id="password-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Password is required.</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
