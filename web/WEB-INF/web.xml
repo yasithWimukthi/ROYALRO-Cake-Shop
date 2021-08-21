@@ -8,7 +8,7 @@
     <!-- Insert Item -->
     <servlet>
         <servlet-name>AddItem</servlet-name>
-        <servlet-class>servlet.AddItemServlet</servlet-class>
+        <servlet-class>com.royalro.servlet.AddItemServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

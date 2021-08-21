@@ -20,7 +20,7 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
-<a href="adminDashboard.jsp" >View admin dashboard</a>
+
 
 
 
