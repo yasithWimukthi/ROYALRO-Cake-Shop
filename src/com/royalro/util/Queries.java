@@ -20,4 +20,5 @@ public class Queries {
 
     /*Queries for user authentication*/
     public static String CREATE_LOGIN = "INSERT INTO LOGIN (email,password) VALUES (?,?)";
+    public static String SIGN_UP = "INSERT INTO customers (name,email,mobile) VALUES (?,?,?)";
 }

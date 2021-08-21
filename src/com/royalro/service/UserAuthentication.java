@@ -31,4 +31,22 @@ public class UserAuthentication implements IUserAuthentication{
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
     }
+
+    @Override
+    public void signUp(String name, String email, String mobile) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.SIGN_UP;
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,email);
+            preparedStatement.setString(QueryConstants.COLUMN_THREE,mobile);
+            preparedStatement.execute();
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+    }
 }

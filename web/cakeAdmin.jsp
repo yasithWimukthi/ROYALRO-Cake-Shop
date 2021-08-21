@@ -324,7 +324,7 @@
                             </div>
                             <div id="weightError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid weight.</div>
                             <div class="form-group">
-                                <label>Catagory</label>
+                                <label>Category</label>
                                 <select name="catagory" id="categoryInput" class="form-control">
                                     <option value="">-- SELECT CATAGORY --</option>
                                     <option value="Milk Chocolate">Milk Chocolate</option>
@@ -400,7 +400,7 @@
                                 </div>
                                 <div id="weightUpdateError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid weight.</div>
                                 <div class="form-group">
-                                    <label>Catagory</label>
+                                    <label>Category</label>
                                     <select name="catagory" id="update-category-input" class="form-control">
                                         <option value="">-- SELECT CATAGORY --</option>
                                         <option selected value="Milk Chocolate">Milk Chocolate</option>

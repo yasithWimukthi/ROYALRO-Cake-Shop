@@ -20,10 +20,6 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
-<a href="adminDashboard.jsp" >View admin dashboard</a>
-
-
-
 <section id="carousel">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
         <div class="carousel-inner">
