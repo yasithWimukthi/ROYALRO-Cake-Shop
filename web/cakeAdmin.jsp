@@ -49,11 +49,14 @@
     <%--    Search function--%>
     <div class="search-container"
          style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-        <input type="text" class="search-input" name="search-bar" placeholder="Search Cakes..."
-               style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white"/>
-        <button class="btn btn-light search-btn" type="button" style="background-color: white;">
-            <i class="fa fa-search"></i>
-        </button>
+        <form action="SearchServlet" method="post">
+            <input type="text" class="search-input" name="key" placeholder="Search Cakes..."
+                   style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white"/>
+            <input type="hidden" value="admin" name="user">
+            <button class="btn btn-light search-btn" type="button" style="background-color: white;">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
     </div>
 
     <%--    main header--%>
@@ -382,25 +385,25 @@
                             <div class="form-group col-md-6">
                                 <div class="form-group">
                                     <label> Cake Name</label>
-                                    <input  type="text" class="form-control" id="update-name-input" placeholder="name " >
+                                    <input  type="text" class="form-control" value="Devil's Food Cake" id="update-name-input" placeholder="name " >
                                 </div>
                                 <div id="update-name-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid name.</div>
                                 <div class="form-group">
                                     <label>Price(LKR)</label>
-                                    <input type="text" class="form-control" id="update-price-input" placeholder="xxxx.xx "
+                                    <input type="text" class="form-control" id="update-price-input" value="1500.00" placeholder="xxxx.xx "
                                            style="width: 50%" >
                                 </div>
                                 <div id="update-price-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid price.</div>
                                 <div class="form-group">
                                     <label>Weight(kg)</label>
-                                    <input type="text" class="form-control" id="update-weight-input" placeholder="1.5 " style="width: 50%">
+                                    <input type="text" class="form-control" id="update-weight-input" value="1.5" placeholder="1.5 " style="width: 50%">
                                 </div>
                                 <div id="weightUpdateError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid weight.</div>
                                 <div class="form-group">
                                     <label>Catagory</label>
                                     <select name="catagory" id="update-category-input" class="form-control">
                                         <option value="">-- SELECT CATAGORY --</option>
-                                        <option value="Milk Chocolate">Milk Chocolate</option>
+                                        <option selected value="Milk Chocolate">Milk Chocolate</option>
                                         <option value="White Chocolate">White Chocolate</option>
                                         <option value="Coffee Mocha">Coffee Mocha</option>
                                     </select>
@@ -408,7 +411,8 @@
                                 <div id="update-category-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid category.</div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control" id="update-description">
+                                    <textarea  class="form-control" id="update-description">
+Forget the name, this cake is heavenly. The base is tender, the filling and frosting luscious. Let's spread the love this season with your favourite chocolate cake!
                                      </textarea>
                                 </div>
                                 <div id="update-descriptionError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid description.</div>

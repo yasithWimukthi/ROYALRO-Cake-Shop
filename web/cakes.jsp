@@ -39,10 +39,13 @@
     </div>
     <%--    Search function--%>
     <div class="search-container" style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-        <input type="text" class="search-input" name="search-bar" placeholder="Search Cakes..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
-        <button class="btn btn-light search-btn" type="button" style="background-color: white;">
-            <i class="fa fa-search"></i>
-        </button>
+        <form action="SearchServlet" method="post">
+        <input type="text" class="search-input" name="key" placeholder="Search Cakes..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
+        <input type="hidden" value="customer" name="user">
+            <button class="btn btn-light search-btn" type="submit" style="background-color: white;">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
     </div>
 
     <%--    main header--%>
