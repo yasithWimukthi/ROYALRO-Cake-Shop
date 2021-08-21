@@ -26,7 +26,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 <div class="login-clean " style="margin: 0px;height: 550px;background: url(&quot;assets/img/sign%20up%20background.png&quot;) center / cover no-repeat;" >
-    <form method="post" style="opacity: 1;background-color: rgba(255,255,255,0.57);filter: sepia(0%);" id="login-form">
+    <form method="post" style="opacity: 1;background-color: rgba(255,255,255,0.57);filter: sepia(0%);" id="login-form" action="LoginServlet">
         <h2 class="sr-only">Login Form</h2>
         <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
         <div class="form-group">
