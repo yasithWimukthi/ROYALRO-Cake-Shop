@@ -27,7 +27,7 @@
                 <h3>Services</h3>
                 <ul>
                     <li><a href="#">Cakes</a></li>
-                    <li><a href="#">decorations</a></li>
+                    <li><a href="#">Decorations</a></li>
                     <li><a href="#">Retail Items</a></li>
                 </ul>
             </div>
@@ -41,11 +41,11 @@
             </div>
             <div class="col-md-6 item text">
                 <h3>Royalro</h3>
-                <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                <p>Royalro is a famous cake shop in kiribathgoda. we have a large collection of cakes, decorations and various retail items. We can organize your parties and supply cakes for you.</p>
             </div>
             <div class="col item social"><a href="#"><i class="icon ion-social-fb"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
         </div>
-        <p class="copyright">Company Name © 2021</p>
+        <p class="copyright">Royalro © 2021</p>
     </div>
 </footer>
 </body>
