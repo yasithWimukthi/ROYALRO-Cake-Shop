@@ -188,7 +188,7 @@
 
                     <div class="form-group" style="float: right; margin-top: 10px">
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>
-                        <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+                        <button type="submit" class="btn btn-primary" id="saveBtn">Save</button>
                     </div>
 
 
