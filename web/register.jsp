@@ -37,7 +37,7 @@
                     </div>
                     <input id="email-input" class="form-control form-control" type="text" placeholder="E-mail">
                 </div>
-                <div id="email-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* An valid E-mail is required.</div>
+                <div id="email-error" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* An valid E-mail is required. Ex: xxxxxx@example.com</div>
                 <div class="input-group" style="margin: 0 auto;width: 80%;">
                     <div class="input-group-prepend">
                         <span style="height: 38px" class="input-group-text icon-container"><i class="fa fa-phone" ></i></span>
