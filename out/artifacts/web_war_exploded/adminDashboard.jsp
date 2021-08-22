@@ -42,6 +42,7 @@
         <div class="col offset-xl-0"><a href="#"><img src="assets/img/7%20Transactions.png" width="170"></a></div>
     </div>
 </div>
+<jsp:include page="footer.jsp"></jsp:include>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>

@@ -136,18 +136,18 @@
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <label > Item Name</label>
-                                <input type="text" class="form-control" id="ItemNameInput" placeholder="name " required>
+                                <input type="text" class="form-control" name="ItemNameInput" placeholder="name " required>
                             </div>
                             <div id="ItemNameError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid name.</div>
                             <div class="form-group">
                                 <label >Price(LKR)</label>
-                                <input type="text" class="form-control" id="ItemPriceInput" placeholder="xxxx.xx " style="width: 50%" required>
+                                <input type="text" class="form-control" name="ItemPriceInput" placeholder="xxxx.xx " style="width: 50%" required>
 
                             </div>
                             <div id="ItemPriceError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Invalid Price</div>
                             <div class="form-group">
                                 <label >Category</label>
-                                <select name="category" id="ItemCategoryInput" class="form-control" >
+                                <select  name="ItemCategoryInput"  id="ItemCategoryInput" class="form-control" >
                                     <option value="">-- SELECT CATEGORY -- </option>
                                     <option value="Cake tools">Cake tools</option>
                                     <option value="Decoration Items">Decoration Items</option>
@@ -158,28 +158,28 @@
                             <div id="ItemCategoryError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid Category.</div>
                             <div class="form-group">
                                 <label >Qty.</label>
-                                <input type="number" class="form-control" id="Qty" style="width: 50%" required>
+                                <input type="number" class="form-control" name="Qty" style="width: 50%" required>
 
                             </div>
                             <div id="QtyError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid Quantity.</div>
                             <div class="form-group">
                                 <label > Brand</label>
-                                <input type="text" class="form-control" id="Brand">
+                                <input type="text" class="form-control" name="Brand">
                             </div>
                             <div class="form-group">
                                 <label >Company code</label>
-                                <input type="text" class="form-control" id="CompanyCode">
+                                <input type="text" class="form-control" name="CompanyCode">
                             </div>
                             <div class="form-group">
                                 <label >Description</label>
-                                <textarea class="form-control">
+                                <textarea class="form-control" name="description">
                                      </textarea>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <div style="text-align: center;"><label >Image Upload</label></div>
-                                <input type="file"   id="ItemImage" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                <input type="file"   name="ItemImage" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
                             </div>
                             <div id="ItemImageError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
                         </div>
@@ -188,7 +188,7 @@
 
                     <div class="form-group" style="float: right; margin-top: 10px">
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>
-                        <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+                        <button type="submit" class="btn btn-primary" id="saveBtn">Save</button>
                     </div>
 
 
