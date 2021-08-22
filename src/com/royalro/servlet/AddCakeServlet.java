@@ -13,16 +13,16 @@ import java.io.IOException;
 @WebServlet("/AddCakeServlet")
 public class AddCakeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserAuthentication ua = new UserAuthentication();
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        request.setAttribute("visible",true);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cakeAdmin.jsp");
-        dispatcher.forward(request, response);
+//        UserAuthentication ua = new UserAuthentication();
+//        ua.createLogin("y@w.com","hhiu");
+//        ua.createLogin("y@w.com","hhiu");
+//        ua.createLogin("y@w.com","hhiu");
+//        ua.createLogin("y@w.com","hhiu");
+//        ua.createLogin("y@w.com","hhiu");
+//        ua.createLogin("y@w.com","hhiu");
+//        request.setAttribute("visible",true);
+//        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cakeAdmin.jsp");
+//        dispatcher.forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
