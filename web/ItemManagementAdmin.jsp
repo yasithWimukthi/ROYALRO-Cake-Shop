@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.royalro.model.ProductItem" %>
+<%@ page import="com.royalro.service.ProductService" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: shalitha
   Date: 8/15/2021
@@ -29,8 +32,6 @@
     <link rel="stylesheet" href="assets/css/file-upload.css">
 </head>
 <body>
-
-
 <div>
     <div>
         <%--Header--%>
@@ -83,7 +84,8 @@
                     <%--            get catagories from database and loop throug for each loop--%>
                     <%--            then it will display all the categories--%>
                     <%--            under all the catgorieas shoul display related cakes--%>
-                    <% for(int i=0; i<5 ;i++){%>
+
+
                     <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
@@ -94,23 +96,37 @@
 
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                         <%--  loop card from here--%>
-                        <% for(int j=0; j<3 ;j++){%>
-                        <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
+
+                            <%
+                                ProductService ps = new ProductService();
+                                List<ProductItem> itemsList = ps.getAllProducts();
+
+                                for(ProductItem item : itemsList) {
+                                    System.out.println(item.getName());
+                                    System.out.println(item.getPrice());
+                                    System.out.println(item.getCategory());
+                            %>
+                               <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
-                                    <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4>
-                                    <img class="d-flex" style="background-image: url(&quot;assets/img/image.png&quot;);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                    <h6
-                                            class="text-muted card-subtitle mb-2">Subtitle</h6>
-                                    <p class="card-text" style="color: rgb(95,95,95);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                    <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
+                                    <img class="d-flex" style="background-image: url(assets/img/image.png);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                    <h4 class="text-muted card-subtitle mb-2">Price:<%=item.getPrice()%></h4>
+                                    <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph">
+
+                                            Brand: <%=item.getBrand()%><br>
+                                            Available Qty:<%=item.getQuantity()%><br>
+                                            Description:<%=item.getDescription()%>
+                                    </p>
                                     <button class="btn btn-info" type="button" style="margin-left: 21px;" data-bs-toggle="modal" data-bs-target="#updateItem">Update</button>
                                     <button class="btn btn-danger" type="button" style="margin-left: 53px;" data-bs-toggle="modal" data-bs-target="#deleteItem">Delete</button>
                                 </div>
                             </div>
                         </div>
-                        <%}%>
+<%--                            <%=item.getName()%><br>--%>
+                             <%}%>
                     </div>
-                    <%}%>
+
                 </div>
             </div>
         </div>
@@ -317,6 +333,7 @@
 <script src="assets/js/Side-Swipe-Menu.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
 <script src="assets/js/itemManagement.js"></script>
+<script src="assets/js/word-limit.js"></script>
 </body>
 
 </html>
