@@ -325,8 +325,8 @@
                             <div id="weightError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid weight.</div>
                             <div class="form-group">
                                 <label>Category</label>
-                                <select name="catagory" id="categoryInput" class="form-control" name="category">
-                                    <option value="">-- SELECT CATAGORY --</option>
+                                <select  id="categoryInput" class="form-control" name="category">
+                                    <option value="">-- SELECT CATEGORY --</option>
                                     <option value="Milk Chocolate">Milk Chocolate</option>
                                     <option value="White Chocolate">White Chocolate</option>
                                     <option value="Coffee Mocha">Coffee Mocha</option>
