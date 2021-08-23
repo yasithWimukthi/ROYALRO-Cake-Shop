@@ -302,31 +302,31 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="AddCakeServlet" method="post"  id="cakeForm">
+                <form action="AddCakeServlet" method="post"  id="cakeForm" enctype="multipart/form-data">
 
                     <div class="row">
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <label> Cake Name</label>
-                                <input type="text" class="form-control" id="nameInput" placeholder="name " >
+                                <input type="text" class="form-control" id="nameInput" placeholder="name " name="name">
                             </div>
                             <div id="nameError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid name.</div>
                             <div class="form-group">
                                 <label>Price(LKR)</label>
                                 <input type="text" class="form-control" id="priceInput" placeholder="xxxx.xx "
-                                       style="width: 50%" >
+                                       style="width: 50%" name="price">
                             </div>
                             <div id="priceError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid price.</div>
                             <div class="form-group">
                                 <label>Weight(kg)</label>
                                 <input type="text" class="form-control" id="weightInput" placeholder="1.5 "
-                                       style="width: 50%">
+                                       style="width: 50%" name="weight">
                             </div>
                             <div id="weightError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid weight.</div>
                             <div class="form-group">
                                 <label>Category</label>
-                                <select name="catagory" id="categoryInput" class="form-control">
-                                    <option value="">-- SELECT CATAGORY --</option>
+                                <select  id="categoryInput" class="form-control" name="category">
+                                    <option value="">-- SELECT CATEGORY --</option>
                                     <option value="Milk Chocolate">Milk Chocolate</option>
                                     <option value="White Chocolate">White Chocolate</option>
                                     <option value="Coffee Mocha">Coffee Mocha</option>
@@ -335,7 +335,7 @@
                             <div id="categoryError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid category.</div>
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea id="description" class="form-control">
+                                <textarea id="description" class="form-control" name="description">
                                      </textarea>
                             </div>
                             <div id="descriptionError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Select a valid description.</div>
@@ -344,7 +344,7 @@
                             <div class="form-group">
                                 <div style="text-align: center;"><label>Image Upload</label></div>
                                 <input type="file" id="image"
-                                       style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                       style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;" name="image">
                             </div>
                             <div id="imageError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
                         </div>
@@ -419,9 +419,11 @@ Forget the name, this cake is heavenly. The base is tender, the filling and fros
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="form-group">
-                                    <label>Image Upload</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    <div style="text-align: center;"><label>Image Upload</label></div>
+                                    <input type="file" id="UploadImage"
+                                           style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;" name="image">
                                 </div>
+                                <div id="uploadImageError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
                             </div>
                         </div>
 

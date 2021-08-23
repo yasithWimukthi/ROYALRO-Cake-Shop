@@ -119,7 +119,7 @@ public class CakeService implements ICakeService{
     public void updateCake(int id, String name, String imagePath, String description, String category, float price, float weight) {
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.DELETE_CAKE;
+            String sql = Queries.UPDATE_CAKE;
             preparedStatement = conn.prepareStatement(sql);
 
             preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
@@ -129,6 +129,29 @@ public class CakeService implements ICakeService{
             preparedStatement.setFloat(QueryConstants.COLUMN_FIVE,price);
             preparedStatement.setFloat(QueryConstants.COLUMN_SIX,weight);
             preparedStatement.setInt(QueryConstants.COLUMN_SEVEN,id);
+
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+    }
+
+    @Override
+    public void updateCake(int id, String name, String description, String category, float price, float weight) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.UPDATE_CAKE_WITHOUT_IMAGE_PATH;
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,description);
+            preparedStatement.setString(QueryConstants.COLUMN_THREE,category);
+            preparedStatement.setFloat(QueryConstants.COLUMN_FOUR,price);
+            preparedStatement.setFloat(QueryConstants.COLUMN_FIVE,weight);
+            preparedStatement.setInt(QueryConstants.COLUMN_SIX,id);
 
             preparedStatement.executeUpdate();
 
