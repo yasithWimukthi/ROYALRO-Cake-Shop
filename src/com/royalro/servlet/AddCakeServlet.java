@@ -1,5 +1,6 @@
 package com.royalro.servlet;
 
+import com.royalro.service.CakeService;
 import com.royalro.service.UserAuthentication;
 
 import javax.servlet.RequestDispatcher;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.xml.crypto.Data;
 import java.io.IOException;
 
 @WebServlet("/AddCakeServlet")
@@ -19,6 +21,15 @@ import java.io.IOException;
         maxRequestSize = 1024 * 1024 * 100   // 100 MB
 )
 public class AddCakeServlet extends HttpServlet {
+
+    private CakeService cakeService;
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        cakeService = new CakeService();
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         String name = request.getParameter("name");
@@ -34,7 +45,8 @@ public class AddCakeServlet extends HttpServlet {
             part.write("C:\\Users\\ACER\\IdeaProjects\\ROYALRO Cake Shop\\web\\assets\\img\\cakes\\" + fileName);
         }
 
-        System.out.println(fileName);
+        cakeService.addCake(name,fileName,description,category,price,weight);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
