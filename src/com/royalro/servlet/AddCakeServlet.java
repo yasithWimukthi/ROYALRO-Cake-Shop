@@ -46,6 +46,9 @@ public class AddCakeServlet extends HttpServlet {
         }
 
         cakeService.addCake(name,fileName,description,category,price,weight);
+        RequestDispatcher dispatcher;
+        dispatcher = getServletContext().getRequestDispatcher("/cakeAdmin.jsp");
+        dispatcher.forward(request, response);
 
     }
 

@@ -2,6 +2,7 @@ package com.royalro.servlet;
 
 import com.royalro.service.CakeService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -49,7 +50,9 @@ public class UpdateCakeServlet extends HttpServlet {
             cakeService.updateCake(cakeId,name,description,category,price,weight);
         }
 
-
+        RequestDispatcher dispatcher;
+        dispatcher = getServletContext().getRequestDispatcher("/cakeAdmin.jsp");
+        dispatcher.forward(request, response);
 
     }
 
