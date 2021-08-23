@@ -29,4 +29,13 @@ public interface ICakeService {
             float price,
             float weight
     );
+
+    public void updateCake(
+            int id,
+            String name,
+            String description,
+            String category,
+            float price,
+            float weight
+    );
 }
