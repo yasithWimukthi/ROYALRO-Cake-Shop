@@ -101,12 +101,12 @@ public class CakeService implements ICakeService{
     }
 
     @Override
-    public void deleteCake(String id) {
+    public void deleteCake(int id) {
         try {
             conn = DBConnectionUtil.getConnection();
             String sql = Queries.DELETE_CAKE;
             preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(QueryConstants.COLUMN_ONE,id);
+            preparedStatement.setInt(QueryConstants.COLUMN_ONE,id);
             preparedStatement.execute();
         }catch (SQLException | ClassNotFoundException  e){
             e.printStackTrace();

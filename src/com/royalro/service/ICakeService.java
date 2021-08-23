@@ -18,7 +18,7 @@ public interface ICakeService {
 
     public ArrayList<Cake> searchCakeByName(String name);
 
-    public void deleteCake(String id);
+    public void deleteCake(int id);
 
     public void updateCake(
             int id,
