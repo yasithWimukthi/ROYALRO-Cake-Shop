@@ -41,7 +41,7 @@
     ArrayList<Cake> whiteChocolateCakes = cakeService.searchCakeByCategory("White Chocolate");
 %>
 
-<div>
+
     <div>
         <%--Header--%>
         <jsp:include page="header.jsp"></jsp:include>
@@ -107,18 +107,19 @@
                         <%for (Cake cake : milkChocolateCakes) {%>
                         <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse"
-                                 style="width: 300px;height: 500px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
+                                 style="width: 300px;height: 550px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);"><%=cake.getName()%>
                                     </h4>
                                     <img class="d-flex"
                                          style="background-image: url('assets/img/cakes/<%=cake.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                     <h6
-                                            class="text-muted card-subtitle mb-2">WQC655 by Wishque Cake</h6>
+                                            class="text-success card-subtitle mb-2">WQC655 by Wishque Cake</h6>
                                     <p class="card-text"
-                                       style="color: rgb(95,95,95);height: 120px"><%=cake.getDescription()%>
+                                       style="color: rgb(95,95,95);height: 120px;text-align: justify"><%=cake.getDescription()%>
                                     </p>
-                                    <p style="text-align: center">Price : <%=cake.getPrice()%>.00</p>
+                                    <p class="badge rounded-pill bg-danger" style="text-align: center">Price : <%=cake.getPrice()%>.00</p>
+                                    <p class="badge rounded-pill bg-success" style="text-align: center">Weight : <%=cake.getWeight()%> Kg</p>
                                     <button class="btn btn-light text-center d-xl-flex mx-auto justify-content-xl-center"
                                             type="button"
                                             style="margin-left: 0px;background-color: orange;color: rgb(255,255,255);">
@@ -143,18 +144,19 @@
                         <%for (Cake cake : whiteChocolateCakes) {%>
                         <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse"
-                                 style="width: 300px;height: 500px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
+                                 style="width: 300px;height: 550px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);"><%=cake.getName()%>
                                     </h4>
                                     <img class="d-flex"
                                          style="background-image: url('assets/img/cakes/<%=cake.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                     <h6
-                                            class="text-muted card-subtitle mb-2">WQC655 by Wishque Cake</h6>
+                                            class="text-success card-subtitle mb-2">WQC655 by Wishque Cake</h6>
                                     <p class="card-text"
-                                       style="color: rgb(95,95,95);height: 120px"><%=cake.getDescription()%>
+                                       style="color: rgb(95,95,95);height: 120px;text-align: justify"><%=cake.getDescription()%>
                                     </p>
-                                    <p style="text-align: center">Price : <%=cake.getPrice()%>.00</p>
+                                    <p class="badge rounded-pill bg-danger" style="text-align: center">Price : <%=cake.getPrice()%>.00</p>
+                                    <p class="badge rounded-pill bg-success" style="text-align: center">Weight : <%=cake.getWeight()%> Kg</p>
                                     <button class="btn btn-light text-center d-xl-flex mx-auto justify-content-xl-center"
                                             type="button"
                                             style="margin-left: 0px;background-color: orange;color: rgb(255,255,255);">
@@ -187,6 +189,10 @@
             </div>
         </div>
     </div>--%>
+    <div>
+        <%--Header--%>
+        <jsp:include page="footer.jsp"></jsp:include>
+    </div>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
