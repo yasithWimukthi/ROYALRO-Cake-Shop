@@ -48,11 +48,12 @@ public class CakeService implements ICakeService{
             conn = DBConnectionUtil.getConnection();
             String sql = Queries.GET_ALL_CAKES;
             preparedStatement = conn.prepareStatement(sql);
-            Cake cake = new Cake();
+
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
+                Cake cake = new Cake();
                 cake.setCakeId(resultSet.getInt("cakeId"));
                 cake.setName(resultSet.getString("name"));
                 cake.setCategory(resultSet.getString("category"));
@@ -79,10 +80,10 @@ public class CakeService implements ICakeService{
             String sql = Queries.SEARCH_CAKE_BY_NAME;
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
-            Cake cake = new Cake();
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
+                Cake cake = new Cake();
                 cake.setCakeId(resultSet.getInt("cakeId"));
                 cake.setName(resultSet.getString("name"));
                 cake.setCategory(resultSet.getString("category"));
@@ -160,6 +161,35 @@ public class CakeService implements ICakeService{
         }finally {
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
+    }
+
+    @Override
+    public ArrayList<Cake> searchCakeByCategory(String category) {
+        ArrayList<Cake> cakeList = new ArrayList<Cake>();
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.SEARCH_CAKE_BY_NAME;
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,category);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                Cake cake = new Cake();
+                cake.setCakeId(resultSet.getInt("cakeId"));
+                cake.setName(resultSet.getString("name"));
+                cake.setCategory(resultSet.getString("category"));
+                cake.setImagePath(resultSet.getString("imagePath"));
+                cake.setDescription(resultSet.getString("description"));
+                cake.setPrice(resultSet.getFloat("price"));
+                cake.setWeight(resultSet.getFloat("weight"));
+                cakeList.add(cake);
+            }
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return null;
     }
 
 }

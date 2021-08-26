@@ -38,4 +38,6 @@ public interface ICakeService {
             float price,
             float weight
     );
+
+    public ArrayList<Cake> searchCakeByCategory(String category);
 }
