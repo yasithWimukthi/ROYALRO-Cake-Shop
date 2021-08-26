@@ -98,7 +98,7 @@ public class CakeService implements ICakeService{
         }finally {
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
-        return null;
+        return cakeList;
     }
 
     @Override
@@ -168,7 +168,7 @@ public class CakeService implements ICakeService{
         ArrayList<Cake> cakeList = new ArrayList<Cake>();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.SEARCH_CAKE_BY_NAME;
+            String sql = Queries.SEARCH_CAKE_BY_CATEGORY;
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(QueryConstants.COLUMN_ONE,category);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -189,7 +189,7 @@ public class CakeService implements ICakeService{
         }finally {
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
-        return null;
+        return cakeList;
     }
 
 }
