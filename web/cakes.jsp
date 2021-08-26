@@ -190,7 +190,7 @@
         </div>
     </div>--%>
     <div>
-        <%--Header--%>
+        <%--footer--%>
         <jsp:include page="footer.jsp"></jsp:include>
     </div>
 
