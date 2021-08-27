@@ -40,4 +40,6 @@ public interface ICakeService {
     );
 
     public ArrayList<Cake> searchCakeByCategory(String category);
+
+    public ArrayList<Cake> searchCakeByCategoryAndName(String name, String category);
 }

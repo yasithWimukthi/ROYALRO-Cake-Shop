@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.royalro.model.Cake" %>
+<%@ page import="com.royalro.service.CakeService" %><%--
   Created by IntelliJ IDEA.
   User: ACER
   Date: 8/21/2021
@@ -29,8 +31,11 @@
 </head>
 <body>
 <%
-    String key = request.getParameter("key");
+    CakeService cakeService = new CakeService();
     String user = request.getParameter("user");
+    String key = request.getParameter("key");
+    ArrayList<Cake> milkChocolate = cakeService.searchCakeByCategoryAndName(key,"Milk Chocolate");
+    ArrayList<Cake> whiteChocolate = cakeService.searchCakeByCategoryAndName(key,"White Chocolate");
 %>
 <div>
     <%--Header--%>
@@ -52,7 +57,8 @@
 <div style="margin-left: 10px;text-decoration: none; ">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.jsp" style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
-        <li class="breadcrumb-item"><a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Cakes</span></a></li>
+        <li class="breadcrumb-item"><a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Cake Management</span></a></li>
+        <li class="breadcrumb-item"><a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Search</span></a></li>
     </ol>
 </div>
 
