@@ -32,6 +32,16 @@
     <link rel="stylesheet" href="assets/css/file-upload.css">
 </head>
 <body>
+
+<%
+ boolean isSearch = false;
+ try {
+     isSearch = (boolean)request.getAttribute("isSearch");
+ }catch (Exception e){
+     isSearch = false;
+ }
+
+%>
 <div>
     <div>
         <%--Header--%>
@@ -39,10 +49,12 @@
     </div>
     <%--    Search function--%>
     <div class="search-container" style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-        <input type="text" class="search-input" name="search-bar" placeholder="Search Items..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
-        <button class="btn btn-light search-btn" type="button" style="background-color: white;">
+        <form action="ItemSearchServlet" method="post">
+        <input type="text" class="search-input" name="ItemSearch" id="ItemSearch" placeholder="Search Items..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
+        <button class="btn btn-light search-btn" type="submit" style="background-color: white;">
             <i class="fa fa-search"></i>
         </button>
+        </form>
     </div>
 
     <%--    main header--%>
@@ -70,6 +82,7 @@
                     <li><a href="adminDashboard.jsp">Admin Page</a></li>
                 </ul>
             </div>
+            <%if(!isSearch){%>
             <%--    Main area--%>
             <div class="main-content">
                 <div class="swipe-area" style="background-color: rgb(255,255,255);"></div>
@@ -132,6 +145,71 @@
                 <%}%>
                 </div>
             </div>
+            <%
+                }
+                else{
+            %>
+            <%--    Main area after search--%>
+            <div class="main-content">
+                <div class="swipe-area" style="background-color: rgb(255,255,255);"></div>
+                <a  data-toggle=".container" href="#" style="background-color: #ed4dc0;">
+                    <span class="bar"></span>
+                    <span class="bar" style="background-color: rgb(254,254,254);"></span>
+                    <span class="bar"></span>
+                </a>
+                <div class="content" style="padding-left: 56px;">
+
+                    <%--            loop categories with cards--%>
+                    <%--            get catagories from database and loop throug for each loop--%>
+                    <%--            then it will display all the categories--%>
+                    <%--            under all the catgorieas shoul display related cakes--%>
+
+                    <%
+
+                        List<ProductItem> categoriesList = (List<ProductItem>)request.getAttribute("ItemSearchResult");
+
+                        for (ProductItem pi: categoriesList) {
+
+                    %>
+                    <h2 style="width: 604px;
+                                background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
+                                color: #ffffff;
+                                margin-left: -5px;
+                                padding-left: 10px;
+                                font-family: serif;
+                                border-radius: 10px;"><%=pi.getCategory()%></h2>
+
+                    <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
+                        <%--  loop card from here--%>
+
+                        <%
+                            for(ProductItem item : categoriesList) {
+                            if(item.getCategory().equals(pi.getCategory())){
+                        %>
+                        <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
+                            <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
+                                    <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                    <h4 class="text-muted card-subtitle mb-2">Price:<%= item.getPrice()%></h4>
+                                    <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph2">
+
+                                        Brand: <%= item.getBrand()%><br>
+                                        Available Qty: <%= item.getQuantity()%><br>
+                                        Description:<%= item.getDescription()%>
+                                    </p>
+                                    <button class="btn btn-info" type="button" style="margin-left: 21px;" data-bs-toggle="modal" data-bs-target="#updateItem">Update</button>
+                                    <button class="btn btn-danger" type="button" style="margin-left: 53px;" data-bs-toggle="modal" data-bs-target="#deleteItem">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <%--                            <%=item.getName()%><br>--%>
+                        <%}}%>
+                    </div>
+                    <%}%>
+                </div>
+            </div>
+            <%}%>
         </div>
     </div>
 </div>

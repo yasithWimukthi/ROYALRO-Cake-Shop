@@ -82,9 +82,9 @@ public class ProductService implements IProductService{
         ArrayList<ProductItem> productList = new ArrayList<>();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.SEARCH_PRODUCT_BY_NAME;
+            String sql = "SELECT distinct  * FROM products WHERE name LIKE '%"+name+"%' or category LIKE '%"+name+"%'or brand LIKE '%"+name+"%'";
             preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+
 
             ProductItem productItem = new ProductItem();
 
