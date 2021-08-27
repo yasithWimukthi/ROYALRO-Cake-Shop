@@ -82,9 +82,9 @@ public class ProductService implements IProductService{
         ArrayList<ProductItem> productList = new ArrayList<>();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.SEARCH_PRODUCT_BY_NAME;
+            String sql = "SELECT distinct  * FROM products WHERE name LIKE '%"+name+"%' or category LIKE '%"+name+"%'or brand LIKE '%"+name+"%'";
             preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+
 
             ProductItem productItem = new ProductItem();
 
@@ -109,5 +109,26 @@ public class ProductService implements IProductService{
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
         return productList;
+    }
+
+    public ArrayList<String> getAllCategories() {
+        ArrayList<String> categoriesList = new ArrayList<>();
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.GET_CATEGORIES;
+            preparedStatement = conn.prepareStatement(sql);
+               ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+              String category= resultSet.getString("category") ;
+              categoriesList.add(category);
+            }
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return categoriesList;
     }
 }
