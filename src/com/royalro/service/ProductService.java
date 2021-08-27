@@ -110,4 +110,25 @@ public class ProductService implements IProductService{
         }
         return productList;
     }
+
+    public ArrayList<String> getAllCategories() {
+        ArrayList<String> categoriesList = new ArrayList<>();
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.GET_CATEGORIES;
+            preparedStatement = conn.prepareStatement(sql);
+               ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+              String category= resultSet.getString("category") ;
+              categoriesList.add(category);
+            }
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return categoriesList;
+    }
 }

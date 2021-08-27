@@ -13,6 +13,7 @@ public class Queries {
     public static String ADD_PRODUCT = "INSERT INTO PRODUCTS (name,category,description,brand,companyCode,imagePath,price,quantity) VALUES (?,?,?,?,?,?,?,?)" ;
     public static String GET_ALL_PRODUCTS = "SELECT * FROM PRODUCTS";
     public static String SEARCH_PRODUCT_BY_NAME = "SELECT * FROM products WHERE name LIKE ?";
+    public static String GET_CATEGORIES = "select distinct p.category from royalro.products p";
 
     /*Queries for decorations management*/
     public static String ADD_DECORATION = "INSERT INTO decorations(name,imagePath,description,category,price) VALUES (?,?,?,?,?)";

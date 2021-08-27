@@ -85,14 +85,19 @@
                     <%--            then it will display all the categories--%>
                     <%--            under all the catgorieas shoul display related cakes--%>
 
+                <%  ProductService psc = new ProductService();
+                    List<String> categoriesList = psc.getAllCategories();
 
+                    for (String category: categoriesList) {
+
+                %>
                     <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
                                 margin-left: -5px;
                                 padding-left: 10px;
                                 font-family: serif;
-                                border-radius: 10px;">Category</h2>
+                                border-radius: 10px;"><%=category%></h2>
 
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                         <%--  loop card from here--%>
@@ -102,21 +107,19 @@
                                 List<ProductItem> itemsList = ps.getAllProducts();
 
                                 for(ProductItem item : itemsList) {
-                                    System.out.println(item.getName());
-                                    System.out.println(item.getPrice());
-                                    System.out.println(item.getCategory());
+                                    if(item.getCategory().equals(category)){
                             %>
                                <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
-                                    <img class="d-flex" src="<%=item.getImagePath()%>" style=";height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                    <h4 class="text-muted card-subtitle mb-2">Price:<%=item.getPrice()%></h4>
+                                    <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                    <h4 class="text-muted card-subtitle mb-2">Price:<%= item.getPrice()%></h4>
                                     <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph">
 
-                                            Brand: <%=item.getBrand()%><br>
-                                            Available Qty:<%=item.getQuantity()%><br>
-                                            Description:<%=item.getDescription()%>
+                                            Brand: <%= item.getBrand()%><br>
+                                            Available Qty: <%= item.getQuantity()%><br>
+                                            Description:<%= item.getDescription()%>
                                     </p>
                                     <button class="btn btn-info" type="button" style="margin-left: 21px;" data-bs-toggle="modal" data-bs-target="#updateItem">Update</button>
                                     <button class="btn btn-danger" type="button" style="margin-left: 53px;" data-bs-toggle="modal" data-bs-target="#deleteItem">Delete</button>
@@ -124,9 +127,9 @@
                             </div>
                         </div>
 <%--                            <%=item.getName()%><br>--%>
-                             <%}%>
+                             <%}}%>
                     </div>
-
+                <%}%>
                 </div>
             </div>
         </div>
