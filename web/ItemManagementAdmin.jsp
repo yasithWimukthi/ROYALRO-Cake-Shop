@@ -146,7 +146,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="AddItemServlet" method="post" id="itemForm">
+                <form action="AddItemServlet" method="post" id="itemForm" enctype="multipart/form-data">
 
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -195,7 +195,7 @@
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <div style="text-align: center;"><label >Image Upload</label></div>
-                                <input type="file"   name="ItemImage" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                <input type="file"   id="ItemImage" name="ItemImage" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
                             </div>
                             <div id="ItemImageError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
                         </div>
