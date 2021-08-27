@@ -9,7 +9,7 @@ public class Queries {
     public static String UPDATE_CAKE = "UPDATE CAKES SET name = ?, imagePath = ? , description = ?, category = ?, price = ?, weight = ? WHERE cakeId = ?";
     public static String UPDATE_CAKE_WITHOUT_IMAGE_PATH  = "UPDATE CAKES SET name = ?, description = ?, category = ?, price = ?, weight = ? WHERE cakeId = ?";
     public static String SEARCH_CAKE_BY_CATEGORY = "SELECT * FROM cakes WHERE category = ?";
-
+    public static String SEARCH_CAKE_BY_CATEGORY_AND_NAME = "SELECT * FROM cakes WHERE category = ? and name = ? ";
 
     /*Queries for product item management*/
     public static String ADD_PRODUCT = "INSERT INTO PRODUCTS (name,category,description,brand,companyCode,imagePath,price,quantity) VALUES (?,?,?,?,?,?,?,?)" ;

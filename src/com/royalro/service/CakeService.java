@@ -192,4 +192,34 @@ public class CakeService implements ICakeService{
         return cakeList;
     }
 
+    @Override
+    public ArrayList<Cake> searchCakeByCategoryAndName(String name, String category) {
+        ArrayList<Cake> cakeList = new ArrayList<Cake>();
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.SEARCH_CAKE_BY_CATEGORY_AND_NAME;
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,category);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                Cake cake = new Cake();
+                cake.setCakeId(resultSet.getInt("cakeId"));
+                cake.setName(resultSet.getString("name"));
+                cake.setCategory(resultSet.getString("category"));
+                cake.setImagePath(resultSet.getString("imagePath"));
+                cake.setDescription(resultSet.getString("description"));
+                cake.setPrice(resultSet.getFloat("price"));
+                cake.setWeight(resultSet.getFloat("weight"));
+                cakeList.add(cake);
+            }
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return cakeList;
+    }
+
 }

@@ -1,6 +1,6 @@
 package com.royalro.servlet;
 
-import com.royalro.service.UserAuthentication;
+import com.royalro.service.CakeService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,19 +12,11 @@ import java.io.IOException;
 
 @WebServlet("/SearchServlet")
 public class SearchServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         String user = request.getParameter("user");
         String key = request.getParameter("key").toLowerCase();
-
-        UserAuthentication ua = new UserAuthentication();
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-        ua.createLogin("y@w.com","hhiu");
-
-
 
         RequestDispatcher dispatcher;
         request.setAttribute("key",key);
