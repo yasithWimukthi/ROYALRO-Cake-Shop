@@ -2,6 +2,7 @@ package com.royalro.servlet;
 
 import com.royalro.service.ProductService;
 import com.royalro.service.UserAuthentication;
+import com.royalro.util.CommonConstants;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,6 +19,9 @@ import java.util.logging.Level;
 @WebServlet("/AddItemServlet")
 @MultipartConfig()
 public class AddItemServlet extends HttpServlet {
+
+
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String name = request.getParameter("ItemNameInput");
@@ -33,13 +37,12 @@ public class AddItemServlet extends HttpServlet {
         String fileName = getSubmittedFileName(filepart);
 
         for (Part part : request.getParts()) {
-            part.write("C:\\Users\\shalitha\\IdeaProjects\\ROYALRO-Cake-Shop\\web\\assets\\img\\Items\\" + fileName);
+            part.write(CommonConstants.ITEM_IMAGES_FILE_PATH + fileName);
 
         }
-
-
+        String ImagePath = "assets/img/Items/" + fileName;
         ProductService ps = new ProductService();
-        ps.addProduct(name,category,description,brand,companyCode,image,Float.parseFloat(price),Integer.parseInt(qty));
+        ps.addProduct(name,category,description,brand,companyCode,ImagePath,Float.parseFloat(price),Integer.parseInt(qty));
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ItemManagementAdmin.jsp");
         dispatcher.forward(request, response);
