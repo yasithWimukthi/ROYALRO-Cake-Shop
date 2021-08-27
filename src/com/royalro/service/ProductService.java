@@ -51,11 +51,10 @@ public class ProductService implements IProductService{
             String sql = Queries.GET_ALL_PRODUCTS;
             preparedStatement = conn.prepareStatement(sql);
 
-            ProductItem productItem = new ProductItem();
-
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
+                ProductItem productItem = new ProductItem();
                 productItem.setProductId(resultSet.getInt("productId"));
                 productItem.setBrand(resultSet.getString("brand"));
                 productItem.setCategory(resultSet.getString("category"));
@@ -67,6 +66,8 @@ public class ProductService implements IProductService{
                 productItem.setQuantity(resultSet.getInt("quantity"));
                 productList.add(productItem);
             }
+
+
 
         }catch (SQLException | ClassNotFoundException  e){
             e.printStackTrace();
