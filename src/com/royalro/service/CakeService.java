@@ -197,10 +197,10 @@ public class CakeService implements ICakeService{
         ArrayList<Cake> cakeList = new ArrayList<Cake>();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.SEARCH_CAKE_BY_CATEGORY_AND_NAME;
+            String sql = "SELECT * FROM cakes WHERE category = ? and name LIKE \"%" + name+ "%\" ";
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(QueryConstants.COLUMN_ONE,category);
-            preparedStatement.setString(QueryConstants.COLUMN_TWO,name);
+//            preparedStatement.setString(QueryConstants.COLUMN_TWO,name);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
