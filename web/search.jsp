@@ -96,6 +96,7 @@
                     class="bar"></span></a>
             <div class="content"
                  style="padding-left: 56px;">
+                <% if (milkChocolateCakes.size() != 0) { %>
                 <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
@@ -133,7 +134,9 @@
                     </div>
                     <%}%>
                 </div>
+                <%}%>
 
+                <% if (whiteChocolateCakes.size() != 0) { %>
                 <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
@@ -170,6 +173,7 @@
                     </div>
                     <%}%>
                 </div>
+                <%}%>
             </div>
         </div>
     </div>
