@@ -147,7 +147,7 @@
             </div>
             <%
                 }
-                else{
+                else if(isSearch){
             %>
             <%--    Main area after search--%>
             <div class="main-content">
@@ -166,7 +166,7 @@
 
                     <%
 
-                        List<ProductItem> categoriesList = (List<ProductItem>)request.getAttribute("ItemSearchResult");
+                        List<ProductItem> categoriesList = (List<ProductItem>)request.getAttribute("ItemSearchCategory");
 
                         for (ProductItem pi: categoriesList) {
 
@@ -183,7 +183,8 @@
                         <%--  loop card from here--%>
 
                         <%
-                            for(ProductItem item : categoriesList) {
+                            List<ProductItem> categoriesList2 = (List<ProductItem>)request.getAttribute("ItemSearchResult");
+                            for(ProductItem item : categoriesList2) {
                             if(item.getCategory().equals(pi.getCategory())){
                         %>
                         <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
@@ -205,11 +206,22 @@
                         </div>
                         <%--                            <%=item.getName()%><br>--%>
                         <%}}%>
+
+
                     </div>
-                    <%}%>
+                    <%}
+                        if(categoriesList.isEmpty()){%>
+
+                        <div style="text-align: center;">
+                            <img src="assets/img/noItemFound.png" style="height: 250px;width: 250px">
+                            <H1>Sorry! No Item Found!</H1>
+                        </div>
+                        <%}%>
+
                 </div>
             </div>
-            <%}%>
+            <%}
+            %>
         </div>
     </div>
 </div>
