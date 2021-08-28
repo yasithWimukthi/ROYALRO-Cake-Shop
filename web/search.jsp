@@ -69,9 +69,14 @@
 
 <div style="margin-left: 10px;text-decoration: none; ">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.jsp"
-                                       style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
-        <li class="breadcrumb-item"><a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Cakes</span></a>
+        <li class="breadcrumb-item">
+            <a href="index.jsp" style="text-decoration: none;color: #5c636a;"><span>Home</span></a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Cakes</span></a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="#" style="text-decoration: none;color: #5c636a;"><span>Search</span></a>
         </li>
     </ol>
 </div>
@@ -96,6 +101,17 @@
                     class="bar"></span></a>
             <div class="content"
                  style="padding-left: 56px;">
+
+                <%if (milkChocolateCakes.size() ==0 && whiteChocolateCakes.size() ==0) {%>
+                <div style="margin-bottom: 500px" class="alert alert-danger d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    <div>
+                        The product you are looking for cant be found. Please try again.
+                    </div>
+                </div>
+                <%}%>
+
+                <% if (milkChocolateCakes.size() != 0) { %>
                 <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
@@ -133,7 +149,9 @@
                     </div>
                     <%}%>
                 </div>
+                <%}%>
 
+                <% if (whiteChocolateCakes.size() != 0) { %>
                 <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
@@ -170,6 +188,7 @@
                     </div>
                     <%}%>
                 </div>
+                <%}%>
             </div>
         </div>
     </div>
