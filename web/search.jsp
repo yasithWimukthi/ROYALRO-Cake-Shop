@@ -69,9 +69,14 @@
 
 <div style="margin-left: 10px;text-decoration: none; ">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.jsp"
-                                       style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
-        <li class="breadcrumb-item"><a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Cakes</span></a>
+        <li class="breadcrumb-item">
+            <a href="index.jsp" style="text-decoration: none;color: #5c636a;"><span>Home</span></a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Cakes</span></a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="#" style="text-decoration: none;color: #5c636a;"><span>Search</span></a>
         </li>
     </ol>
 </div>
