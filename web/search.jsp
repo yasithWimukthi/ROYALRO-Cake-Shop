@@ -101,6 +101,16 @@
                     class="bar"></span></a>
             <div class="content"
                  style="padding-left: 56px;">
+
+                <%if (milkChocolateCakes.size() ==0 && whiteChocolateCakes.size() ==0) {%>
+                <div style="margin-bottom: 500px" class="alert alert-danger d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    <div>
+                        The product you are looking for cant be found. Please try again.
+                    </div>
+                </div>
+                <%}%>
+
                 <% if (milkChocolateCakes.size() != 0) { %>
                 <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
