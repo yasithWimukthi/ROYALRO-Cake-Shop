@@ -33,6 +33,11 @@ public class ItemSearchServlet extends HttpServlet {
         ProductService ps = new ProductService();
         ArrayList<ProductItem> result = ps.searchProductByName(search);
         request.setAttribute("ItemSearchResult", result);
+
+
+        ArrayList<ProductItem> result2 = ps.searchProductByNameCategory(search);
+        request.setAttribute("ItemSearchCategory", result2);
+
     //testing
         for (ProductItem pi: result) {
             System.out.println(pi.getName());

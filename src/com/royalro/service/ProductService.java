@@ -82,15 +82,16 @@ public class ProductService implements IProductService{
         ArrayList<ProductItem> productList = new ArrayList<>();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = "SELECT distinct  * FROM products WHERE name LIKE '%"+name+"%' or category LIKE '%"+name+"%'or brand LIKE '%"+name+"%'";
+            String sql = "SELECT   * FROM products  WHERE name LIKE '%"+name+"%' or category LIKE '%"+name+"%'or brand LIKE '%"+name+"%'";
             preparedStatement = conn.prepareStatement(sql);
 
 
-            ProductItem productItem = new ProductItem();
+
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
+                ProductItem productItem = new ProductItem();
                 productItem.setProductId(resultSet.getInt("productId"));
                 productItem.setBrand(resultSet.getString("brand"));
                 productItem.setCategory(resultSet.getString("category"));
@@ -130,5 +131,34 @@ public class ProductService implements IProductService{
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
         return categoriesList;
+    }
+
+    public ArrayList<ProductItem> searchProductByNameCategory(String search) {
+
+
+        ArrayList<ProductItem> productList = new ArrayList<>();
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = "SELECT  distinct p.category FROM products p  WHERE name LIKE '%"+search+"%' or category LIKE '%"+search+"%'or brand LIKE '%"+search+"%'";
+            preparedStatement = conn.prepareStatement(sql);
+
+
+
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                ProductItem productItem = new ProductItem();
+                productItem.setCategory(resultSet.getString("category"));
+                productList.add(productItem);
+            }
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return productList;
+
     }
 }
