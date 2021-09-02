@@ -132,8 +132,18 @@
                                     : <%=cake.getPrice()%>.00</p>
                                 <p class="badge rounded-pill bg-success" style="text-align: center">Weight
                                     : <%=cake.getWeight()%> Kg</p>
-                                <button class="btn btn-info" type="button" style="margin-left: 21px;"
-                                        data-bs-toggle="modal" data-bs-target="#updateNewCake">Update
+                                <button
+                                        class="btn btn-info"
+                                        type="button"
+                                        style="margin-left: 21px;"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#updateModal"
+                                        data-bs-name="<%=cake.getName()%>"
+                                        data-bs-price="<%=cake.getPrice()%>"
+                                        data-bs-category="<%=cake.getCategory()%>"
+                                        data-bs-description="<%=cake.getDescription()%>"
+                                        data-bs-weight="<%=cake.getWeight()%>"
+                                >Update
                                 </button>
                                 <button class="btn btn-danger" type="button" style="margin-left: 53px;"
                                         data-bs-toggle="modal" data-bs-target="#deleteCake">Delete
@@ -173,8 +183,18 @@
                                     : <%=cake.getPrice()%>.00</p>
                                 <p class="badge rounded-pill bg-success" style="text-align: center">Weight
                                     : <%=cake.getWeight()%> Kg</p>
-                                <button class="btn btn-info" type="button" style="margin-left: 21px;"
-                                        data-bs-toggle="modal" data-bs-target="#updateNewCake">Update
+                                <button
+                                        class="btn btn-info"
+                                        type="button"
+                                        style="margin-left: 21px;"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#updateModal"
+                                        data-bs-name="<%=cake.getName()%>"
+                                        data-bs-price="<%=cake.getPrice()%>"
+                                        data-bs-category="<%=cake.getCategory()%>"
+                                        data-bs-description="<%=cake.getDescription().trim()%>"
+                                        data-bs-weight="<%=cake.getWeight()%>"
+                                >Update
                                 </button>
                                 <button class="btn btn-danger" type="button" style="margin-left: 53px;"
                                         data-bs-toggle="modal" data-bs-target="#deleteCake">Delete
@@ -287,7 +307,7 @@
 </div>
 
 <%--update form--%>
-<div class="modal fade" id="updateNewCake" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -301,7 +321,7 @@
                             <div class="form-group col-md-6">
                                 <div class="form-group">
                                     <label> Cake Name</label>
-                                    <input type="text" class="form-control" value="Devil's Food Cake"
+                                    <input type="text" class="form-control"
                                            id="update-name-input" placeholder="name ">
                                 </div>
                                 <div id="update-name-error"
@@ -310,7 +330,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Price(LKR)</label>
-                                    <input type="text" class="form-control" id="update-price-input" value="1500.00"
+                                    <input type="text" class="form-control" id="update-price-input"
                                            placeholder="xxxx.xx "
                                            style="width: 50%">
                                 </div>
@@ -320,7 +340,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Weight(kg)</label>
-                                    <input type="text" class="form-control" id="update-weight-input" value="1.5"
+                                    <input type="text" class="form-control" id="update-weight-input"
                                            placeholder="1.5 " style="width: 50%">
                                 </div>
                                 <div id="weightUpdateError"
@@ -343,7 +363,6 @@
                                 <div class="form-group">
                                     <label>Description</label>
                                     <textarea class="form-control" id="update-description">
-Forget the name, this cake is heavenly. The base is tender, the filling and frosting luscious. Let's spread the love this season with your favourite chocolate cake!
                                      </textarea>
                                 </div>
                                 <div id="update-descriptionError"
