@@ -132,8 +132,18 @@
                                     : <%=cake.getPrice()%>.00</p>
                                 <p class="badge rounded-pill bg-success" style="text-align: center">Weight
                                     : <%=cake.getWeight()%> Kg</p>
-                                <button class="btn btn-info" type="button" style="margin-left: 21px;"
-                                        data-bs-toggle="modal" data-bs-target="#updateNewCake">Update
+                                <button
+                                        class="btn btn-info"
+                                        type="button"
+                                        style="margin-left: 21px;"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#updateModal"
+                                        data-bs-name="<%=cake.getName()%>"
+                                        data-bs-price="<%=cake.getPrice()%>"
+                                        data-bs-category="<%=cake.getCategory()%>"
+                                        data-bs-description="<%=cake.getDescription()%>"
+                                        data-bs-weight="<%=cake.getWeight()%>"
+                                >Update
                                 </button>
                                 <button class="btn btn-danger" type="button" style="margin-left: 53px;"
                                         data-bs-toggle="modal" data-bs-target="#deleteCake">Delete
@@ -182,7 +192,7 @@
                                         data-bs-name="<%=cake.getName()%>"
                                         data-bs-price="<%=cake.getPrice()%>"
                                         data-bs-category="<%=cake.getCategory()%>"
-                                        data-bs-description="<%=cake.getDescription()%>"
+                                        data-bs-description="<%=cake.getDescription().trim()%>"
                                         data-bs-weight="<%=cake.getWeight()%>"
                                 >Update
                                 </button>
