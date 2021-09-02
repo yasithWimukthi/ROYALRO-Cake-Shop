@@ -118,3 +118,16 @@ updateCakeForm.addEventListener("submit", e =>{
     }
 
 })
+
+
+
+
+var updateCakeModal = document.getElementById('updateModal')
+updateCakeModal.addEventListener('show.bs.modal', function (event) {
+    var button = event.relatedTarget
+    var name = button.getAttribute('data-bs-name')
+    var weight = button.getAttribute('data-bs-weight')
+
+    updateCakeModal.querySelector('#update-name-input').value = name;
+    updateCakeModal.querySelector('#update-weight-input').value = weight
+})
