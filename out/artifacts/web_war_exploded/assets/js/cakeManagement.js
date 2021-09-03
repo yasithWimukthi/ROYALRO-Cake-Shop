@@ -131,6 +131,7 @@ updateCakeModal.addEventListener('show.bs.modal', function (event) {
     var price = button.getAttribute('data-bs-price')
     var category = button.getAttribute('data-bs-category')
     var id = button.getAttribute('data-bs-id')
+    var image = button.getAttribute('data-bs-image')
 
     updateCakeModal.querySelector('#update-name-input').value = name;
     updateCakeModal.querySelector('#update-weight-input').value = weight;
@@ -138,4 +139,5 @@ updateCakeModal.addEventListener('show.bs.modal', function (event) {
     updateCakeModal.querySelector('#update-category-input').value = category;
     updateCakeModal.querySelector('#update-description').value = description;
     updateCakeModal.querySelector('#updateCakeId').value = id;
+    updateCakeModal.querySelector('#updateImage').value = image;
 })
