@@ -144,6 +144,7 @@
                                         data-bs-description="<%=cake.getDescription()%>"
                                         data-bs-weight="<%=cake.getWeight()%>"
                                         data-bs-id="<%=cake.getCakeId()%>"
+                                        data-bs-image="<%=cake.getImagePath()%>"
                                 >Update
                                 </button>
                                 <button class="btn btn-danger" type="button" style="margin-left: 53px;"
@@ -196,6 +197,7 @@
                                         data-bs-description="<%=cake.getDescription().trim()%>"
                                         data-bs-weight="<%=cake.getWeight()%>"
                                         data-bs-id="<%=cake.getCakeId()%>"
+                                        data-bs-image="<%=cake.getImagePath()%>"
                                 >Update
                                 </button>
                                 <button class="btn btn-danger" type="button" style="margin-left: 53px;"
@@ -324,7 +326,7 @@
                                 <div class="form-group">
                                     <label> Cake Name</label>
                                     <input type="text" class="form-control"
-                                           id="update-name-input" placeholder="name ">
+                                           id="update-name-input" placeholder="name " name="name">
                                 </div>
                                 <div id="update-name-error"
                                      style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">
@@ -334,6 +336,7 @@
                                     <label>Price(LKR)</label>
                                     <input type="text" class="form-control" id="update-price-input"
                                            placeholder="xxxx.xx "
+                                           name="price"
                                            style="width: 50%">
                                 </div>
                                 <div id="update-price-error"
@@ -342,7 +345,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Weight(kg)</label>
-                                    <input type="text" class="form-control" id="update-weight-input"
+                                    <input type="text" name="weight" class="form-control" id="update-weight-input"
                                            placeholder="1.5 " style="width: 50%">
                                 </div>
                                 <div id="weightUpdateError"
@@ -351,7 +354,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Category</label>
-                                    <select name="catagory" id="update-category-input" class="form-control">
+                                    <select name="catagory" name="category" id="update-category-input" class="form-control">
                                         <option value="">-- SELECT CATAGORY --</option>
                                         <option selected value="Milk Chocolate">Milk Chocolate</option>
                                         <option value="White Chocolate">White Chocolate</option>
@@ -364,7 +367,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control" id="update-description">
+                                    <textarea name="description" class="form-control" id="update-description">
                                      </textarea>
                                 </div>
                                 <div id="update-descriptionError"
@@ -375,7 +378,7 @@
                             <div class="form-group col-md-6">
                                 <div class="form-group">
                                     <div style="text-align: center;"><label>Image Upload</label></div>
-                                    <input type="file" id="UploadImage"
+                                    <input type="file" id="updateImage"
                                            style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;"
                                            name="image">
                                 </div>
