@@ -147,8 +147,16 @@
                                         data-bs-image="<%=cake.getImagePath()%>"
                                 >Update
                                 </button>
-                                <button class="btn btn-danger" type="button" style="margin-left: 53px;"
-                                        data-bs-toggle="modal" data-bs-target="#deleteCake">Delete
+                                <button
+                                        class="btn btn-danger"
+                                        type="button"
+                                        style="margin-left: 53px;"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteCakeModal"
+                                        data-bs-id="<%=cake.getCakeId()%>"
+                                        data-bs-name="<%=cake.getName()%>"
+                                >
+                                    Delete
                                 </button>
                             </div>
                         </div>
@@ -200,8 +208,16 @@
                                         data-bs-image="<%=cake.getImagePath()%>"
                                 >Update
                                 </button>
-                                <button class="btn btn-danger" type="button" style="margin-left: 53px;"
-                                        data-bs-toggle="modal" data-bs-target="#deleteCake">Delete
+                                <button
+                                        class="btn btn-danger"
+                                        type="button"
+                                        style="margin-left: 53px;"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteCakeModal"
+                                        data-bs-id="<%=cake.getCakeId()%>"
+                                        data-bs-name="<%=cake.getName()%>"
+                                >
+                                    Delete
                                 </button>
                             </div>
                         </div>
@@ -402,8 +418,7 @@
 </div>
 
 <%--delete confirmation modal--%>
-<div class="modal fade" id="deleteCake" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="deleteCakeModal" tabindex="-1" aria-labelledby="deleteCakeModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -412,13 +427,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                Are you sure want to delete this item?
+                Are you sure want to delete this item? <p id="deleteName"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm
-                </button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel
-                </button>
+                <form>
+                    <input style="display: none" type="number" id="deleteCakeId" name="id" >
+                    <button type="submit" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm
+                    </button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel
+                    </button>
+                </form>
+
             </div>
         </div>
     </div>
