@@ -143,6 +143,7 @@
                                         data-bs-category="<%=cake.getCategory()%>"
                                         data-bs-description="<%=cake.getDescription()%>"
                                         data-bs-weight="<%=cake.getWeight()%>"
+                                        data-bs-id="<%=cake.getCakeId()%>"
                                 >Update
                                 </button>
                                 <button class="btn btn-danger" type="button" style="margin-left: 53px;"
@@ -194,6 +195,7 @@
                                         data-bs-category="<%=cake.getCategory()%>"
                                         data-bs-description="<%=cake.getDescription().trim()%>"
                                         data-bs-weight="<%=cake.getWeight()%>"
+                                        data-bs-id="<%=cake.getCakeId()%>"
                                 >Update
                                 </button>
                                 <button class="btn btn-danger" type="button" style="margin-left: 53px;"
@@ -315,7 +317,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="AddCakeServlet" method="post" enctype="multipart/form-data" id="updateCakeForm">
+                <form action="UpdateCakeServlet" method="post" enctype="multipart/form-data" id="updateCakeForm">
                     <form>
                         <div class="row">
                             <div class="form-group col-md-6">
@@ -383,11 +385,10 @@
                                 </div>
                             </div>
                         </div>
-
-
+                        <input style="display: none" type="number" id="updateCakeId" name="id" >
                         <div class="form-group" style="float: right; margin-top: 10px">
                             <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary" id="up-bu">Save</button>
+                            <button type="submit" class="btn btn-primary" id="up-bu">Update</button>
                         </div>
                     </form>
                 </form>

@@ -130,11 +130,12 @@ updateCakeModal.addEventListener('show.bs.modal', function (event) {
     var description = button.getAttribute('data-bs-description')
     var price = button.getAttribute('data-bs-price')
     var category = button.getAttribute('data-bs-category')
-
+    var id = button.getAttribute('data-bs-id')
 
     updateCakeModal.querySelector('#update-name-input').value = name;
     updateCakeModal.querySelector('#update-weight-input').value = weight;
     updateCakeModal.querySelector('#update-price-input').value = price;
     updateCakeModal.querySelector('#update-category-input').value = category;
     updateCakeModal.querySelector('#update-description').value = description;
+    updateCakeModal.querySelector('#updateCakeId').value = id;
 })
