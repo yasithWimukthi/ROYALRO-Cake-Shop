@@ -33,22 +33,25 @@ public class UpdateCakeServlet extends HttpServlet {
         String name = request.getParameter("name");
         String category = request.getParameter("category");
         String description = request.getParameter("description");
-        int cakeId = Integer.parseInt(request.getParameter("id"));
-        float price = Float.parseFloat(request.getParameter("price"));
-        float weight = Float.parseFloat(request.getParameter("weight"));
-
-        Part filePart = request.getPart("image");
-
-        if (filePart != null){
-            String fileName = filePart.getSubmittedFileName();
-
-            for (Part part : request.getParts()) {
-                part.write("C:\\Users\\ACER\\IdeaProjects\\ROYALRO Cake Shop\\web\\assets\\img\\cakes\\" + fileName);
-            }
-            cakeService.updateCake(cakeId,name,fileName,description,category,price,weight);
-        }else{
-            cakeService.updateCake(cakeId,name,description,category,price,weight);
-        }
+        System.out.println( "id " + request.getParameter("id"));
+//        int cakeId = Integer.parseInt(request.getParameter("id"));
+//        float price = Float.parseFloat(request.getParameter("price"));
+//        float weight = Float.parseFloat(request.getParameter("weight"));
+//
+//
+//
+//        Part filePart = request.getPart("image");
+//
+//        if (filePart != null){
+//            String fileName = filePart.getSubmittedFileName();
+//
+//            for (Part part : request.getParts()) {
+//                part.write("C:\\Users\\ACER\\IdeaProjects\\ROYALRO Cake Shop\\web\\assets\\img\\cakes\\" + fileName);
+//            }
+//            cakeService.updateCake(cakeId,name,fileName,description,category,price,weight);
+//        }else{
+//            cakeService.updateCake(cakeId,name,description,category,price,weight);
+//        }
 
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher("/cakeAdmin.jsp");
