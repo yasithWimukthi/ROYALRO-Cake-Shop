@@ -122,16 +122,16 @@ updateCakeForm.addEventListener("submit", e =>{
 
 
 
-var updateCakeModal = document.getElementById('updateModal')
+let updateCakeModal = document.getElementById('updateModal')
 updateCakeModal.addEventListener('show.bs.modal', function (event) {
-    var button = event.relatedTarget
-    var name = button.getAttribute('data-bs-name')
-    var weight = button.getAttribute('data-bs-weight')
-    var description = button.getAttribute('data-bs-description')
-    var price = button.getAttribute('data-bs-price')
-    var category = button.getAttribute('data-bs-category')
-    var id = button.getAttribute('data-bs-id')
-    var image = button.getAttribute('data-bs-image')
+    let button = event.relatedTarget
+    let name = button.getAttribute('data-bs-name')
+    let weight = button.getAttribute('data-bs-weight')
+    let description = button.getAttribute('data-bs-description')
+    let price = button.getAttribute('data-bs-price')
+    let category = button.getAttribute('data-bs-category')
+    let id = button.getAttribute('data-bs-id')
+    let image = button.getAttribute('data-bs-image')
 
     updateCakeModal.querySelector('#update-name-input').value = name;
     updateCakeModal.querySelector('#update-weight-input').value = weight;
@@ -140,4 +140,14 @@ updateCakeModal.addEventListener('show.bs.modal', function (event) {
     updateCakeModal.querySelector('#update-description').value = description;
     updateCakeModal.querySelector('#updateCakeId').value = id;
     updateCakeModal.querySelector('#updateImage').value = image;
+})
+
+let deleteCakeModal = document.getElementById('deleteCakeModal')
+deleteCakeModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let id = button.getAttribute('data-bs-id')
+    let name = button.getAttribute('data-bs-name')
+
+    deleteCakeModal.querySelector('#deleteCakeId').value = id;
+    deleteCakeModal.querySelector('#deleteName').innerHTML = name;
 })
