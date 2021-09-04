@@ -370,9 +370,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Category</label>
-                                    <select name="catagory" name="category" id="update-category-input" class="form-control">
-                                        <option value="">-- SELECT CATAGORY --</option>
-                                        <option selected value="Milk Chocolate">Milk Chocolate</option>
+                                    <select name="category" id="update-category-input" class="form-control">
+                                        <option value="">-- SELECT CATEGORY --</option>
+                                        <option value="Milk Chocolate">Milk Chocolate</option>
                                         <option value="White Chocolate">White Chocolate</option>
                                         <option value="Coffee Mocha">Coffee Mocha</option>
                                     </select>
@@ -396,6 +396,7 @@
                                     <div style="text-align: center;"><label>Image Upload</label></div>
                                     <input type="file" id="updateImage"
                                            style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;"
+                                           value="default"
                                            name="image">
                                 </div>
                                 <div id="uploadImageError"
