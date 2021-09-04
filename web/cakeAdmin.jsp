@@ -430,14 +430,13 @@
                 Are you sure want to delete this item? <p id="deleteName"></p>
             </div>
             <div class="modal-footer">
-                <form>
+                <form method="POST" action="DeleteCakeServlet">
                     <input style="display: none" type="number" id="deleteCakeId" name="id" >
                     <button type="submit" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm
                     </button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel
                     </button>
                 </form>
-
             </div>
         </div>
     </div>
