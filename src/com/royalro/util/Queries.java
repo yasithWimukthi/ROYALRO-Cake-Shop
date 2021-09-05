@@ -17,7 +17,14 @@ public class Queries {
     public static String ADD_DECORATION = "INSERT INTO decorations(name,imagePath,description,category,price) VALUES (?,?,?,?,?)";
     public static String GET_ALL_DECORATIONS = "SELECT * FROM decorations";
     public static String SEARCH_DECORATIONS_BY_NAME = "SELECT * FROM decorations WHERE name LIKE ?";
+    public static String DELETE_DECORATION = "DELETE FROM Decorations WHERE decorationId = ?" ;
+    public static String UPDATE_DECORATION = "UPDATE Decorations SET name = ?, imagePath = ? , description = ?, category = ?, price = ? WHERE decorationId = ?";
+    public static String UPDATE_DECORATION_WITHOUT_IMAGE_PATH  = "UPDATE Decorations SET name = ?, description = ?, category = ?, price = ? WHERE decorationId = ?";
+    public static String SEARCH_DECORATION_BY_CATEGORY = "SELECT * FROM Decorations WHERE category = ?";
+    public static String SEARCH_DECORATION_BY_CATEGORY_AND_NAME = "SELECT * FROM Decorations WHERE category = ? and name LIKE \"% ? %\" ";
 
     /*Queries for user authentication*/
     public static String CREATE_LOGIN = "INSERT INTO LOGIN (email,password) VALUES (?,?)";
+
+
 }

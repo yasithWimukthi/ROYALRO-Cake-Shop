@@ -1,6 +1,6 @@
 package com.royalro.model;
 
-public class DecorationItem {
+public class Decoration {
     private int decorationId;
     private String name;
     private String category;
@@ -8,7 +8,16 @@ public class DecorationItem {
     private String imagePath;
     private float price;
 
-    public DecorationItem() {
+    public Decoration() {
+    }
+
+    public Decoration(int decorationId, String name, String category, String description, String imagePath, float price) {
+        this.decorationId = decorationId;
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.imagePath = imagePath;
+        this.price = price;
     }
 
     public String getName() {
@@ -53,5 +62,9 @@ public class DecorationItem {
 
     public int getDecorationId() {
         return decorationId;
+    }
+
+    public void setDecorationId(int decorationId) {
+        this.decorationId = decorationId;
     }
 }
