@@ -6,23 +6,27 @@ public class Customer {
     private String email;
     private String mobile;
     private String birthDate;
-    private String addresses[];
+    private String addresses;
+    private String address2;
+    private String gender;
 
     public Customer() {
-        this.addresses = new String[5];
+        //this.addresses = new String[5];
     }
 
-    public Customer(int customerId, String name, String email, String mobile, String birthDate) {
+    public Customer(int customerId, String name, String email, String mobile, String birthDate, String address,String address2, String gender) {
         this.customerId = customerId;
         this.name = name;
         this.email = email;
         this.mobile = mobile;
         this.birthDate = birthDate;
-        this.addresses = new String[5];
+        this.addresses = address;
+        this.address2 =address2;
+        this.gender = gender;
     }
 
     public int getCustomerId() {
-        return customerId;
+        return this.customerId;
     }
 
     public void setCustomerId(int customerId) {
@@ -61,11 +65,26 @@ public class Customer {
         this.birthDate = birthDate;
     }
 
-    public String[] getAddresses() {
+    public String getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(String[] addresses) {
-        this.addresses = addresses;
+    public void setAddresses(String address) {
+        this.addresses = address;
     }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+    public String getGender(){return gender;}
+
+    public void setGender(String gender) {this.gender = gender;}
+
+
+
 }
