@@ -67,20 +67,20 @@
             </div>
             <div class="col-md-4 col-lg-7" style="height: 550px;">
                 <div style="height: 300px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255)); padding: 20px;border-radius: 5px">
-                    <h1 style="padding-left: 10px;">Manage my Account</h1>
+                    <h2 style="padding-left: 10px;">Manage my Account</h2>
                     <div class="col-md-4 col-lg-3"style="height: 150px;width: 520px;">
 
                         <label style="width: 100px;padding: 10px;"><strong>Address 1</strong></label>
 
                         <input class="form-control-plaintext" type="text" value="No 123,Wijerama rd, Colombo 07" readonly="" style="width: 260px;height: 80px;padding: 10px;">
                        <%if(customer.getAddress2()!=null){%>
-                        <div style="margin-left: 300px;margin-top: -120px"><label style="width: 100px;padding: 10px;"><strong>Address 2</strong></label>
+                        <div style="margin-left: 300px;margin-top: -123.5px"><label style="width: 100px;padding: 10px;"><strong>Address 2</strong></label>
                         <input class="form-control-plaintext" type="text" value="<%=customer.getAddress2()%>" readonly="" style="width: 260px;height: 80px;padding: 10px;"></div>
 
-                        <%}else {%>
+                        <%}%>
                         <button data-bs-toggle="modal" data-bs-target="#insertAddress" class="btn btn-outline-primary text-truncate float-none float-sm-none add-another-btn"data-bs-hover-animate="pulse" type="button" style="margin-top: 10px;width: 520px;margin-left: 20px;">Add Another Address<i class="fas fa-plus-circle edit-icon"></i></button>
 
-                        <%}%>
+
 
                     </div>
                         <div class="col-md-4 col-lg-4">
