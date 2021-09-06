@@ -317,10 +317,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action=" " method="post" enctype="multipart/form-data">
 
                     <div class="row">
-                        <div class="form-group col-md-6">
                             <div class="form-group">
                                 <label > Item Name</label>
                                 <input type="text" class="form-control" id="UpdateItemName" placeholder="name " required>
@@ -355,14 +354,14 @@
                             </div>
                             <div class="form-group">
                                 <label >Description</label>
-                                <textarea class="form-control">
+                                <textarea class="form-control" id="UpdateDescription">
                                      </textarea>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <div style="text-align: center;"><label >Image Upload</label></div>
-                                <input type="file"   id="fileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                <input type="file"   id="UpadatefileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
                             </div>
                         </div>
                     </div>
