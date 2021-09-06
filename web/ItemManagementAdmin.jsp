@@ -1,4 +1,4 @@
-<%@ page import="java.util.ArrayList" %>
+
 <%@ page import="com.royalro.model.ProductItem" %>
 <%@ page import="com.royalro.service.ProductService" %>
 <%@ page import="java.util.List" %><%--
@@ -134,7 +134,22 @@
                                             Available Qty: <%= item.getQuantity()%><br>
                                             Description:<%= item.getDescription()%>
                                     </p>
-                                    <button class="btn btn-info" type="button" style="margin-left: 21px;" data-bs-toggle="modal" data-bs-target="#updateItem">Update</button>
+                                    <button
+                                            class="btn btn-info"
+                                            type="button"
+                                            style="margin-left: 21px;"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#updateItemModal"
+                                            data-bs-name ="<%=item.getName()%>"
+                                            data-bs-price ="<%=item.getPrice()%>"
+                                            data-bs-category ="<%=item.getCategory()%>"
+                                            data-bs-qty ="<%=item.getQuantity()%>"
+                                            data-bs-brand ="<%=item.getBrand()%>"
+                                            data-bs-companyCode ="<%=item.getCompanyCode()%>"
+                                            data-bs-description ="<%=item.getDescription()%>"
+                                            data-bs-ProductID ="<%=item.getProductId()%>"
+                                            data-bs-image ="<%=item.getImagePath()%>"
+                                    >Update</button>
                                     <button class="btn btn-danger" type="button" style="margin-left: 53px;" data-bs-toggle="modal" data-bs-target="#deleteItem">Delete</button>
                                 </div>
                             </div>
@@ -309,11 +324,11 @@
 </div>
 
 <%--update form--%>
-<div class="modal fade" id="updateItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateItemModal" tabindex="-1" aria-labelledby="UpdateModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="UpdateItemMainLabel" style="text-align: center;"> Add New Item</h3>
+                <h3 class="modal-title" id="UpdateItemMainLabel" style="text-align: center;"> Update Item</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -323,12 +338,12 @@
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <label > Item Name</label>
-                                <input type="text" class="form-control" name="UpdateItemName" placeholder="name " required>
+                                <input type="text" class="form-control" id="UpdateItemName" name="UpdateItemName" placeholder="name " required>
                             </div>
                             <div id="UpdateItemNameError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid name.</div>
                             <div class="form-group">
                                 <label >Price(LKR)</label>
-                                <input type="text" class="form-control" name="updateItemPrice" placeholder="xxxx.xx " style="width: 50%" required>
+                                <input type="text" class="form-control" id="updateItemPrice" name="updateItemPrice" placeholder="xxxx.xx " style="width: 50%" required>
 
                             </div>
                             <div id="updateItemPriceError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Invalid Price</div>
@@ -343,30 +358,32 @@
 
                             </div>
                             <div id="UpdateItemCategoryError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid Category.</div>
+
                             <div class="form-group">
                                 <label >Qty.</label>
-                                <input type="number" class="form-control" name="UpdateQty" style="width: 50%" required>
+                                <input type="number" class="form-control" id="UpdateQty" name="UpdateQty" style="width: 50%" required>
 
                             </div>
                             <div id="UpdateQtyError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid Quantity.</div>
                             <div class="form-group">
                                 <label > Brand</label>
-                                <input type="text" class="form-control" name="UpdateBrand">
+                                <input type="text" class="form-control" name="UpdateBrand" id="UpdateBrand">
                             </div>
                             <div class="form-group">
                                 <label >Company code</label>
-                                <input type="text" class="form-control" name="UpdateCompanyCode">
+                                <input type="text" class="form-control" name="UpdateCompanyCode" id="UpdateCompanyCode">
                             </div>
                             <div class="form-group">
                                 <label >Description</label>
-                                <textarea class="form-control" name="UpdateDescription">
+                                <textarea class="form-control" name="UpdateDescription" id="UpdateDescription">
                                      </textarea>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <div style="text-align: center;"><label >Image Upload</label></div>
-                                <input type="file"   id="UpadatefileUpload" name="UpadatefileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                <input type="file"   id="UpadatefileUpload" name="UpadatefileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;"
+                                       value="default">
                             </div>
                             <div id="UpadatefileUploadError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
                         </div>
@@ -430,9 +447,8 @@
 <script src="assets/js/bs-init.js"></script>
 <script src="assets/js/Side-Swipe-Menu-1.js"></script>
 <script src="assets/js/Side-Swipe-Menu.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
-<script src="assets/js/itemManagement.js"></script>
 <script src="assets/js/word-limit.js"></script>
+<script src="assets/js/itemManagement.js"></script>
 </body>
 
 </html>
