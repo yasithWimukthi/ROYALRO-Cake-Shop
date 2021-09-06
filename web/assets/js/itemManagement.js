@@ -1,12 +1,14 @@
 const itemForm = document.querySelector("#itemForm");
-const button = document.querySelector('#saveBtn');
+const UpdateItemForm = document.querySelector("#UpdateItemForm")
+const InsertButton = document.querySelector('#saveBtn');
+const UpdateButton = document.querySelector("#UpdateSaveBtn")
 
-button.addEventListener("click", e=>{
+InsertButton.addEventListener("click", e=>{
     const itemName = document.querySelector("#ItemNameInput").value;
     const itemPrice = document.querySelector("#ItemPriceInput").value;
     const itemCategory = document.querySelector("#ItemCategoryInput").value;
     const itemQty = document.querySelector("#Qty").value;
-    const itemImage = document.querySelector("#ItemImage").value;
+    const itemImage = document.querySelector("#ItemImage").value;z
 
     if (itemName.trim().length === 0){
         e.preventDefault();
@@ -52,5 +54,59 @@ button.addEventListener("click", e=>{
     }else{
         document.querySelector("#ItemImageError").style.visibility="hidden";
         document.querySelector("#ItemImage").style.borderColor = "black"
+    }
+})
+
+UpdateButton.addEventListener("click", e=>{
+    const itemName = document.querySelector("#UpdateItemName").value;
+    const itemPrice = document.querySelector("#updateItemPrice").value;
+    const itemCategory = document.querySelector("#UpdateItemCategory").value;
+    const itemQty = document.querySelector("#UpdateQty").value;
+    const itemImage = document.querySelector("#UpadatefileUpload").value;z
+
+    if (itemName.trim().length === 0){
+        e.preventDefault();
+        document.querySelector("UpdateItemNameError").style.visibility="visible";
+        document.querySelector("#UpdateItemName").style.borderColor = "red"
+    }else{
+        document.querySelector("#UpdateItemNameError").style.visibility="hidden";
+        document.querySelector("#UpdateItemName").style.borderColor = "black";
+    }
+
+    if (isNaN(itemPrice) ||itemPrice.trim().length === 0){
+        e.preventDefault();
+        document.querySelector("#updateItemPriceError").style.visibility="visible";
+        document.querySelector("#updateItemPrice").style.borderColor = "red"
+    }else{
+        document.querySelector("#updateItemPriceError").style.visibility="hidden";
+        document.querySelector("#updateItemPrice").style.borderColor = "black";
+    }
+
+    if (itemCategory.trim().length === 0){
+        e.preventDefault();
+        document.querySelector("#UpdateItemCategoryError").style.visibility="visible";
+        document.querySelector("#UpdateItemCategory").style.borderColor = "red"
+    }else{
+        document.querySelector("#UpdateItemCategoryError").style.visibility="hidden";
+        document.querySelector("#UpdateItemCategory").style.borderColor = "black";
+    }
+
+    if (isNaN(itemQty) || itemQty.trim().length === 0 || itemQty <= 0){
+        e.preventDefault();
+        document.querySelector("#UpdateQtyError").style.visibility="visible";
+        document.querySelector("#UpdateQty").style.borderColor = "red"
+    }else{
+        document.querySelector("#UpdateQtyError").style.visibility="hidden";
+        document.querySelector("#UpdateQty").style.borderColor = "black";
+    }
+
+
+    if (!itemImage){
+        e.preventDefault();
+        document.querySelector("#UpadatefileUploadError").style.visibility="visible";
+        document.querySelector("#UpadatefileUpload").style.borderColor = "red"
+    }else{
+        document.querySelector("#UpadatefileUploadError").style.visibility="hidden";
+        document.querySelector("#UpadatefileUpload").style.borderColor = "black"
     }
 })

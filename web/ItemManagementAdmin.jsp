@@ -313,68 +313,75 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="no" style="text-align: center;"> Update Item Details</h3>
+                <h3 class="modal-title" id="UpdateItemMainLabel" style="text-align: center;"> Add New Item</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action=" " method="post" enctype="multipart/form-data">
+                <form action="UpdateItemServlet" method="post" id="UpdateItemForm" enctype="multipart/form-data">
 
                     <div class="row">
+                        <div class="form-group col-md-6">
                             <div class="form-group">
                                 <label > Item Name</label>
-                                <input type="text" class="form-control" id="UpdateItemName" placeholder="name " required>
+                                <input type="text" class="form-control" name="UpdateItemName" placeholder="name " required>
                             </div>
+                            <div id="UpdateItemNameError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid name.</div>
                             <div class="form-group">
                                 <label >Price(LKR)</label>
-                                <input type="text" class="form-control" id="updateItemPrice" placeholder="xxxx.xx " style="width: 50%" required>
+                                <input type="text" class="form-control" name="updateItemPrice" placeholder="xxxx.xx " style="width: 50%" required>
 
                             </div>
+                            <div id="updateItemPriceError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Invalid Price</div>
                             <div class="form-group">
                                 <label >Category</label>
-                                <select name="category" id="UpdateItemCategory" class="form-control" >
+                                <select  name="UpdateItemCategory"  id="UpdateItemCategory" class="form-control" >
                                     <option value="">-- SELECT CATEGORY -- </option>
-                                    <option value="">CATEGORY2</option>
-                                    <option value="">CATEGORY3</option>
-                                    <option value="">CATEGORY4</option>
+                                    <option value="Cake tools">Cake tools</option>
+                                    <option value="Decoration Items">Decoration Items</option>
+                                    <option value="Cake Ingredients">Cake Ingredients</option>
                                 </select>
 
                             </div>
+                            <div id="UpdateItemCategoryError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid Category.</div>
                             <div class="form-group">
                                 <label >Qty.</label>
-                                <input type="number" class="form-control" id="UpdateQty" style="width: 50%" required>
+                                <input type="number" class="form-control" name="UpdateQty" style="width: 50%" required>
 
                             </div>
+                            <div id="UpdateQtyError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid Quantity.</div>
                             <div class="form-group">
                                 <label > Brand</label>
-                                <input type="text" class="form-control" id="UpdateBrand">
+                                <input type="text" class="form-control" name="UpdateBrand">
                             </div>
                             <div class="form-group">
                                 <label >Company code</label>
-                                <input type="text" class="form-control" id="UpdateCompanyCode">
+                                <input type="text" class="form-control" name="UpdateCompanyCode">
                             </div>
                             <div class="form-group">
                                 <label >Description</label>
-                                <textarea class="form-control" id="UpdateDescription">
+                                <textarea class="form-control" name="UpdateDescription">
                                      </textarea>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <div style="text-align: center;"><label >Image Upload</label></div>
-                                <input type="file"   id="UpadatefileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                <input type="file"   id="UpadatefileUpload" name="UpadatefileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
                             </div>
+                            <div id="UpadatefileUploadError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
                         </div>
                     </div>
 
-
+                    <input style="display: none" type="number" id="ProductID" name="ProductID" >
                     <div class="form-group" style="float: right; margin-top: 10px">
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary" id="UpdateSaveBtn">Save</button>
                     </div>
 
 
                 </form>
             </div>
+
         </div>
     </div>
 </div>
