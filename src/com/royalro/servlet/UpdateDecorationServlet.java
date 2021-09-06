@@ -1,7 +1,5 @@
 package com.royalro.servlet;
 
-import com.royalro.service.DecorationService;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -21,6 +19,7 @@ import java.io.IOException;
 )
 
 public class UpdateDecorationServlet extends HttpServlet {
+
     private DecorationService decorationService;
 
     @Override
@@ -34,23 +33,27 @@ public class UpdateDecorationServlet extends HttpServlet {
         String name = request.getParameter("name");
         String category = request.getParameter("category");
         String description = request.getParameter("description");
-        //System.out.println( "id " + request.getParameter("id"));
-        int decorationId = Integer.parseInt(request.getParameter("decorationId"));
+        int decorationId = Integer.parseInt(request.getParameter("id"));
         float price = Float.parseFloat(request.getParameter("price"));
 
 
-
         Part filePart = request.getPart("image");
+        String fileName = filePart.getSubmittedFileName();
 
-        if (filePart != null){
-            String fileName = filePart.getSubmittedFileName();
-
-            for (Part part : request.getParts()) {
-                part.write("C:\\Users\\sandu\\Downloads\\NewPartner\\ROYALRO-Cake-Shop\\web\\assets\\img" + fileName);
-            }
-            decorationService.updateDecoration(decorationId,name,fileName,description,category,price);
-        }else{
-            decorationService.updateDecoration(decorationId,name,description,category,price);
+        if (fileName.equals("")) {
+            decorationService.updateDecoration(decorationId, name, description, category, price);
+        } else {
+            Thread newThread = new Thread(() -> {
+                try {
+                    for (Part part : request.getParts()) {
+                        part.write("C:\\Users\\sandu\\Downloads\\NewPartner\\ROYALRO-Cake-Shop\\web\\assets\\img" + fileName);
+                    }
+                } catch (IOException | ServletException e) {
+                    e.printStackTrace();
+                }
+            });
+            newThread.start();
+            decorationService.updateDecoration(decorationId, name, fileName, description, category, price);
         }
 
         RequestDispatcher dispatcher;
@@ -58,7 +61,7 @@ public class UpdateDecorationServlet extends HttpServlet {
         dispatcher.forward(request, response);
 
     }
-
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

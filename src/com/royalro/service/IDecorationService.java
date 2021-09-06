@@ -40,3 +40,4 @@ public interface IDecorationService {
 
     public ArrayList<Decoration> searchDecorationByCategoryAndName(String name, String category);
 }
+

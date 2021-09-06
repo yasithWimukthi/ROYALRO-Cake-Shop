@@ -1,7 +1,5 @@
 package com.royalro.servlet;
 
-import com.royalro.service.DecorationService;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +10,7 @@ import java.io.IOException;
 
 @WebServlet("/DeleteDecorationServlet")
 public class DeleteDecorationServlet extends HttpServlet {
+
     private DecorationService decorationService;
 
     @Override
@@ -22,7 +21,7 @@ public class DeleteDecorationServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        int decorationId = Integer.parseInt(request.getParameter("decorationId"));
+        int decorationId = Integer.parseInt(request.getParameter("id"));
         decorationService.deleteDecoration(decorationId);
 
         RequestDispatcher dispatcher;

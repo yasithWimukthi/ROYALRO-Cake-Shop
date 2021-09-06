@@ -1,5 +1,6 @@
 package com.royalro.model;
 
+//customer class
 public class Customer {
     private int customerId;
     private String name;

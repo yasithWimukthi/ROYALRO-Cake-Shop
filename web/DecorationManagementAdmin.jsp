@@ -55,7 +55,7 @@
 <div class="search-container"
      style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
     <form action="SearchServlet" method="post">
-        <input type="text" class="search-input" name="key" placeholder="Search Cakes..."
+        <input type="text" class="search-input" name="key" placeholder="Search Decorations..."
                style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white"/>
         <input type="hidden" value="admin" name="user">
         <button class="btn btn-light search-btn" type="button" style="background-color: white;">
@@ -75,7 +75,7 @@
                                        style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
         <li class="breadcrumb-item"><a href="adminDashboard.jsp"
                                        style="text-decoration: none;color: #5c636a;"><span>Admin</span></a></li>
-        <li class="breadcrumb-item"><a href="CakeManagementAdmin.jsp"
+        <li class="breadcrumb-item"><a href="DecorationManagementAdmin.jsp"
                                        style="text-decoration: none;color: #5c636a;"><span>Decoration Management</span></a>
         </li>
     </ol>
@@ -87,7 +87,7 @@
         <div id="sidebar">
             <ul>
                 <li><a href="index.jsp">Home</a></li>
-                <li><a href="#bannerformmodal" data-bs-toggle="modal" data-bs-target="#addNewDecoration">Add New Cake</a>
+                <li><a href="#bannerformmodal" data-bs-toggle="modal" data-bs-target="#addNewDecoration">Add New Decoration</a>
                 </li>
                 <li><a href="#">Categories</a></li>
                 <li><a href="#">Reports</a></li>
@@ -129,9 +129,8 @@
                                 <h4 class="card-title" style="color: rgb(104,0,167);"><%=decoration.getName()%>
                                 </h4>
                                 <img class="d-flex"
-                                     style="background-image: url('assets/img/Decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                <h6
-                                        class="text-success card-subtitle mb-2">WQC655 by Wishque Cake</h6>
+                                     style="background-image: url('assets/img/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+
                                 <p class="card-text"
                                    style="color: rgb(95,95,95);height: 120px"><%=decoration.getDescription()%>
                                 </p>
@@ -180,16 +179,15 @@
                      style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                     <%--                loop card from here--%>
                     <%for (Decoration decoration : birthdayDecorations) {%>
-                    <div data-bs-toggle="modal" data-bs-target="#DecorationDetails">
+                    <div data-bs-toggle="modal" data-bs-target="#decorationDetails">
                         <div class="card shadow-lg" data-bs-hover-animate="pulse"
                              style="width: 300px;height: 550px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                             <div class="card-body">
                                 <h4 class="card-title" style="color: rgb(104,0,167);"><%=decoration.getName()%>
                                 </h4>
                                 <img class="d-flex"
-                                     style="background-image: url('assets/img/Decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                <h6
-                                        class="text-success card-subtitle mb-2">WQC655 by Wishque Cake</h6>
+                                     style="background-image: url('assets/img/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+
                                 <p class="card-text"
                                    style="color: rgb(95,95,95);height: 120px"><%=decoration.getDescription()%>
                                 </p>
@@ -352,9 +350,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Category</label>
-                                    <select name="catagory" name="category" id="update-category-input" class="form-control">
-                                        <option value="">-- SELECT CATAGORY --</option>
-                                        <option selected value="Wedding Decorations">Wedding Decorations</option>
+                                    <select name="category" id="update-category-input" class="form-control">
+                                        <option value="">-- SELECT CATEGORY --</option>
+                                        <option value="Wedding Decorations">Wedding Decorations</option>
                                         <option value="Birthday Decorations">Birthday Decorations</option>
                                     </select>
                                 </div>
@@ -411,7 +409,7 @@
                 Are you sure want to delete this item? <p id="deleteName"></p>
             </div>
             <div class="modal-footer">
-                <form>
+                <form method="post" action="DeleteDecorationServlet">
                     <input style="display: none" type="number" id="deleteDecorationId" name="id" >
                     <button type="submit" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm
                     </button>
@@ -449,6 +447,6 @@
 <script src="assets/js/Side-Swipe-Menu-1.js"></script>
 <script src="assets/js/Side-Swipe-Menu.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
-<script src="assets/js/cakeManagement.js"></script>
+<script src="assets/js/decorationManagement.js"></script>
 </body>
 </html>
