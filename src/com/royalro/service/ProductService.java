@@ -112,6 +112,32 @@ public class ProductService implements IProductService{
         return productList;
     }
 
+    @Override
+    public void UpdateProduct(String name, String category, String description, String brand, String companyCode, String imagePath, float price, int quantity,int ProductID) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.UPDATE_PRODUCT;
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,imagePath);
+            preparedStatement.setString(QueryConstants.COLUMN_THREE,description);
+            preparedStatement.setString(QueryConstants.COLUMN_FOUR,brand);
+            preparedStatement.setString(QueryConstants.COLUMN_FIVE,companyCode);
+            preparedStatement.setString(QueryConstants.COLUMN_SIX,imagePath);
+            preparedStatement.setFloat(QueryConstants.COLUMN_SEVEN,price);
+            preparedStatement.setInt(QueryConstants.COLUMN_EIGHT,quantity);
+            preparedStatement.setInt(QueryConstants.COLUMN_NINE,ProductID);
+
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+    }
+
     public ArrayList<String> getAllCategories() {
         ArrayList<String> categoriesList = new ArrayList<>();
         try {
