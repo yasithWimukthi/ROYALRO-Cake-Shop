@@ -47,6 +47,10 @@ public class DecorationItem {
         return price;
     }
 
+    public void setDecorationId(int decorationId) {
+        this.decorationId = decorationId;
+    }
+
     public void setPrice(float price) {
         this.price = price;
     }
