@@ -57,11 +57,11 @@
                 <h1 style="font-size: 20px;width: 220px;padding: 2px;margin-top: 20px;">My Shopping cart</h1>
             </div>
             <div class="col-md-4 col-lg-2" style="background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));height: 550px; padding: 20px;border-radius: 5px">
-                <div style="height: 75px;"><label name= name style="width: 130px;padding: 2px;"><strong>User Name</strong></label><label style="width: 130px;"><%=customer.getName()%></label></div>
-                <div style="height: 75px;"><label style="width: 130px;"><strong>Email address</strong></label><label style="width: 130px;"><%=customer.getEmail()%></label></div>
-                <div style="height: 75px;"><label style="width: 130px;"><strong>Mobile</strong></label><label style="width: 130px;"><%=customer.getMobile()%></label></div>
-                <div style="height: 75px;"><label style="width: 130px;"><strong>Birthday</strong></label><label style="width: 130px;"><%=customer.getBirthDate()%></label></div>
-                <div style="height: 75px;"><label style="width: 130px;"><strong>Gender</strong></label><label style="width: 130px;"><%=customer.getGender()%></label></div>
+                <div style="height: 75px;"><label name= name style="width: 130px;padding: 2px;"><strong>User Name</strong></label><label style="width: 130px;margin-bottom: 50px"><%=customer.getName()%></label></div>
+                <div style="height: 75px;"><label style="width: 130px;"><strong>Email address</strong></label><label style="width: 130px;margin-bottom: 50px"><%=customer.getEmail()%></label></div>
+                <div style="height: 75px;"><label style="width: 130px;"><strong>Mobile</strong></label><label style="width: 130px;margin-bottom: 50px"><%=customer.getMobile()%></label></div>
+                <div style="height: 75px;"><label style="width: 130px;"><strong>Birthday</strong></label><label style="width: 130px;margin-bottom: 50px"><%=customer.getBirthDate()%></label></div>
+                <div style="height: 75px;"><label style="width: 130px;"><strong>Gender</strong></label><label style="width: 130px;margin-bottom: 50px"><%=customer.getGender()%></label></div>
             </div>
             <div class="col-md-4 col-lg-7" style="height: 550px;">
                 <div style="height: 300px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255)); padding: 20px;border-radius: 5px">

@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>HEADER</title>
+    <title>AdminDashboard</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script">
@@ -38,7 +38,7 @@
     </div>
     <div class="row">
         <div class="col offset-xl-2"><a href="#"><img src="assets/img/5%20Reports.png" width="150"></a></div>
-        <div class="col offset-xl-0"><a href="#"><img src="assets/img/6%20Feedback.png" width="150"></a></div>
+        <div class="col offset-xl-0"><a href="#"><img src="assets/img/6%20Feedback.png" width="150" onclick="document.location = 'Feedback.jsp'"></a></div>
         <div class="col offset-xl-0"><a href="#"><img src="assets/img/7%20Transactions.png" width="170"></a></div>
     </div>
 </div>
