@@ -2,7 +2,6 @@ package com.royalro.service;
 
 import com.royalro.model.Customer;
 import com.royalro.util.DBConnectionUtil;
-import com.royalro.util.Queries;
 import com.royalro.util.QueryConstants;
 
 import java.sql.Connection;
@@ -34,22 +33,28 @@ public class CustomerService implements ICustomer {
         }
     }
 
-
     @Override
-    public Customer getAddress2() {
-        ArrayList<Customer> customerList = new ArrayList<>();
+    public Customer  getCustomer() {
+        Customer customer = new Customer();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = "SELECT `address2` FROM customer where customerId = ?";
+            String sql = "SELECT * FROM customer where customerId = ?";
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setInt(1,1);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Customer customer = new Customer();
-                customer.setAddress2(resultSet.getString(1));
+
+                customer.setName(resultSet.getString("name"));
+                customer.setEmail(resultSet.getString("email"));
+                customer.setMobile(resultSet.getString("mobile"));
+                customer.setGender(resultSet.getString("gender"));
+                customer.setBirthDate(resultSet.getString("birthDate"));
+                customer.setAddresses(resultSet.getString("address"));
+                customer.setAddress2(resultSet.getString("address2"));
+                customer.setCustomerId(resultSet.getInt("customerId"));
                 System.out.println(customer.getAddress2());
                 //customerList.add(customer);
-                return customer;
+
             }
 
         } catch (SQLException | ClassNotFoundException e) {
@@ -57,12 +62,49 @@ public class CustomerService implements ICustomer {
         } finally {
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
-        return null;
+        return customer;
+
     }
 
 
 
+    @Override
+    public void updateProfile(int customerId, String name, String email, String mobile, String gender) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql =  "UPDATE royalro.customer SET `name` = ?, `email` = ? , `mobile` = ? WHERE customerId = ?";
+            preparedStatement = conn.prepareStatement(sql);
 
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,email);
+            preparedStatement.setString(QueryConstants.COLUMN_THREE,mobile);
+            preparedStatement.setInt(QueryConstants.COLUMN_FOUR,customerId);
+
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+    }
+
+
+
+    @Override
+    public void deleteProfile(int customerId) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql =  "DELETE FROM royalro.customer WHERE customerId = ?" ;
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(QueryConstants.COLUMN_ONE,customerId);
+            preparedStatement.execute();
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+    }
 
 
 }

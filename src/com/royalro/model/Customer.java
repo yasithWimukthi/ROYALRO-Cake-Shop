@@ -6,7 +6,7 @@ public class Customer {
     private String email;
     private String mobile;
     private String birthDate;
-    private String addresses;
+    private String address;
     private String address2;
     private String gender;
 
@@ -20,7 +20,7 @@ public class Customer {
         this.email = email;
         this.mobile = mobile;
         this.birthDate = birthDate;
-        this.addresses = address;
+        this.address = address;
         this.address2 =address2;
         this.gender = gender;
     }
@@ -66,11 +66,11 @@ public class Customer {
     }
 
     public String getAddresses() {
-        return addresses;
+        return address;
     }
 
     public void setAddresses(String address) {
-        this.addresses = address;
+        this.address = address;
     }
 
     public String getAddress2() {

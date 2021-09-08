@@ -20,7 +20,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Untitled</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/Add-Another-Button.css">
@@ -31,9 +31,7 @@
 <body>
 <%
     CustomerService customerService = new CustomerService();
-    Customer customer = customerService.getAddress2();
-
-
+    Customer customer = customerService.getCustomer();
 %>
 
 
@@ -59,11 +57,11 @@
                 <h1 style="font-size: 20px;width: 220px;padding: 2px;margin-top: 20px;">My Shopping cart</h1>
             </div>
             <div class="col-md-4 col-lg-2" style="background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));height: 550px; padding: 20px;border-radius: 5px">
-                <div style="height: 75px;"><label name= name style="width: 130px;padding: 2px;"><strong>User Name</strong></label><label style="width: 130px;">Kamal Perera</label></div>
-                <div style="height: 75px;"><label style="width: 130px;"><strong>Email address</strong></label><label style="width: 130px;">kamal@gmail.com</label></div>
-                <div style="height: 75px;"><label style="width: 130px;"><strong>Mobile</strong></label><label style="width: 130px;">0716552345</label></div>
-                <div style="height: 75px;"><label style="width: 130px;"><strong>Birthday</strong></label><label style="width: 130px;">12.12.2012</label></div>
-                <div style="height: 75px;"><label style="width: 130px;"><strong>Gender</strong></label><label style="width: 130px;">male</label></div>
+                <div style="height: 75px;"><label name= name style="width: 130px;padding: 2px;"><strong>User Name</strong></label><label style="width: 130px;"><%=customer.getName()%></label></div>
+                <div style="height: 75px;"><label style="width: 130px;"><strong>Email address</strong></label><label style="width: 130px;"><%=customer.getEmail()%></label></div>
+                <div style="height: 75px;"><label style="width: 130px;"><strong>Mobile</strong></label><label style="width: 130px;"><%=customer.getMobile()%></label></div>
+                <div style="height: 75px;"><label style="width: 130px;"><strong>Birthday</strong></label><label style="width: 130px;"><%=customer.getBirthDate()%></label></div>
+                <div style="height: 75px;"><label style="width: 130px;"><strong>Gender</strong></label><label style="width: 130px;"><%=customer.getGender()%></label></div>
             </div>
             <div class="col-md-4 col-lg-7" style="height: 550px;">
                 <div style="height: 300px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255)); padding: 20px;border-radius: 5px">
@@ -141,32 +139,32 @@
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <label > Full Name</label>
-                                <input type="text"name = "name" value="Kamal Perera" class="form-control" id="UpdateDecorationName" placeholder="name " required>
+                                <input type="text" name="name" value="<%=customer.getName()%>" class="form-control" id="UpdateDecorationName" placeholder="name " required>
                             </div>
                             <div class="form-group">
                                 <label >Email address</label>
-                                <input type="email" name = "email" value="kamal@gmail.com" class="form-control" id="UpdateDecorationPrice" placeholder="" required>
+                                <input type="email" name="email" value="<%=customer.getEmail()%>"  class="form-control" id="UpdateDecorationPrice" placeholder="" required>
 
                             </div>
 
                             <div class="form-group">
                                 <label >Mobile</label>
-                                <input type="number" name = "mobile" value="0716552345" class="form-control" id="UpdateDecorationPrice" placeholder="" style="width: 50%" required>
+                                <input type="number" name="mobile" value="<%=customer.getMobile()%>" class="form-control" id="UpdateDecorationMobile" placeholder="" style="width: 50%" required>
 
                             </div>
 
                             <div class="form-group">
                                 <label >Birthday</label>
-                                <input type="text" name = "bday" value="12/12/2012"class="form-control" id="UpdateBday" placeholder="" style="width: 50%" disabled>
+                                <input type="text" name="bday" class="form-control" value="<%=customer.getBirthDate()%>" id="UpdateBday" placeholder="" style="width: 50%" disabled>
 
                             </div>
 
                             <div class="form-group">
                                 <label >Gender</label>
-                                <select name="Gender" value="Male"id="UpdateDecorationCategory" class="form-control" disabled>
+                                <select name="gender" id="UpdateDecorationCategory" value="<%=customer.getGender()%>" class="form-control" disabled>
 <%--                                    <option value="">Select</option>--%>
-                                    <option value="">Male</option>
-                                    <option value="">Female</option>
+                                    <option selected value="male">Male</option>
+                                    <option value="female">Female</option>
                                 </select>
 
                             </div>
@@ -174,6 +172,7 @@
                         </div>
 
                         </div>
+                    <input type="number" style="display: none"  name="customerId" value=<%=customer.getCustomerId()%> >
                     <div class="form-group" style="float: right; margin-top: 10px">
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>
                         <button type="submit" class="btn btn-primary">Save</button>
@@ -237,6 +236,7 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
+<script src="assets/js/profileManagement.js"></script>
 <br>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>

@@ -20,4 +20,16 @@ public class Queries {
 
     /*Queries for user authentication*/
     public static String CREATE_LOGIN = "INSERT INTO LOGIN (email,password) VALUES (?,?)";
+    public static String GET_CUSTOMER = "SELECT * FROM customer where customerId = (?)";
+
+    /*Queries for profile management*/
+    public static String ADD_ADDRESS = "UPDATE customer SET address2 = ? WHERE customerId ?";
+    public static String GET_ADDRESS = "SELECT `address2` FROM customer where customerId = (?)";
+
+    public static String UPDATE_PROFILE = "UPDATE CAKES SET name = ?, imagePath = ? , description = ?, category = ?, price = ?, weight = ? WHERE cakeId = ?";
+    public static String DELETE_PROFILE = "DELETE FROM CAKES WHERE customerID = ?" ;
+
+
+
+
 }

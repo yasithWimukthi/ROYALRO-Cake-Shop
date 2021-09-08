@@ -9,7 +9,18 @@ public interface ICustomer {
             String address2
     );
 
-    public Customer getAddress2();
+    public Customer getCustomer(
 
+    );
+
+    public void updateProfile(
+            int customerId,
+            String name,
+            String email,
+            String mobile,
+            String gender
+    );
+
+    public void deleteProfile(int customerId);
 
 }
