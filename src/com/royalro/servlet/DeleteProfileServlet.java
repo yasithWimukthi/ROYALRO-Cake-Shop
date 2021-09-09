@@ -23,7 +23,7 @@ public class DeleteProfileServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        int customerId = Integer.parseInt(request.getParameter("id"));
+        int customerId = Integer.parseInt(request.getParameter("customerId"));
         customerService.deleteProfile(customerId);
 
         RequestDispatcher dispatcher;

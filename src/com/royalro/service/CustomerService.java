@@ -92,12 +92,12 @@ public class CustomerService implements ICustomer {
 
 
     @Override
-    public void deleteProfile(int customerId) {
+    public void deleteProfile(int id) {
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql =  "DELETE FROM royalro.customer WHERE customerId = ?" ;
+            String sql="DELETE FROM royalro.customer WHERE customerId = ?" ;
             preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setInt(QueryConstants.COLUMN_ONE,customerId);
+            preparedStatement.setInt(QueryConstants.COLUMN_ONE,id);
             preparedStatement.execute();
         }catch (SQLException | ClassNotFoundException  e){
             e.printStackTrace();

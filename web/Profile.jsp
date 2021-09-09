@@ -120,7 +120,7 @@
         </div>
     </div>
 </div>
-<div class="btn-group" role="group" style="margin-top: 10px;border-radius: 5px"><button class="btn btn-primary" type="button" style="width: 340px;margin-left: 100px;margin-right: 5px;border-radius: 5px"data-bs-toggle="modal" data-bs-target="#updateProfile">UPDATE PROFILE</button><button class="btn btn-primary" type="button" style="width: 310px;margin-right: 5px;border-radius: 5px">CHANGE PASSWORD</button><button class="btn btn-danger" type="button" style="width: 320px;border-radius: 5px" data-bs-toggle="modal" data-bs-target="#deleteDeco">REMOVE ACCOUNT</button></div>
+<div class="btn-group" role="group" style="margin-top: 10px;border-radius: 5px"><button class="btn btn-primary" type="button" style="width: 340px;margin-left: 100px;margin-right: 5px;border-radius: 5px"data-bs-toggle="modal" data-bs-target="#updateProfile">UPDATE PROFILE</button><button class="btn btn-primary" type="button" style="width: 310px;margin-right: 5px;border-radius: 5px">CHANGE PASSWORD</button><button class="btn btn-danger" type="button" style="width: 320px;border-radius: 5px" data-bs-toggle="modal" data-bs-target="#deleteProfileModal">REMOVE ACCOUNT</button></div>
 <br>
 
 
@@ -213,7 +213,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteDeco" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -225,8 +225,11 @@
                 Are you sure want to delete the profile?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm</button>
+                <form method="post" action="DeleteProfileServlet">
+                    <input type="number" style="display: none"  name="customerId" value=<%=customer.getCustomerId()%> >
+                <button type="submit" class="btn btn-danger" style="text-align: left;margin-right: 300px">Confirm</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel</button>
+                </form>
             </div>
         </div>
     </div>

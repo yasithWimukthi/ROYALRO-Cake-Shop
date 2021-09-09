@@ -21,6 +21,6 @@ public interface ICustomer {
             String gender
     );
 
-    public void deleteProfile(int customerId);
+    public void deleteProfile(int id);
 
 }

@@ -81,3 +81,14 @@ updateCakeForm.addEventListener("submit", e =>{
     }
 
 })
+
+
+let deleteProfileModal = document.getElementById('deleteProfileModal')
+deleteProfileModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let id = button.getAttribute('data-bs-id')
+    let name = button.getAttribute('data-bs-name')
+
+    deleteProfileModal.querySelector('#deleteCustomerId').value = id;
+    deleteProfileModal.querySelector('#deleteName').innerHTML = name;
+})
