@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/SignUpServlet")
@@ -30,6 +31,10 @@ public class SignUpServlet extends HttpServlet {
 
         auth.createLogin(email,password);
         auth.signUp(name,email,mobile);
+
+        HttpSession session=request.getSession();
+        session.setAttribute("email",email);
+        session.setAttribute("type","customer");
 
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
