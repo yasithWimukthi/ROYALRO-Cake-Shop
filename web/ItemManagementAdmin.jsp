@@ -150,7 +150,14 @@
                                             data-bs-ProductID ="<%=item.getProductId()%>"
                                             data-bs-image ="<%=item.getImagePath()%>"
                                     >Update</button>
-                                    <button class="btn btn-danger" type="button" style="margin-left: 53px;" data-bs-toggle="modal" data-bs-target="#deleteItem">Delete</button>
+                                    <button
+                                            class="btn btn-danger"
+                                            type="button" style="margin-left: 53px;"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteItem"
+                                            data-bs-ProductID ="<%=item.getProductId()%>"
+                                            data-bs-name ="<%=item.getName()%>"
+                                    >Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -417,10 +424,13 @@
             </div>
             <div class="modal-body">
                 Are you sure want to delete this item?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel</button>
+               <center><p id="deleteItemName" name="deleteItemName"></p></center>
+                <form method="post" action="DeleteItemServlet">
+
+                    <input style="display: none" type="number" id="deletePID" name="deletePID" >
+                 <button type="submit" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm</button>
+                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel</button>
+                </form>
             </div>
         </div>
     </div>
