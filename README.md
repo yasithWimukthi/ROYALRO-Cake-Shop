@@ -7,7 +7,7 @@
 |--|--|--|--|
 | H.R. Yasith Wimukthi |IT19966922  | yasithWimukthi | cake-management-backend, cake-management-customer-view |
 |Alahakoon A.G.S.P|IT19960432|ShalithaAlahakoon|Item_Management_front_end_admin, Item_Management_2|
-|Arunoda D.P.H|IT19164236|HiruniArunoda|cart_management|
+|Arunoda D.P.H|IT19164236|HiruniArunoda|cart_management, cart-backend|
 Dharmadasa K.R.W.S|IT19970578|SandunDharmadasa|decoration-management DecorationManagement_Backend|
 
 # Project Description
