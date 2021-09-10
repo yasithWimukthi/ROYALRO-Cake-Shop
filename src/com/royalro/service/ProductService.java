@@ -120,7 +120,7 @@ public class ProductService implements IProductService{
             preparedStatement = conn.prepareStatement(sql);
 
             preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
-            preparedStatement.setString(QueryConstants.COLUMN_TWO,imagePath);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,category);
             preparedStatement.setString(QueryConstants.COLUMN_THREE,description);
             preparedStatement.setString(QueryConstants.COLUMN_FOUR,brand);
             preparedStatement.setString(QueryConstants.COLUMN_FIVE,companyCode);
@@ -186,5 +186,46 @@ public class ProductService implements IProductService{
         }
         return productList;
 
+    }
+
+    public void UpdateProduct(String name, String category, String description, String brand, String companyCode, float price, int quantity, int ProductID) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.UPDATE_PRODUCT_2;
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,category);
+            preparedStatement.setString(QueryConstants.COLUMN_THREE,description);
+            preparedStatement.setString(QueryConstants.COLUMN_FOUR,brand);
+            preparedStatement.setString(QueryConstants.COLUMN_FIVE,companyCode);
+            preparedStatement.setString(QueryConstants.COLUMN_SIX, String.valueOf(price));
+            preparedStatement.setFloat(QueryConstants.COLUMN_SEVEN,quantity);
+            preparedStatement.setInt(QueryConstants.COLUMN_EIGHT,ProductID);
+
+
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+    }
+
+    public void deleteItemByID(int id) {
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.DELETE_ITEM;
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setInt(QueryConstants.COLUMN_ONE,id);
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
     }
 }

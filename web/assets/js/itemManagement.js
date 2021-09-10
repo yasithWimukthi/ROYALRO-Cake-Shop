@@ -135,3 +135,13 @@ updateItemModal.addEventListener('show.bs.modal', function (event) {
 
 
 })
+
+let deleteItemModal = document.getElementById('deleteItem')
+deleteItemModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let id = button.getAttribute('data-bs-ProductID')
+    let name = button.getAttribute('data-bs-name')
+
+    deleteItemModal.querySelector('#deletePID').value = id;
+    deleteItemModal.querySelector('#deleteItemName').innerHTML = name;
+})

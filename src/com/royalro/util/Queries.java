@@ -18,6 +18,7 @@ public class Queries {
     public static String GET_CATEGORIES = "select distinct p.category from royalro.products p";
     public static String UPDATE_PRODUCT = "UPDATE PRODUCTS SET name = ?, category = ? , description = ?, brand = ?,companyCode = ?, imagePath = ?,price = ?,quantity = ? WHERE productID = ?";
     public static String UPDATE_PRODUCT_2 = "UPDATE PRODUCTS SET name = ?, category = ? , description = ?, brand = ?,companyCode = ?,price = ?,quantity = ? WHERE productID = ?";
+    public static String DELETE_ITEM = "DELETE FROM PRODUCTS WHERE productID = ?" ;
 
     /*Queries for decorations management*/
     public static String ADD_DECORATION = "INSERT INTO decorations(name,imagePath,description,category,price) VALUES (?,?,?,?,?)";
