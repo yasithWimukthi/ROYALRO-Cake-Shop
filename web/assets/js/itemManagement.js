@@ -131,5 +131,7 @@ updateItemModal.addEventListener('show.bs.modal', function (event) {
     updateItemModal.querySelector('#UpdateCompanyCode').value = CompanyCode;
     updateItemModal.querySelector('#UpdateDescription').value = description;
     updateItemModal.querySelector('#ProductID').value = id;
-    updateItemModal.querySelector('#UpadatefileUpload').value = image;
+    updateItemModal.querySelector('#UpdateImage').value = image;
+
+
 })

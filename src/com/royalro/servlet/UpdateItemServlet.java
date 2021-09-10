@@ -14,7 +14,12 @@ import javax.servlet.http.Part;
 import java.io.IOException;
 
 @WebServlet("/UpdateItemServlet")
-@MultipartConfig()
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+        maxFileSize = 1024 * 1024 * 10,      // 10 MB
+        maxRequestSize = 1024 * 1024 * 100   // 100 MB
+)
+
 public class UpdateItemServlet extends HttpServlet {
 
 
@@ -31,20 +36,29 @@ public class UpdateItemServlet extends HttpServlet {
         String image = request.getParameter("UpadatefileUpload");
         String ProductID =request.getParameter("ProductID");
 
-        Part filepart = request.getPart("UpadatefileUpload");
-        String fileName = getSubmittedFileName(filepart);
+        Part filePart = request.getPart("image");
+        String fileName = getSubmittedFileName(filePart);
 
-        for (Part part : request.getParts()) {
-            part.write(CommonConstants.ITEM_IMAGES_FILE_PATH + fileName);
-
-        }
         String ImagePath = "assets/img/Items/" + fileName;
         ProductService ps = new ProductService();
 
 
-        ps.UpdateProduct(name, category, description, brand, companyCode, ImagePath, Float.parseFloat(price), Integer.parseInt(qty),Integer.parseInt(ProductID));
 
-
+        if (fileName.equals("")){
+            ps.UpdateProduct(name, category, description, brand, companyCode,  Float.parseFloat(price), Integer.parseInt(qty),Integer.parseInt(ProductID));
+        }else{
+            Thread newThread = new Thread(() -> {
+                try {
+                    for (Part part : request.getParts()) {
+                        part.write(CommonConstants.ITEM_IMAGES_FILE_PATH + fileName);
+                    }
+                } catch (IOException | ServletException e) {
+                    e.printStackTrace();
+                }
+            });
+            newThread.start();
+            ps.UpdateProduct(name, category, description, brand, companyCode, ImagePath, Float.parseFloat(price), Integer.parseInt(qty),Integer.parseInt(ProductID));
+        }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ItemManagementAdmin.jsp");
         dispatcher.forward(request, response);
     }
