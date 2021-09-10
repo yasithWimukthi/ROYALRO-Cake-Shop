@@ -382,7 +382,10 @@
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <div style="text-align: center;"><label >Image Upload</label></div>
-                                <input type="file"   id="UpadatefileUpload" name="UpadatefileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;"
+                                <input type="file"
+                                       id="UpdateImage"
+                                       name="image"
+                                       style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;"
                                        value="default">
                             </div>
                             <div id="UpadatefileUploadError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
