@@ -122,7 +122,20 @@
                                 for(ProductItem item : itemsList) {
                                     if(item.getCategory().equals(category)){
                             %>
-                               <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
+                               <div
+                                       id="card"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#ItemDetails"
+                                       data-bs-name ="<%=item.getName()%>"
+                                       data-bs-price ="<%=item.getPrice()%>"
+                                       data-bs-category ="<%=item.getCategory()%>"
+                                       data-bs-qty ="<%=item.getQuantity()%>"
+                                       data-bs-brand ="<%=item.getBrand()%>"
+                                       data-bs-companyCode ="<%=item.getCompanyCode()%>"
+                                       data-bs-description ="<%=item.getDescription()%>"
+                                       data-bs-ProductID ="<%=item.getProductId()%>"
+                                       data-bs-image ="<%=item.getImagePath()%>"
+                               >
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
@@ -209,7 +222,9 @@
                             for(ProductItem item : categoriesList2) {
                             if(item.getCategory().equals(pi.getCategory())){
                         %>
-                        <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
+                        <div
+                                data-bs-toggle="modal"
+                                data-bs-target="#ItemDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
@@ -427,7 +442,7 @@
                <center><p id="deleteItemName" name="deleteItemName"></p></center>
                 <form method="post" action="DeleteItemServlet">
 
-                    <input style="display: none" type="number" id="deletePID" name="deletePID" >
+                    <input style="display: none" type="number" id="deletePID" name=" " >
                  <button type="submit" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm</button>
                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel</button>
                 </form>
@@ -446,7 +461,50 @@
                 </button>
             </div>
             <div class="modal-body">
-                Details will display here
+                <table class="table">
+                    <thead>
+                    <tr></tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="text-center" colspan="2">
+                            <img id="Image" name="Image" width="150" height="100" style="border-radius: 10px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Item ID</td>
+                        <td><p  id="ProductID2" name="ProductID2"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Item Name</td>
+                        <td ><p id="ItemName" name="ItemName"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td id="ItemPrice" name="ItemPrice"></td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td id="ItemCategory" name="ItemCategory"></td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td id="Qty" name="Qty"></td>
+                    </tr>
+                    <tr>
+                        <td>Brand</td>
+                        <td id="Brand" name="Brand"></td>
+                    </tr>
+                    <tr>
+                        <td>Company Code</td>
+                        <td id="CompanyCode" name="CompanyCode"></td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td id="Description" name="Description"></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>

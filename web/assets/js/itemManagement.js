@@ -145,3 +145,33 @@ deleteItemModal.addEventListener('show.bs.modal', function (event) {
     deleteItemModal.querySelector('#deletePID').value = id;
     deleteItemModal.querySelector('#deleteItemName').innerHTML = name;
 })
+
+// diplay all the details
+let DisplayItemDetailsModal = document.getElementById('ItemDetails')
+DisplayItemDetailsModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget;
+    let name = button.data('data-bs-name');
+    let price = button.getAttribute('data-bs-price');
+    let category = button.getAttribute('data-bs-category');
+    let Qty= button.getAttribute('data-bs-qty');
+    let Brand= button.getAttribute('data-bs-brand');
+    let CompanyCode= button.getAttribute('data-bs-companyCode');
+    let description = button.getAttribute('data-bs-description');
+    let id = button.getAttribute('data-bs-ProductID');
+    let image = button.getAttribute('data-bs-image');
+
+
+
+    updateItemModal.querySelector('#ItemName').value = name;
+    updateItemModal.querySelector('#ItemPrice').value = price;
+    updateItemModal.querySelector('#ItemCategory').value = category;
+    updateItemModal.querySelector('#Qty').value = Qty;
+    updateItemModal.querySelector('#Brand').value = Brand;
+    updateItemModal.querySelector('#CompanyCode').value = CompanyCode;
+    updateItemModal.querySelector('#Description').value = description;
+    updateItemModal.querySelector('#ProductID2').innerHTML = id;
+    updateItemModal.querySelector('#Image').value = image;
+
+
+
+})
