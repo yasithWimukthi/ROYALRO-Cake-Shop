@@ -20,7 +20,7 @@ public interface IProductService {
 
     public ArrayList<ProductItem> searchProductByName(String name);
 
-    void UpdateProduct(
+    public void UpdateProduct(
             String name,
             String category,
             String description,

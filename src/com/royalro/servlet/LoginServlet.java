@@ -8,32 +8,40 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.SQLException;
+
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         boolean isTrue;
-        String type;
+        String userTyoe;
 
         UserAuthentication auth = new UserAuthentication();
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-
         isTrue = auth.validate(email,password);
-        type = auth.getUserType(email);
+        userTyoe = auth.getUserType(email);
 
-        if(isTrue && type.equals("Admin"))
+        HttpSession session=request.getSession();
+        session.setAttribute("email",email);
+
+
+        if(isTrue && userTyoe.equals("Admin"))
         {
+            session.setAttribute("UserType",userTyoe);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adminDashboard.jsp");
             dispatcher.forward(request, response);
+
         }
-        else if (isTrue && type.equals("customer")){
+        else if (isTrue && userTyoe.equals("customer")){
+            session.setAttribute("UserType",userTyoe);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Profile.jsp");
             dispatcher.forward(request, response);
+
         }
         else
         {
