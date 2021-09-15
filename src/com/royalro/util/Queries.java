@@ -1,6 +1,7 @@
 package com.royalro.util;
 
 public class Queries {
+
     /*Queries for cake management*/
     public static String ADD_CAKE = "INSERT INTO CAKES (name,imagePath,description,category,price,weight) VALUES (?,?,?,?,?,?)";
     public static String GET_ALL_CAKES = "SELECT * FROM CAKES" ;
@@ -28,4 +29,6 @@ public class Queries {
     /*Queries for user authentication*/
     public static String CREATE_LOGIN = "INSERT INTO LOGIN (email,password) VALUES (?,?)";
     public static String SIGN_UP = "INSERT INTO customers (name,email,mobile) VALUES (?,?,?)";
+    public static String LOGIN = "SELECT * FROM login WHERE email = ? and password = ?";
+    public static final String GET_TYPE =" SELECT * FROM customers WHERE email = ? ";
 }
