@@ -78,7 +78,7 @@
                     <li><a href="index.jsp">Home</a> </li>
                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewItem">Add New Item</a> </li>
                     <li><a href="#" >Categories</a></li>
-                    <li><a href="#">Reports</a></li>
+                    <li><a href="ItemReport.jsp">Reports</a></li>
                     <li><a href="adminDashboard.jsp">Admin Page</a></li>
                 </ul>
             </div>
@@ -140,7 +140,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
                                     <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                    <h4 class="text-muted card-subtitle mb-2">Price:<%= item.getPrice()%></h4>
+                                    <h4 class=" card-subtitle mb-2" style="color: #f00c0c">Price:<%= item.getPrice()%></h4>
                                     <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph">
 
                                             Brand: <%= item.getBrand()%><br>
