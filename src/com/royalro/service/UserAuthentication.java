@@ -6,12 +6,14 @@ import com.royalro.util.QueryConstants;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserAuthentication implements IUserAuthentication{
 
     private static Connection conn;
-
+    private static ResultSet resultSet;
+    private static boolean isSuccess;
     private PreparedStatement preparedStatement;
 
     @Override
@@ -48,5 +50,53 @@ public class UserAuthentication implements IUserAuthentication{
         }finally {
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
+    }
+
+    public boolean validate(String email, String password) {
+
+        try {
+        conn = DBConnectionUtil.getConnection();
+        String sql = Queries.LOGIN;
+        preparedStatement = conn.prepareStatement(sql);
+
+
+        preparedStatement.setString(QueryConstants.COLUMN_ONE,email);
+        preparedStatement.setString(QueryConstants.COLUMN_TWO,password);
+        resultSet = preparedStatement.executeQuery();
+
+        if (resultSet.next()) {
+            isSuccess = true;
+        } else {
+            isSuccess = false;
+        }
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return isSuccess;
+    }
+
+    public String getUserType(String email) {
+        String type = null;
+        try {
+            conn = DBConnectionUtil.getConnection();
+            String sql = Queries.GET_TYPE;
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setString(QueryConstants.COLUMN_ONE,email);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                type = "customer";
+            } else {
+                type = "Admin";
+            }
+        }catch (SQLException | ClassNotFoundException  e){
+            e.printStackTrace();
+        }finally {
+            DBConnectionUtil.closeConnection(preparedStatement, conn);
+        }
+        return type;
     }
 }
