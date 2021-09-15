@@ -442,7 +442,7 @@
                <center><p id="deleteItemName" name="deleteItemName"></p></center>
                 <form method="post" action="DeleteItemServlet">
 
-                    <input style="display: none" type="number" id="deletePID" name=" " >
+                    <input style="display: none" type="number" id="deletePID" name="deletePID" >
                  <button type="submit" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm</button>
                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel</button>
                 </form>

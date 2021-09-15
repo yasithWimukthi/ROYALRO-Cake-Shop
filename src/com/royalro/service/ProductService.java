@@ -1,6 +1,5 @@
 package com.royalro.service;
 
-import com.royalro.model.Cake;
 import com.royalro.model.ProductItem;
 import com.royalro.util.DBConnectionUtil;
 import com.royalro.util.Queries;
