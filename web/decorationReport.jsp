@@ -65,6 +65,7 @@
             </div>
 
             <%--    Main area--%>
+
             <div class="main-content">
                 <div class="swipe-area" style="background-color: rgb(255,255,255);"></div>
                 <a id="sidebar-toggle" data-toggle=".container" href="#" style="background-color: #ed4dc0;">
