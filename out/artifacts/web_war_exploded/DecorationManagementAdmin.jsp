@@ -80,10 +80,10 @@
         <div id="sidebar">
             <ul>
                 <li><a href="index.jsp">Home</a></li>
-                <li><a href="#bannerformmodal" data-bs-toggle="modal" data-bs-target="#addNewDecoration">Add New Decoration</a>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewDecoration">Add New Decoration</a>
                 </li>
                 <li><a href="#">Categories</a></li>
-                <li><a href="#">Reports</a></li>
+                <li><a href="decorationReport.jsp">Reports</a></li>
                 <li><a href="adminDashboard.jsp">Admin Page</a></li>
             </ul>
         </div>
