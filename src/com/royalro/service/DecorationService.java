@@ -23,7 +23,6 @@ public class DecorationService implements IDecorationService{
             conn = DBConnectionUtil.getConnection();
             String sql = Queries.ADD_DECORATION;
             preparedStatement = conn.prepareStatement(sql);
-
             preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
             preparedStatement.setString(QueryConstants.COLUMN_TWO,imagePath);
             preparedStatement.setString(QueryConstants.COLUMN_THREE,description);
@@ -54,6 +53,7 @@ public class DecorationService implements IDecorationService{
             while(resultSet.next()){
                 DecorationItem decoration = new DecorationItem();
                 decoration.setDecorationId(resultSet.getInt("decorationId"));
+                System.out.println(resultSet.getInt("decorationId"));
                 decoration.setName(resultSet.getString("name"));
                 decoration.setCategory(resultSet.getString("category"));
                 decoration.setImagePath(resultSet.getString("imagePath"));
@@ -99,12 +99,12 @@ public class DecorationService implements IDecorationService{
     }
 
     @Override
-    public void deleteDecoration(int decorationId) {
+    public void deleteDecoration(int id) {
         try {
             conn = DBConnectionUtil.getConnection();
             String sql = Queries.DELETE_DECORATION;
             preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setInt(QueryConstants.COLUMN_ONE,decorationId);
+            preparedStatement.setInt(QueryConstants.COLUMN_ONE,id);
             preparedStatement.execute();
         }catch (SQLException | ClassNotFoundException  e){
             e.printStackTrace();
@@ -114,10 +114,10 @@ public class DecorationService implements IDecorationService{
     }
 
     @Override
-    public void updateDecoration(int decorationId, String name, String imagePath, String description, String category, float price) {
+    public void updateDecoration(int id, String name, String imagePath, String description, String category, float price) {
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = Queries.UPDATE_DECORATION;
+            String sql = "UPDATE decorations SET name = ?, imagePath = ? , description = ?, category = ?, price = ? WHERE decorationId = ?";
             preparedStatement = conn.prepareStatement(sql);
 
             preparedStatement.setString(QueryConstants.COLUMN_ONE,name);
@@ -125,7 +125,7 @@ public class DecorationService implements IDecorationService{
             preparedStatement.setString(QueryConstants.COLUMN_THREE,description);
             preparedStatement.setString(QueryConstants.COLUMN_FOUR,category);
             preparedStatement.setFloat(QueryConstants.COLUMN_FIVE,price);
-            preparedStatement.setInt(QueryConstants.COLUMN_SEVEN,decorationId);
+            preparedStatement.setInt(QueryConstants.COLUMN_SIX,id);
 
             preparedStatement.executeUpdate();
 
@@ -137,7 +137,7 @@ public class DecorationService implements IDecorationService{
     }
 
     @Override
-    public void updateDecoration(int decorationId, String name, String description, String category, float price) {
+    public void updateDecoration(int id, String name, String description, String category, float price) {
         try {
             conn = DBConnectionUtil.getConnection();
             String sql = Queries.UPDATE_DECORATION_WITHOUT_IMAGE_PATH;
@@ -147,7 +147,7 @@ public class DecorationService implements IDecorationService{
             preparedStatement.setString(QueryConstants.COLUMN_TWO,description);
             preparedStatement.setString(QueryConstants.COLUMN_THREE,category);
             preparedStatement.setFloat(QueryConstants.COLUMN_FOUR,price);
-            preparedStatement.setInt(QueryConstants.COLUMN_SIX,decorationId);
+            preparedStatement.setInt(QueryConstants.COLUMN_FIVE,id);
 
             preparedStatement.executeUpdate();
 
@@ -188,13 +188,16 @@ public class DecorationService implements IDecorationService{
 
     @Override
     public ArrayList<DecorationItem> searchDecorationByCategoryAndName(String name, String category) {
+
+
+
         ArrayList<DecorationItem> decorationList = new ArrayList<DecorationItem>();
         try {
             conn = DBConnectionUtil.getConnection();
-            String sql = "SELECT * FROM Deco WHERE category = ? and name LIKE \"%" + name+ "%\" ";
+            String sql = Queries.SEARCH_DECORATION_BY_CATEGORY_AND_NAME;
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(QueryConstants.COLUMN_ONE,category);
-//            preparedStatement.setString(QueryConstants.COLUMN_TWO,name);
+            preparedStatement.setString(QueryConstants.COLUMN_TWO,"%"+name+"%");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
@@ -210,8 +213,14 @@ public class DecorationService implements IDecorationService{
         }catch (SQLException | ClassNotFoundException  e){
             e.printStackTrace();
         }finally {
+
             DBConnectionUtil.closeConnection(preparedStatement, conn);
         }
+
+
+
+
+
         return decorationList;
     }
 }

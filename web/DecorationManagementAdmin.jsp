@@ -1,4 +1,3 @@
-
 <%@ page import="com.royalro.service.DecorationService" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.royalro.model.DecorationItem" %><%--
@@ -8,7 +7,7 @@
   Time: 7:57 PM
   To change this template use File | Settings | File Templates.
 --%>
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Royalro | Cakes</title>
@@ -48,7 +47,7 @@
 <%--    Search function--%>
 <div class="search-container"
      style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-    <form action="SearchServlet" method="post">
+    <form action="searchDecoServlet" method="post">
         <input type="text" class="search-input" name="key" placeholder="Search Decorations..."
                style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white"/>
         <input type="hidden" value="admin" name="user">
@@ -123,7 +122,7 @@
                                 <h4 class="card-title" style="color: rgb(104,0,167);"><%=decoration.getName()%>
                                 </h4>
                                 <img class="d-flex"
-                                     style="background-image: url('assets/img/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                     style="background-image: url('assets/img/decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
 
                                 <p class="card-text"
                                    style="color: rgb(95,95,95);height: 120px"><%=decoration.getDescription()%>
@@ -180,7 +179,7 @@
                                 <h4 class="card-title" style="color: rgb(104,0,167);"><%=decoration.getName()%>
                                 </h4>
                                 <img class="d-flex"
-                                     style="background-image: url('assets/img/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                     style="background-image: url('assets/img/decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
 
                                 <p class="card-text"
                                    style="color: rgb(95,95,95);height: 120px"><%=decoration.getDescription()%>
@@ -194,13 +193,15 @@
                                         data-bs-toggle="modal"
                                         data-bs-target="#updateModal"
                                         data-bs-name="<%=decoration.getName()%>"
-                                        data-bs-price="<%=decoration.getPrice()%>"
                                         data-bs-category="<%=decoration.getCategory()%>"
-                                        data-bs-description="<%=decoration.getDescription().trim()%>"
-                                        data-bs-id="<%=decoration.getDecorationId()%>"
                                         data-bs-image="<%=decoration.getImagePath()%>"
-                                >Update
+                                        data-bs-description="<%=decoration.getDescription().trim()%>"
+                                        data-bs-price="<%=decoration.getPrice()%>"
+                                        data-bs-id="<%=decoration.getDecorationId()%>"
+                                >  Update
                                 </button>
+
+
                                 <button
                                         class="btn btn-danger"
                                         type="button"
@@ -324,8 +325,9 @@
                             <div class="form-group col-md-6">
                                 <div class="form-group">
                                     <label> Decoration Name</label>
+
                                     <input type="text" class="form-control"
-                                           id="update-name-input" placeholder="name " name="name">
+                                           id="update-name-input" placeholder="name " name="name1">
                                 </div>
                                 <div id="update-name-error"
                                      style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">
@@ -335,7 +337,7 @@
                                     <label>Price(LKR)</label>
                                     <input type="text" class="form-control" id="update-price-input"
                                            placeholder="xxxx.xx "
-                                           name="price"
+                                           name="price1"
                                            style="width: 50%">
                                 </div>
                                 <div id="update-price-error"
@@ -344,7 +346,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Category</label>
-                                    <select name="category" id="update-category-input" class="form-control">
+                                    <select name="category1" id="update-category-input" class="form-control">
                                         <option value="">-- SELECT CATEGORY --</option>
                                         <option value="Wedding Decorations">Wedding Decorations</option>
                                         <option value="Birthday Decorations">Birthday Decorations</option>
@@ -356,7 +358,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea name="description" class="form-control" id="update-description">
+                                    <textarea name="description1" class="form-control" id="update-description">
                                      </textarea>
                                 </div>
                                 <div id="update-descriptionError"
@@ -369,7 +371,7 @@
                                     <div style="text-align: center;"><label>Image Upload</label></div>
                                     <input type="file" id="updateImage"
                                            style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;"
-                                           name="image">
+                                           name="image1">
                                 </div>
                                 <div id="uploadImageError"
                                      style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">
@@ -377,8 +379,9 @@
                                 </div>
                             </div>
                         </div>
-                        <input style="display: none" type="number" id="updateDecorationId" name="id" >
+
                         <div class="form-group" style="float: right; margin-top: 10px">
+                            <input type="hidden" id="idx" name="id1">
                             <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
                             <button type="submit" class="btn btn-primary" id="up-bu">Update</button>
                         </div>
