@@ -1,6 +1,7 @@
-<%@ page import="sun.font.Decoration" %>
+
 <%@ page import="com.royalro.service.DecorationService" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.royalro.model.DecorationItem" %><%--
   Created by IntelliJ IDEA.
   User: Sandun Dharmadasa
   Date: 9/8/2021
@@ -35,8 +36,8 @@
 <body>
 <%
     DecorationService decorationService = new DecorationService();
-    ArrayList<Decoration> weddingDecorations = decorationService.searchDecorationByCategory("Wedding Decorations");
-    ArrayList<Decoration> birthdayDecorations = decorationService.searchDecorationByCategory("Birthday Decorations");
+    ArrayList<DecorationItem> weddingDecorations = decorationService.searchDecorationByCategory("Wedding Decorations");
+    ArrayList<DecorationItem> birthdayDecorations = decorationService.searchDecorationByCategory("Birthday Decorations");
 %>
 
 
@@ -47,7 +48,7 @@
 <%--    Search function--%>
 <div class="search-container"
      style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-    <form action="SearchServlet" method="post">
+    <form action="searchDecoServlet" method="post">
         <input type="text" class="search-input" name="key" placeholder="Search Cakes..."
                style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white"/>
         <input type="hidden" value="customer" name="user">
@@ -101,7 +102,7 @@
                 <div class="d-xl-flex justify-content-xl-start"
                      style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                     <%--                loop card from here--%>
-                    <%for (Decoration decoration : weddingDecorations) {%>
+                    <%for (DecorationItem decoration : weddingDecorations) {%>
                     <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
                         <div class="card shadow-lg" data-bs-hover-animate="pulse"
                              style="width: 300px;height: 550px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
@@ -109,7 +110,7 @@
                                 <h4 class="card-title" style="color: rgb(104,0,167);"><%=decoration.getName()%>
                                 </h4>
                                 <img class="d-flex"
-                                     style="background-image: url('assets/img/Decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                     style="background-image: url('assets/img/decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                 <h6
                                         class="text-success card-subtitle mb-2">WQC655 by Wishque Cake</h6>
                                 <p class="card-text"
@@ -137,7 +138,7 @@
 
                 <div class="d-xl-flex justify-content-xl-start"
                      style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
-                    <%for (Decoration decoration : birthdayDecorations) {%>
+                    <%for (DecorationItem decoration : birthdayDecorations) {%>
                     <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
                         <div class="card shadow-lg" data-bs-hover-animate="pulse"
                              style="width: 300px;height: 550px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
@@ -145,7 +146,7 @@
                                 <h4 class="card-title" style="color: rgb(104,0,167);"><%=decoration.getName()%>
                                 </h4>
                                 <img class="d-flex"
-                                     style="background-image: url('assets/img/Decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                     style="background-image: url('assets/img/decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                 <h6
                                         class="text-success card-subtitle mb-2">WQC655 by Wishque Cake</h6>
                                 <p class="card-text"
@@ -166,7 +167,7 @@
         </div>
     </div>
 </div>
-
+</div>
 
 <%--Cake Details modal
 <div class="modal fade" id="cakeDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -184,10 +185,8 @@
     </div>
 </div>--%>
 <div>
-    <%--footer--%>
     <jsp:include page="footer.jsp"></jsp:include>
 </div>
-
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>

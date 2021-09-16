@@ -8,15 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/DisplayDecorationServlet")
-public class DisplayDecorationServlet extends HttpServlet {
+@WebServlet("/searchDecoServlet")
+public class searchDecoServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //response.setContentType("text/html");
-        System.out.println("display decoration");
+        response.setContentType("text/html");
+
+
+        String key = request.getParameter("key").toLowerCase();
         RequestDispatcher dispatcher;
-        request.setAttribute("key",null);
-        request.setAttribute("type","display");
-        dispatcher = getServletContext().getRequestDispatcher("/Decorations.jsp");
+        request.setAttribute("key",key);
+        dispatcher = getServletContext().getRequestDispatcher("/searchDeco.jsp");
         dispatcher.forward(request, response);
     }
 

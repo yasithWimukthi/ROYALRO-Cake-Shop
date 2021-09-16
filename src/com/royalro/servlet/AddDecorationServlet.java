@@ -4,6 +4,7 @@ import com.royalro.service.DecorationService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,11 @@ import javax.servlet.http.Part;
 import java.io.IOException;
 
 @WebServlet("/AddDecorationServlet")
+@MultipartConfig(
+        fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+        maxFileSize = 1024 * 1024 * 10,      // 10 MB
+        maxRequestSize = 1024 * 1024 * 100   // 100 MB
+)
 public class AddDecorationServlet extends HttpServlet {
     private DecorationService decorationService;
 
@@ -27,12 +33,13 @@ public class AddDecorationServlet extends HttpServlet {
         String category = request.getParameter("category");
         String description = request.getParameter("description");
         float price = Float.parseFloat(request.getParameter("price"));
+        //System.out.println("Hello");
 
         Part filePart = request.getPart("image");
         String fileName = filePart.getSubmittedFileName();
 
         for (Part part : request.getParts()) {
-            part.write("C:\\Users\\sandu\\Documents\\NewPartner\\web\\assets\\img\\decorations" + fileName);
+            part.write("C:\\Users\\sandu\\Documents\\NewPartner\\web\\assets\\img\\decorations\\" + fileName);
         }
 
         decorationService.addDecoration(name,fileName,description,category,price);

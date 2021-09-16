@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public interface IDecorationService {
     public void addDecoration(
             String name,
+            String category,
             String imagePath,
             String description,
-            String category,
             float price
     );
 
@@ -18,10 +18,10 @@ public interface IDecorationService {
 
     public ArrayList<DecorationItem> searchDecorationByName(String name);
 
-    public void deleteDecoration(int decorationId);
+    public void deleteDecoration(int id);
 
     public void updateDecoration(
-            int decorationId,
+            int id,
             String name,
             String imagePath,
             String description,
@@ -30,7 +30,7 @@ public interface IDecorationService {
     );
 
     public void updateDecoration(
-            int decorationId,
+            int id,
             String name,
             String description,
             String category,
