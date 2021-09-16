@@ -21,10 +21,16 @@ public class Queries {
     public static String UPDATE_PRODUCT_2 = "UPDATE PRODUCTS SET name = ?, category = ? , description = ?, brand = ?,companyCode = ?,price = ?,quantity = ? WHERE productID = ?";
     public static String DELETE_ITEM = "DELETE FROM PRODUCTS WHERE productID = ?" ;
 
+
     /*Queries for decorations management*/
     public static String ADD_DECORATION = "INSERT INTO decorations(name,imagePath,description,category,price) VALUES (?,?,?,?,?)";
     public static String GET_ALL_DECORATIONS = "SELECT * FROM decorations";
     public static String SEARCH_DECORATIONS_BY_NAME = "SELECT * FROM decorations WHERE name LIKE ?";
+    public static String DELETE_DECORATION = "DELETE FROM decorations WHERE decorationId = ?" ;
+    // public static String UPDATE_DECORATION = "UPDATE decorations SET name = ?, imagePath = ? , description = ?, category = ?, price = ? WHERE decorationId = ?";
+    public static String UPDATE_DECORATION_WITHOUT_IMAGE_PATH  = "UPDATE decorations SET name = ?, description = ?, category = ?, price = ? WHERE decorationId = ?";
+    public static String SEARCH_DECORATION_BY_CATEGORY = "SELECT * FROM decorations WHERE category = ?";
+    public static String SEARCH_DECORATION_BY_CATEGORY_AND_NAME = "SELECT * FROM decorations WHERE category = ? and name LIKE ? ESCAPE '!'";
 
     /*Queries for user authentication*/
     public static String CREATE_LOGIN = "INSERT INTO LOGIN (email,password) VALUES (?,?)";
