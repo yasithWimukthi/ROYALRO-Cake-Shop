@@ -14,6 +14,16 @@
     <title>Cake|Report </title>
 </head>
 <body>
+
+<%
+    String type=(String)session.getAttribute("type");
+    if(type.equals("customer")){
+        String redirectURL = "http://localhost:8080/web_war_exploded/index.jsp";
+        response.sendRedirect(redirectURL);
+    }
+
+%>
+
 <div>
     <div>
         <%--Header--%>
