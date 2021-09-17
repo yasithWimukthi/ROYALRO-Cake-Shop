@@ -16,7 +16,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         boolean isTrue;
-        String userTyoe;
+        String userType;
 
         UserAuthentication auth = new UserAuthentication();
 
@@ -24,22 +24,22 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         isTrue = auth.validate(email,password);
-        userTyoe = auth.getUserType(email);
+        userType = auth.getUserType(email);
 
         HttpSession session=request.getSession();
         session.setAttribute("email",email);
 
 
-        if(isTrue && userTyoe.equals("Admin"))
+        if(isTrue && userType.equals("Admin"))
         {
-            session.setAttribute("UserType",userTyoe);
+            session.setAttribute("type","admin");
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adminDashboard.jsp");
             dispatcher.forward(request, response);
 
         }
-        else if (isTrue && userTyoe.equals("customer")){
-            session.setAttribute("UserType",userTyoe);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Profile.jsp");
+        else if (isTrue && userType.equals("customer")){
+            session.setAttribute("type","customer");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
             dispatcher.forward(request, response);
 
         }
