@@ -1,4 +1,7 @@
-<%--
+
+<%@ page import="com.royalro.model.ProductItem" %>
+<%@ page import="com.royalro.service.ProductService" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: shalitha
   Date: 8/15/2021
@@ -30,7 +33,15 @@
 </head>
 <body>
 
+<%
+ boolean isSearch = false;
+ try {
+     isSearch = (boolean)request.getAttribute("isSearch");
+ }catch (Exception e){
+     isSearch = false;
+ }
 
+%>
 <div>
     <div>
         <%--Header--%>
@@ -38,10 +49,12 @@
     </div>
     <%--    Search function--%>
     <div class="search-container" style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
-        <input type="text" class="search-input" name="search-bar" placeholder="Search Items..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
-        <button class="btn btn-light search-btn" type="button" style="background-color: white;">
+        <form action="ItemSearchServlet" method="post">
+        <input type="text" class="search-input" name="ItemSearch" id="ItemSearch" placeholder="Search Items..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
+        <button class="btn btn-light search-btn" type="submit" style="background-color: white;">
             <i class="fa fa-search"></i>
         </button>
+        </form>
     </div>
 
     <%--    main header--%>
@@ -65,10 +78,11 @@
                     <li><a href="index.jsp">Home</a> </li>
                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewItem">Add New Item</a> </li>
                     <li><a href="#" >Categories</a></li>
-                    <li><a href="#">Reports</a></li>
+                    <li><a href="ItemReport.jsp">Reports</a></li>
                     <li><a href="adminDashboard.jsp">Admin Page</a></li>
                 </ul>
             </div>
+            <%if(!isSearch){%>
             <%--    Main area--%>
             <div class="main-content">
                 <div class="swipe-area" style="background-color: rgb(255,255,255);"></div>
@@ -83,36 +97,168 @@
                     <%--            get catagories from database and loop throug for each loop--%>
                     <%--            then it will display all the categories--%>
                     <%--            under all the catgorieas shoul display related cakes--%>
-                    <% for(int i=0; i<5 ;i++){%>
+
+                <%  ProductService psc = new ProductService();
+                    List<String> categoriesList = psc.getAllCategories();
+
+                    for (String category: categoriesList) {
+
+                %>
                     <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
                                 margin-left: -5px;
                                 padding-left: 10px;
                                 font-family: serif;
-                                border-radius: 10px;">Category</h2>
+                                border-radius: 10px;"><%=category%></h2>
 
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                         <%--  loop card from here--%>
-                        <% for(int j=0; j<3 ;j++){%>
-                        <div data-bs-toggle="modal" data-bs-target="#ItemDetails">
+
+                            <%
+                                ProductService ps = new ProductService();
+                                List<ProductItem> itemsList = ps.getAllProducts();
+
+                                for(ProductItem item : itemsList) {
+                                    if(item.getCategory().equals(category)){
+                            %>
+                               <div
+                                       id="card"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#ItemDetails"
+                                       data-bs-name ="<%=item.getName()%>"
+                                       data-bs-price ="<%=item.getPrice()%>"
+                                       data-bs-category ="<%=item.getCategory()%>"
+                                       data-bs-qty ="<%=item.getQuantity()%>"
+                                       data-bs-brand ="<%=item.getBrand()%>"
+                                       data-bs-companyCode ="<%=item.getCompanyCode()%>"
+                                       data-bs-description ="<%=item.getDescription()%>"
+                                       data-bs-ProductID ="<%=item.getProductId()%>"
+                                       data-bs-image ="<%=item.getImagePath()%>"
+                               >
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
-                                    <h4 class="card-title" style="color: rgb(104,0,167);">Title</h4>
-                                    <img class="d-flex" style="background-image: url(&quot;assets/img/image.png&quot;);height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                    <h6
-                                            class="text-muted card-subtitle mb-2">Subtitle</h6>
-                                    <p class="card-text" style="color: rgb(95,95,95);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                    <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
+                                    <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                    <h4 class=" card-subtitle mb-2" style="color: #f00c0c">Price:<%= item.getPrice()%></h4>
+                                    <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph">
+
+                                            Brand: <%= item.getBrand()%><br>
+                                            Available Qty: <%= item.getQuantity()%><br>
+                                            Description:<%= item.getDescription()%>
+                                    </p>
+                                    <button
+                                            class="btn btn-info"
+                                            type="button"
+                                            style="margin-left: 21px;"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#updateItemModal"
+                                            data-bs-name ="<%=item.getName()%>"
+                                            data-bs-price ="<%=item.getPrice()%>"
+                                            data-bs-category ="<%=item.getCategory()%>"
+                                            data-bs-qty ="<%=item.getQuantity()%>"
+                                            data-bs-brand ="<%=item.getBrand()%>"
+                                            data-bs-companyCode ="<%=item.getCompanyCode()%>"
+                                            data-bs-description ="<%=item.getDescription()%>"
+                                            data-bs-ProductID ="<%=item.getProductId()%>"
+                                            data-bs-image ="<%=item.getImagePath()%>"
+                                    >Update</button>
+                                    <button
+                                            class="btn btn-danger"
+                                            type="button" style="margin-left: 53px;"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteItem"
+                                            data-bs-ProductID ="<%=item.getProductId()%>"
+                                            data-bs-name ="<%=item.getName()%>"
+                                    >Delete</button>
+                                </div>
+                            </div>
+                        </div>
+<%--                            <%=item.getName()%><br>--%>
+                             <%}}%>
+                    </div>
+                <%}%>
+                </div>
+            </div>
+            <%
+                }
+                else if(isSearch){
+            %>
+            <%--    Main area after search--%>
+            <div class="main-content">
+                <div class="swipe-area" style="background-color: rgb(255,255,255);"></div>
+                <a  data-toggle=".container" href="#" style="background-color: #ed4dc0;">
+                    <span class="bar"></span>
+                    <span class="bar" style="background-color: rgb(254,254,254);"></span>
+                    <span class="bar"></span>
+                </a>
+                <div class="content" style="padding-left: 56px;">
+
+                    <%--            loop categories with cards--%>
+                    <%--            get catagories from database and loop throug for each loop--%>
+                    <%--            then it will display all the categories--%>
+                    <%--            under all the catgorieas shoul display related cakes--%>
+
+                    <%
+
+                        List<ProductItem> categoriesList = (List<ProductItem>)request.getAttribute("ItemSearchCategory");
+
+                        for (ProductItem pi: categoriesList) {
+
+                    %>
+                    <h2 style="width: 604px;
+                                background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
+                                color: #ffffff;
+                                margin-left: -5px;
+                                padding-left: 10px;
+                                font-family: serif;
+                                border-radius: 10px;"><%=pi.getCategory()%></h2>
+
+                    <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
+                        <%--  loop card from here--%>
+
+                        <%
+                            List<ProductItem> categoriesList2 = (List<ProductItem>)request.getAttribute("ItemSearchResult");
+                            for(ProductItem item : categoriesList2) {
+                            if(item.getCategory().equals(pi.getCategory())){
+                        %>
+                        <div
+                                data-bs-toggle="modal"
+                                data-bs-target="#ItemDetails">
+                            <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
+                                    <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
+                                    <h4 class="text-muted card-subtitle mb-2">Price:<%= item.getPrice()%></h4>
+                                    <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph2">
+
+                                        Brand: <%= item.getBrand()%><br>
+                                        Available Qty: <%= item.getQuantity()%><br>
+                                        Description:<%= item.getDescription()%>
+                                    </p>
                                     <button class="btn btn-info" type="button" style="margin-left: 21px;" data-bs-toggle="modal" data-bs-target="#updateItem">Update</button>
                                     <button class="btn btn-danger" type="button" style="margin-left: 53px;" data-bs-toggle="modal" data-bs-target="#deleteItem">Delete</button>
                                 </div>
                             </div>
                         </div>
-                        <%}%>
+                        <%--                            <%=item.getName()%><br>--%>
+                        <%}}%>
+
+
                     </div>
-                    <%}%>
+                    <%}
+                        if(categoriesList.isEmpty()){%>
+
+                        <div style="text-align: center;">
+                            <img src="assets/img/noItemFound.png" style="height: 250px;width: 250px">
+                            <H1>Sorry! No Item Found!</H1>
+                        </div>
+                        <%}%>
+
                 </div>
             </div>
+            <%}
+            %>
         </div>
     </div>
 </div>
@@ -130,7 +276,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="AddItemServlet" method="post" id="itemForm">
+                <form action="AddItemServlet" method="post" id="itemForm" enctype="multipart/form-data">
 
                     <div class="row">
                         <div class="form-group col-md-6">
@@ -179,7 +325,7 @@
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <div style="text-align: center;"><label >Image Upload</label></div>
-                                <input type="file"   name="ItemImage" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                <input type="file"   id="ItemImage" name="ItemImage" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
                             </div>
                             <div id="ItemImageError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
                         </div>
@@ -200,73 +346,84 @@
 </div>
 
 <%--update form--%>
-<div class="modal fade" id="updateItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateItemModal" tabindex="-1" aria-labelledby="UpdateModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="no" style="text-align: center;"> Update Item Details</h3>
+                <h3 class="modal-title" id="UpdateItemMainLabel" style="text-align: center;"> Update Item</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action="UpdateItemServlet" method="post" id="UpdateItemForm" enctype="multipart/form-data">
 
                     <div class="row">
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <label > Item Name</label>
-                                <input type="text" class="form-control" id="UpdateItemName" placeholder="name " required>
+                                <input type="text" class="form-control" id="UpdateItemName" name="UpdateItemName" placeholder="name " required>
                             </div>
+                            <div id="UpdateItemNameError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid name.</div>
                             <div class="form-group">
                                 <label >Price(LKR)</label>
-                                <input type="text" class="form-control" id="updateItemPrice" placeholder="xxxx.xx " style="width: 50%" required>
+                                <input type="text" class="form-control" id="updateItemPrice" name="updateItemPrice" placeholder="xxxx.xx " style="width: 50%" required>
 
                             </div>
+                            <div id="updateItemPriceError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Invalid Price</div>
                             <div class="form-group">
                                 <label >Category</label>
-                                <select name="category" id="UpdateItemCategory" class="form-control" >
+                                <select  name="UpdateItemCategory"  id="UpdateItemCategory" class="form-control" >
                                     <option value="">-- SELECT CATEGORY -- </option>
-                                    <option value="">CATEGORY2</option>
-                                    <option value="">CATEGORY3</option>
-                                    <option value="">CATEGORY4</option>
+                                    <option value="Cake tools">Cake tools</option>
+                                    <option value="Decoration Items">Decoration Items</option>
+                                    <option value="Cake Ingredients">Cake Ingredients</option>
                                 </select>
 
                             </div>
+                            <div id="UpdateItemCategoryError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid Category.</div>
+
                             <div class="form-group">
                                 <label >Qty.</label>
-                                <input type="number" class="form-control" id="UpdateQty" style="width: 50%" required>
+                                <input type="number" class="form-control" id="UpdateQty" name="UpdateQty" style="width: 50%" required>
 
                             </div>
+                            <div id="UpdateQtyError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Enter a valid Quantity.</div>
                             <div class="form-group">
                                 <label > Brand</label>
-                                <input type="text" class="form-control" id="UpdateBrand">
+                                <input type="text" class="form-control" name="UpdateBrand" id="UpdateBrand">
                             </div>
                             <div class="form-group">
                                 <label >Company code</label>
-                                <input type="text" class="form-control" id="UpdateCompanyCode">
+                                <input type="text" class="form-control" name="UpdateCompanyCode" id="UpdateCompanyCode">
                             </div>
                             <div class="form-group">
                                 <label >Description</label>
-                                <textarea class="form-control">
+                                <textarea class="form-control" name="UpdateDescription" id="UpdateDescription">
                                      </textarea>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <div class="form-group">
                                 <div style="text-align: center;"><label >Image Upload</label></div>
-                                <input type="file"   id="fileUpload" style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;">
+                                <input type="file"
+                                       id="UpdateImage"
+                                       name="image"
+                                       style="border: 2px dashed #adadad;margin: 10px;padding: 80px 0px 80px 60px;border-radius: 5px;"
+                                       value="default">
                             </div>
+                            <div id="UpadatefileUploadError" style="margin: 0 auto;width: 80%;margin-bottom: 10px;color:red;visibility: hidden;">* Upload an image.</div>
                         </div>
                     </div>
 
-
+                    <input style="display: none" type="number" id="ProductID" name="ProductID" >
                     <div class="form-group" style="float: right; margin-top: 10px">
                         <button type="button" class="btn btn-warning" data-bs-dismiss="modal" >Cancel</button>
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary" id="UpdateSaveBtn">Save</button>
                     </div>
 
 
                 </form>
             </div>
+
         </div>
     </div>
 </div>
@@ -282,10 +439,13 @@
             </div>
             <div class="modal-body">
                 Are you sure want to delete this item?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel</button>
+               <center><p id="deleteItemName" name="deleteItemName"></p></center>
+                <form method="post" action="DeleteItemServlet">
+
+                    <input style="display: none" type="number" id="deletePID" name="deletePID" >
+                 <button type="submit" class="btn btn-danger" style="text-align: left;margin-right: 300px;">Confirm</button>
+                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="text-align: right">Cancel</button>
+                </form>
             </div>
         </div>
     </div>
@@ -301,7 +461,50 @@
                 </button>
             </div>
             <div class="modal-body">
-                Details will display here
+                <table class="table">
+                    <thead>
+                    <tr></tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="text-center" colspan="2">
+                            <img id="Image" name="Image" width="150" height="100" style="border-radius: 10px;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Item ID</td>
+                        <td><p  id="ProductID2" name="ProductID2"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Item Name</td>
+                        <td ><p id="ItemName" name="ItemName"></p></td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td id="ItemPrice" name="ItemPrice"></td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td id="ItemCategory" name="ItemCategory"></td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td id="Qty" name="Qty"></td>
+                    </tr>
+                    <tr>
+                        <td>Brand</td>
+                        <td id="Brand" name="Brand"></td>
+                    </tr>
+                    <tr>
+                        <td>Company Code</td>
+                        <td id="CompanyCode" name="CompanyCode"></td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td id="Description" name="Description"></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
@@ -309,13 +512,13 @@
 </div>
 
 <jsp:include page="footer.jsp"></jsp:include>
-
+<%--js--%>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
 <script src="assets/js/Side-Swipe-Menu-1.js"></script>
 <script src="assets/js/Side-Swipe-Menu.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
+<script src="assets/js/word-limit.js"></script>
 <script src="assets/js/itemManagement.js"></script>
 </body>
 

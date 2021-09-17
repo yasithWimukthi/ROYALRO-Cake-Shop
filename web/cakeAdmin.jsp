@@ -83,7 +83,7 @@
                 <li><a href="#bannerformmodal" data-bs-toggle="modal" data-bs-target="#addNewCake">Add New Cake</a>
                 </li>
                 <li><a href="#">Categories</a></li>
-                <li><a href="#">Reports</a></li>
+                <li><a href="cakeReport.jsp">Reports</a></li>
                 <li><a href="adminDashBoard.jsp">Admin Page</a></li>
             </ul>
         </div>
@@ -374,7 +374,7 @@
                                         <option value="">-- SELECT CATEGORY --</option>
                                         <option value="Milk Chocolate">Milk Chocolate</option>
                                         <option value="White Chocolate">White Chocolate</option>
-                                        <option value="Coffee Mocha">Coffee Mocha</option>
+                                        <option value="Coffee Mocha">CoffeeMocha</option>
                                     </select>
                                 </div>
                                 <div id="update-category-error"
