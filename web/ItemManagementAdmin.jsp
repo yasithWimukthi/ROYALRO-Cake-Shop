@@ -51,6 +51,7 @@
     <div class="search-container" style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
         <form action="ItemSearchServlet" method="post">
         <input type="text" class="search-input" name="ItemSearch" id="ItemSearch" placeholder="Search Items..." style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white" />
+            <input type="hidden" name="UserType" value="Admin">
         <button class="btn btn-light search-btn" type="submit" style="background-color: white;">
             <i class="fa fa-search"></i>
         </button>
@@ -122,21 +123,8 @@
                                 for(ProductItem item : itemsList) {
                                     if(item.getCategory().equals(category)){
                             %>
-                               <div
-                                       id="card"
-                                       data-bs-toggle="modal"
-                                       data-bs-target="#ItemDetails"
-                                       data-bs-name ="<%=item.getName()%>"
-                                       data-bs-price ="<%=item.getPrice()%>"
-                                       data-bs-category ="<%=item.getCategory()%>"
-                                       data-bs-qty ="<%=item.getQuantity()%>"
-                                       data-bs-brand ="<%=item.getBrand()%>"
-                                       data-bs-companyCode ="<%=item.getCompanyCode()%>"
-                                       data-bs-description ="<%=item.getDescription()%>"
-                                       data-bs-ProductID ="<%=item.getProductId()%>"
-                                       data-bs-image ="<%=item.getImagePath()%>"
-                               >
-                            <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
+                               <div>
+                                 <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
                                     <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
@@ -173,7 +161,7 @@
                                     >Delete</button>
                                 </div>
                             </div>
-                        </div>
+                                </div>
 <%--                            <%=item.getName()%><br>--%>
                              <%}}%>
                     </div>
@@ -222,25 +210,43 @@
                             for(ProductItem item : categoriesList2) {
                             if(item.getCategory().equals(pi.getCategory())){
                         %>
-                        <div
-                                data-bs-toggle="modal"
-                                data-bs-target="#ItemDetails">
                             <div class="card shadow-lg" data-bs-hover-animate="pulse" style="width: 300px;height: 453px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: rgb(104,0,167);"><%=item.getName()%></h4>
                                     <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                    <h4 class="text-muted card-subtitle mb-2">Price:<%= item.getPrice()%></h4>
+                                    <h4 class=" card-subtitle mb-2" style="color: #f00c0c">Price:<%= item.getPrice()%></h4>
                                     <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph2">
 
                                         Brand: <%= item.getBrand()%><br>
                                         Available Qty: <%= item.getQuantity()%><br>
                                         Description:<%= item.getDescription()%>
                                     </p>
-                                    <button class="btn btn-info" type="button" style="margin-left: 21px;" data-bs-toggle="modal" data-bs-target="#updateItem">Update</button>
-                                    <button class="btn btn-danger" type="button" style="margin-left: 53px;" data-bs-toggle="modal" data-bs-target="#deleteItem">Delete</button>
+                                    <button
+                                            class="btn btn-info"
+                                            type="button"
+                                            style="margin-left: 21px;"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#updateItemModal"
+                                            data-bs-name ="<%=item.getName()%>"
+                                            data-bs-price ="<%=item.getPrice()%>"
+                                            data-bs-category ="<%=item.getCategory()%>"
+                                            data-bs-qty ="<%=item.getQuantity()%>"
+                                            data-bs-brand ="<%=item.getBrand()%>"
+                                            data-bs-companyCode ="<%=item.getCompanyCode()%>"
+                                            data-bs-description ="<%=item.getDescription()%>"
+                                            data-bs-ProductID ="<%=item.getProductId()%>"
+                                            data-bs-image ="<%=item.getImagePath()%>"
+                                    >Update</button>
+                                    <button
+                                            class="btn btn-danger"
+                                            type="button" style="margin-left: 53px;"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteItem"
+                                            data-bs-ProductID ="<%=item.getProductId()%>"
+                                            data-bs-name ="<%=item.getName()%>"
+                                    >Delete</button>
                                 </div>
                             </div>
-                        </div>
                         <%--                            <%=item.getName()%><br>--%>
                         <%}}%>
 
