@@ -1,55 +1,82 @@
-
-$(document).ready(function (){
-    update_amounts();
-    $('.qty, .price').on('keyup keypress blur change' ,
-        function (e){
-        update_amounts();
-        });
+$(function() {
+    $('[data-decrease]').click(decrease);
+    $('[data-increase]').click(increase);
+    $('[data-value]').change(valueChange);
 });
 
- function update_amounts(){
-    let sum = 0.0;
-    $('#myTable > tbody > tr').each(function (){
-        const qty = $(this).find('.qty').val();
-        const price = $(this).find('.price').val();
-        const amount = (qty * price);
-        sum+=amount;
-        $(this).find(' .amount').text(''+amount);
 
-    });
-    ('.total').text(sum);
+
+function decrease() {
+    let value = $(this).parent().find('[data-value]').val();
+
+    document.querySelector("#decQty").value=value;
+    document.querySelector("#decForm").submit();
+
+
 }
- //--------for quantity increment or decrement-------
 
- let incrementQty;
- let decrementQty;
- const plusBtn = document.querySelector("#plus");
- const minusBtn = document.querySelector("#minus");
- const qty = document .querySelector("#qty").value;
- incrementQty = plusBtn.onclick(function () {
-    const $n = qty;
-    $n.val(Number($n.val()) + 1);
-    update_amounts();
-});
 
- decrementQty = minusBtn.onclick(function () {
-    const $n = qty;
-    const QtyVal = Number($n.val());
-    if (QtyVal > 0) {
-        $n.val(QtyVal - 1);
+
+function increase() {
+   let value = $(this).parent().find('[data-value]').val();
+
+    document.querySelector("#incQty").value=value;
+    document.querySelector("#incForm").submit();
+
+}
+
+
+
+function valueChange() {
+    var value = $(this).val();
+    if(value == undefined || isNaN(value) == true || value <= 0) {
+        $(this).val(1);
+    } else if(value >= 101) {
+        $(this).val(100);
     }
-    update_amounts();
-});
-
-
-/*
-let tot = document.getElementById('price');
-function increment(){
-    const value = parseInt(document.getElementById('number').value);
-    tot = (65000.00 * 2);
-
 
 
 }
 
-*/
+
+function setData()
+{
+
+
+}
+function sendForm()
+{document.querySelector("#deleteItemForm").submit();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,14 +1,21 @@
 package com.royalro.model;
-
 public class DecorationItem {
     private int decorationId;
     private String name;
     private String category;
-    private String description;
     private String imagePath;
+    private String description;
     private float price;
-
     public DecorationItem() {
+    }
+
+    public DecorationItem(int decorationId, String name, String category, String imagePath, String description, float price) {
+        this.decorationId = decorationId;
+        this.name = name;
+        this.category = category;
+        this.imagePath = imagePath;
+        this.description = description;
+        this.price = price;
     }
 
     public String getName() {
@@ -27,20 +34,20 @@ public class DecorationItem {
         this.category = category;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getImagePath() {
         return imagePath;
     }
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public float getPrice() {
@@ -53,5 +60,9 @@ public class DecorationItem {
 
     public int getDecorationId() {
         return decorationId;
+    }
+
+    public void setDecorationId(int decorationId) {
+        this.decorationId = decorationId;
     }
 }

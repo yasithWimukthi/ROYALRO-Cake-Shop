@@ -15,5 +15,6 @@ public interface IDecorationService {
 
     public ArrayList<DecorationItem> getAllDecorations();
 
-    public ArrayList<DecorationItem> searchDecorationByName(String name);
+    public ArrayList<DecorationItem> searchDecorationByCategory(String category);
+
 }

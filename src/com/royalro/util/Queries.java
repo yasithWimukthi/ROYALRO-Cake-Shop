@@ -29,7 +29,8 @@ public class Queries {
     public static String UPDATE_PROFILE = "UPDATE CAKES SET name = ?, imagePath = ? , description = ?, category = ?, price = ?, weight = ? WHERE cakeId = ?";
     public static String DELETE_PROFILE = "DELETE FROM CAKES WHERE customerID = ?" ;
 
-
+    /*Queries for cart management*/
+    public static String ADD_TOCART = "INSERT INTO cart(imagePath,name,price,userEmail,quantity) VALUES (?,?,?,?,?)";
 
 
 }
