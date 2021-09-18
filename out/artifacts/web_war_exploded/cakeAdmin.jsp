@@ -35,6 +35,13 @@
 <body>
 
 <%
+
+    String type=(String)session.getAttribute("type");
+    if(type.equals("customer")){
+        String redirectURL = "http://localhost:8080/web_war_exploded/index.jsp";
+        response.sendRedirect(redirectURL);
+    }
+
     CakeService cakeService = new CakeService();
     ArrayList<Cake> milkChocolateCakes = cakeService.searchCakeByCategory("Milk Chocolate");
     ArrayList<Cake> whiteChocolateCakes = cakeService.searchCakeByCategory("White Chocolate");

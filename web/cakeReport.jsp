@@ -47,13 +47,7 @@
 
     <div class="main">
         <%--    side navigation--%>
-        <div class="container x-open-sidebar" style="max-width: 1350px">
-            <div id="sidebar">
-                <ul>
-                    <li><a href="index.jsp">Home</a> </li>
-                    <li><a href="adminDashboard.jsp">Admin Page</a></li>
-                </ul>
-            </div>
+
 
             <%--    Main area--%>
             <div class="main-content">

@@ -15,6 +15,7 @@ import java.io.IOException;
 public class SignUpServlet extends HttpServlet {
 
     private UserAuthentication auth;
+    public HttpSession session;
 
     @Override
     public void init() throws ServletException {
@@ -32,12 +33,13 @@ public class SignUpServlet extends HttpServlet {
         auth.createLogin(email,password);
         auth.signUp(name,email,mobile);
 
-        HttpSession session=request.getSession();
+        session=request.getSession();
         session.setAttribute("email",email);
-        session.setAttribute("type","customer");
+        //session.setAttribute("type","customer");
+        session.setAttribute("type","admin");
 
         RequestDispatcher dispatcher;
-        dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+        dispatcher = getServletContext().getRequestDispatcher("/home.jsp");
         dispatcher.forward(request, response);
     }
 

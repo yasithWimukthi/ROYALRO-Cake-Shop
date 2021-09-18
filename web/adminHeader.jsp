@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: shalitha
-  Date: 8/14/2021
-  Time: 11:42 PM
+  User: ACER
+  Date: 9/18/2021
+  Time: 9:59 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -33,6 +33,7 @@
             <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="ItemUserView.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">Items</a></li>
             <li class="nav-item" role="presentation" style="width: 150px;"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 139px;">Contact Us</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="aboutUs.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">About Us</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="adminDashboard.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">Admin Dashboard</a></li>
         </ul>
 
     </div>

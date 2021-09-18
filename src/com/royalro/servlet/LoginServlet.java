@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
         }
         else if (isTrue && userType.equals("customer")){
             session.setAttribute("type","customer");
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/home.jsp");
             dispatcher.forward(request, response);
 
         }
