@@ -27,7 +27,7 @@
 
 <body style="width: 100%;">
 
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="adminHeader.jsp"></jsp:include>
 <%
     String type=(String)session.getAttribute("type");
     if(type.equals("customer")){

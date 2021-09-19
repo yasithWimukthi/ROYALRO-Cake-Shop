@@ -35,8 +35,8 @@ public class SignUpServlet extends HttpServlet {
 
         session=request.getSession();
         session.setAttribute("email",email);
-        //session.setAttribute("type","customer");
-        session.setAttribute("type","admin");
+        session.setAttribute("type","customer");
+       // session.setAttribute("type","admin");
 
         RequestDispatcher dispatcher;
         dispatcher = getServletContext().getRequestDispatcher("/home.jsp");

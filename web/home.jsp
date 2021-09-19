@@ -5,7 +5,6 @@
   Time: 10:49 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%-- Created by IntelliJ IDEA. --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,18 +24,17 @@
 </head>
 
 <body>
-<%--<%--%>
+<%
+    String type=(String)session.getAttribute("type");%>
 
-<%--    session.setAttribute("type","customer");--%>
+<% if(type.equals("customer")){ %>
+        <jsp:include page="header.jsp"></jsp:include>
 
-<%--    <% if(session.getAttribute("type").equals("customer")){ %>--%>
-<%--        <jsp:include page="header.jsp"></jsp:include>--%>
-<%--    <%} else { %>--%>
-<%--        <jsp:include page="adminHeader.jsp"></jsp:include>--%>
-<%--    <%}--%>
-<%--%>--%>
+    <%} else { %>
+        <jsp:include page="adminHeader.jsp"></jsp:include>
+    <%}%>
 
-<jsp:include page="header.jsp"></jsp:include>
+<%--<jsp:include page="header.jsp"></jsp:include>--%>
 <section id="carousel">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
         <div class="carousel-inner">

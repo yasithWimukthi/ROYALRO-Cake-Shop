@@ -52,7 +52,7 @@
 <div>
     <div>
         <%--Header--%>
-        <jsp:include page="header.jsp"></jsp:include>
+            <jsp:include page="adminHeader.jsp"></jsp:include>
     </div>
     <%--    Search function--%>
     <div class="search-container" style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">

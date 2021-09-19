@@ -1,4 +1,3 @@
-
 <%@ page import="com.royalro.model.ProductItem" %>
 <%@ page import="com.royalro.service.ProductService" %>
 <%@ page import="java.util.List" %><%--
@@ -40,7 +39,6 @@
     }catch (Exception e){
         isSearch = false;
     }
-
 %>
 <div>
     <div>
@@ -77,10 +75,10 @@
             <div id="sidebar">
                 <ul>
                     <li><a href="index.jsp">Home</a> </li>
-                        <%  ProductService psc = new ProductService();
+                    <%  ProductService psc = new ProductService();
                         List<String> categoriesList = psc.getAllCategories();
                         for (String category: categoriesList) {%>
-                        <li><a href="#" ><%=category%></a></li>
+                    <li><a href="#" ><%=category%></a></li>
                     <%}%>
                 </ul>
             </div>
@@ -102,9 +100,7 @@
 
                     <%  ProductService psc2 = new ProductService();
                         List<String> categoriesList2 = psc2.getAllCategories();
-
                         for (String category: categoriesList2) {
-
                     %>
                     <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
@@ -120,7 +116,6 @@
                         <%
                             ProductService ps = new ProductService();
                             List<ProductItem> itemsList = ps.getAllProducts();
-
                             for(ProductItem item : itemsList) {
                                 if(item.getCategory().equals(category)){
                         %>

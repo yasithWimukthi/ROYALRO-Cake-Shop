@@ -37,6 +37,9 @@
     <link rel="stylesheet" href="assets/css/file-upload.css">
 </head>
 <body>
+
+
+
 <%
     CakeService cakeService = new CakeService();
     ArrayList<Cake> milkChocolateCakes = cakeService.searchCakeByCategory("Milk Chocolate");
@@ -45,8 +48,15 @@
 
 
 <div>
-    <%--Header--%>
+    <%
+        String type=(String)session.getAttribute("type");%>
+
+    <% if(type.equals("customer")){ %>
     <jsp:include page="header.jsp"></jsp:include>
+    <%} else { %>
+    <jsp:include page="adminHeader.jsp"></jsp:include>
+    <%}%>
+
 </div>
 <%--    Search function--%>
 <div class="search-container"

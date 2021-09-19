@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: ACER
+  User:
   Date: 8/20/2021
   Time: 3:21 PM
   To change this template use File | Settings | File Templates.
@@ -47,7 +47,14 @@
 
 <div>
     <%--Header--%>
-    <jsp:include page="header.jsp"></jsp:include>
+        <%
+            String type=(String)session.getAttribute("type");%>
+
+        <% if(type.equals("customer")){ %>
+        <jsp:include page="header.jsp"></jsp:include>
+        <%} else { %>
+        <jsp:include page="adminHeader.jsp"></jsp:include>
+        <%}%>
 </div>
 <%--    Search function--%>
 <div class="search-container"
@@ -103,11 +110,15 @@
                  style="padding-left: 56px;">
 
                 <%if (milkChocolateCakes.size() ==0 && whiteChocolateCakes.size() ==0) {%>
-                <div style="margin-bottom: 500px" class="alert alert-danger d-flex align-items-center" role="alert">
+                <div style="margin-bottom: 100px" class="alert alert-danger d-flex align-items-center" role="alert">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
                     <div>
                         The product you are looking for cant be found. Please try again.
                     </div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="assets/img/noItemFound.png" style="height: 250px;width: 250px">
+                    <H1>Sorry! No Item Found!</H1>
                 </div>
                 <%}%>
 

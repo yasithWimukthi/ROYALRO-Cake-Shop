@@ -45,7 +45,14 @@
 
 <div>
     <%--Header--%>
-    <jsp:include page="header.jsp"></jsp:include>
+        <%
+            String type=(String)session.getAttribute("type");%>
+
+        <% if(type.equals("customer")){ %>
+        <jsp:include page="header.jsp"></jsp:include>
+        <%} else { %>
+        <jsp:include page="adminHeader.jsp"></jsp:include>
+        <%}%>
 </div>
 <%--    Search function--%>
 <div class="search-container"

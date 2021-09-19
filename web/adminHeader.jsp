@@ -27,13 +27,13 @@
     <div class="collapse navbar-collapse text-right" id="navcol-2" style="padding: 8px 18px;width: 927px;height: 140px;color: rgb(81,19,29);">
         <a href="index.jsp"><img src="assets/img/logo2.png" width="100px"  ></a>
         <ul class="nav navbar-nav" style="width: 934px;margin: 30px;height: 11px;">
-            <li class="nav-item" role="presentation"><a class="nav-link " data-bs-hover-animate="jello" href="index.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;height: 51px;width: 121px;">Home</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link " data-bs-hover-animate="jello" href="home.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;height: 51px;width: 121px;">Home</a></li>
             <li class="nav-item" role="presentation"><a href="cakes.jsp" class="nav-link" data-bs-hover-animate="jello"  style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;height: 57px;width: 121px;">Cakes</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="DecorationUserView.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 167px;">Decorations</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="Decorations.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 167px;">Decorations</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="ItemUserView.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">Items</a></li>
             <li class="nav-item" role="presentation" style="width: 150px;"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 139px;">Contact Us</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="aboutUs.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">About Us</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="adminDashboard.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">Admin Dashboard</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="adminDashboard.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">Dashboard</a></li>
         </ul>
 
     </div>
