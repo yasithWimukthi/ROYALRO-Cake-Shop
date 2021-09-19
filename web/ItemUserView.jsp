@@ -65,8 +65,8 @@
 
     <div style="margin-left: 10px;text-decoration: none; ">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.jsp" style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
-            <li class="breadcrumb-item"><a href="ItemUserView.jsp" style="text-decoration: none;color: #5c636a;"><span>Items</span></a></li>
+            <li class="breadcrumb-item"><a href="index.jsp" style="text-decoration: none;color: #5c636a;">Home</a></li>
+            <li class="breadcrumb-item"><a href="ItemUserView.jsp" style="text-decoration: none;color: #5c636a;">Items</a></li>
 
         </ol>
     </div>
@@ -194,7 +194,6 @@
                                 <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                 <h4 class=" card-subtitle mb-2" style="color: #f00c0c">Price:<%= item.getPrice()%></h4>
                                 <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph2">
-
                                     Brand: <%= item.getBrand()%><br>
                                     Available Qty: <%= item.getQuantity()%><br>
                                     Description:<%= item.getDescription()%>
@@ -208,8 +207,13 @@
 
                     </div>
                     <%}
-                        if(categoriesList.isEmpty()){%>
-
+                        if(categoriesList3.isEmpty()){%>
+                        <div style="margin-bottom: 100px" class="alert alert-danger d-flex align-items-center" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>
+                                The product you are looking for cant be found. Please try again.
+                            </div>
+                        </div>
                     <div style="text-align: center;">
                         <img src="assets/img/noItemFound.png" style="height: 250px;width: 250px">
                         <H1>Sorry! No Item Found!</H1>
