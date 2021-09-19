@@ -18,7 +18,9 @@
 </head>
 
 <body>
-
+<%
+    session.setAttribute("type","customer");
+%>
 <jsp:include page="indexHeader.jsp"></jsp:include>
 <section id="carousel">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
