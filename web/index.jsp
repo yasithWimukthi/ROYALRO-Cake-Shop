@@ -30,7 +30,7 @@
                     <p class="hero-subtitle"></p>
                     <p class="hero-subtitle"></p>
                     <p class="hero-subtitle"></p>
-                    <p><a class="btn " role="button" href="#" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
+                    <p><a class="btn " role="button" href="cakes.jsp" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
                 </div>
             </div>
             <div class="carousel-item">
@@ -40,7 +40,7 @@
                     <p class="hero-subtitle"></p>
                     <p class="hero-subtitle"></p>
                     <p class="hero-subtitle"></p>
-                    <p><a class="btn " role="button" href="#" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
+                    <p><a class="btn " role="button" href="Decorations.jsp" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
                 </div>
             </div>
             <div class="carousel-item ">
@@ -50,7 +50,7 @@
                     <p class="hero-subtitle"></p>
                     <p class="hero-subtitle"></p>
                     <p class="hero-subtitle"></p>
-                    <p><a class="btn " role="button" href="#" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
+                    <p><a class="btn " role="button" href="ItemUserView.jsp" style="background-color: #ffbdd4; padding: 10px;box-shadow: 5px 10px 18px #888888;">Show more</a></p>
 
                 </div>
             </div>
