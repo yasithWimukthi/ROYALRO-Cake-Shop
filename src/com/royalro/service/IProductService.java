@@ -19,4 +19,15 @@ public interface IProductService {
     public ArrayList<ProductItem> getAllProducts();
 
     public ArrayList<ProductItem> searchProductByName(String name);
+
+    public void UpdateProduct(
+            String name,
+            String category,
+            String description,
+            String brand,
+            String companyCode,
+            String imagePath,
+            float price,
+            int quantity,
+            int ProductID);
 }

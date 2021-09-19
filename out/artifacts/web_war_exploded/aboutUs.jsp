@@ -20,7 +20,15 @@
 </head>
 
 <body>
+<%
+    String type=(String)session.getAttribute("type");%>
+
+<% if(type.equals("customer")){ %>
 <jsp:include page="header.jsp"></jsp:include>
+<%} else { %>
+<jsp:include page="adminHeader.jsp"></jsp:include>
+<%}%>
+
 <div style="margin-top: 0px;height: 600px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));">
     <div class="container">
         <div class="row">

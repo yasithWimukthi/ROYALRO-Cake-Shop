@@ -37,6 +37,9 @@
     <link rel="stylesheet" href="assets/css/file-upload.css">
 </head>
 <body>
+
+
+
 <%
     CakeService cakeService = new CakeService();
     ArrayList<Cake> milkChocolateCakes = cakeService.searchCakeByCategory("Milk Chocolate");
@@ -45,8 +48,15 @@
 
 
 <div>
-    <%--Header--%>
+    <%
+        String type=(String)session.getAttribute("type");%>
+
+    <% if(type.equals("customer")){ %>
     <jsp:include page="header.jsp"></jsp:include>
+    <%} else { %>
+    <jsp:include page="adminHeader.jsp"></jsp:include>
+    <%}%>
+
 </div>
 <%--    Search function--%>
 <div class="search-container"
@@ -95,6 +105,15 @@
                     class="bar"></span></a>
             <div class="content"
                  style="padding-left: 56px;">
+
+                <%if (whiteChocolateCakes.size() == 0 && milkChocolateCakes.size()==0){%>
+                <div style="text-align: center;margin: 0 auto">
+                    <img src="assets/img/noItemFound.png" style="height: 250px;width: 250px">
+                    <H1>Sorry! No Item Found!</H1>
+                </div>
+                <%}%>
+
+                <%if (milkChocolateCakes.size() != 0){%>
                 <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
@@ -102,7 +121,7 @@
                                 padding-left: 10px;
                                 font-family: serif;
                                 border-radius: 10px;">Milk Chocolate</h2>
-
+                <%}%>
                 <div class="d-xl-flex justify-content-xl-start"
                      style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                     <%--                loop card from here--%>
@@ -133,6 +152,7 @@
                     <%}%>
                 </div>
 
+                <%if (milkChocolateCakes.size() != 0){%>
                 <h2 style="width: 604px;
                                 background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));
                                 color: #ffffff;
@@ -140,7 +160,7 @@
                                 padding-left: 10px;
                                 font-family: serif;
                                 border-radius: 10px;">White Chocolate</h2>
-
+                <%}%>
                 <div class="d-xl-flex justify-content-xl-start"
                      style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                     <%for (Cake cake : whiteChocolateCakes) {%>

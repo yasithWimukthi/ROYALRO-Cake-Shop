@@ -18,8 +18,8 @@
 </head>
 
 <body>
-<jsp:include page="header.jsp"></jsp:include>
 
+<jsp:include page="indexHeader.jsp"></jsp:include>
 <section id="carousel">
     <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
         <div class="carousel-inner">

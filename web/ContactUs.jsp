@@ -17,10 +17,20 @@
 </head>
 
 <body style="background-image: url(&quot;assets/img/sign%20up%20background.png&quot;);background-position: center;background-repeat: no-repeat;background-size: cover;">
+
+
+
 <div>
     <div>
         <%--    Header--%>
-        <jsp:include page="header.jsp"></jsp:include>
+            <%
+                String type=(String)session.getAttribute("type");%>
+
+            <% if(type.equals("customer")){ %>
+            <jsp:include page="header.jsp"></jsp:include>
+            <%} else { %>
+            <jsp:include page="adminHeader.jsp"></jsp:include>
+            <%}%>
     </div>
 
     <div class="container">

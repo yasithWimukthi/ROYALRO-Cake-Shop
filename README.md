@@ -1,4 +1,17 @@
-# ROYALRO Cake Shop
+# 2021S1_JUNE_WD_02
+## Royalro Cake Shop
+
+## Group Details
+
+| Name |Student Id| User Name | Branches
+|--|--|--|--|
+| H.R. Yasith Wimukthi |IT19966922  | yasithWimukthi | cake-management-backend, cake-management-customer-view |
+|Alahakoon A.G.S.P|IT19960432|ShalithaAlahakoon|Item_Management_front_end_admin, Item_Management_2|
+|Arunoda D.P.H|IT19164236|HiruniArunoda|cart_management, cart-backend|
+Dharmadasa K.R.W.S|IT19970578|SandunDharmadasa|decoration-management DecorationManagement_Backend|
+
+# Project Description
+
 This is an e-commerce platform creating for a party Management Company called ROYALRO. They are providing various services and products related to parties and decorations. Due to the COVID-19 situation in the country, they need to build an online web application to provide their services to the customers. In the initial state, they need to build the main four functions of this web application.    
 
 ## Cake details management  
@@ -17,7 +30,7 @@ Customers can view available decorations with their details in an online store.
 
  
 
-# Product details management 
+## Product details management 
 
 They also sell a large number of items such as cake ingredients, decoration items, party items, and chocolates. 
 
@@ -25,11 +38,17 @@ In this function company manager can insert, view, update, delete and generate r
 
 Customers can view available products with their details in an online store. 
 
-# Shopping cart management 
+## Shopping cart management 
 
 All the above mention functionalities are related to this function. This function is mostly used by customers. They can add items to the shopping cart which they wish to buy from the store. They can also remove unnecessary items from the cart. And they can update quantities, desired brands as they wish. Finally, they can download the quotation from this function. 
 
-## Team members
+# Technologies 
+Front end - JSP, CSS, Javascript,  jQuery, Bootstrap <br/>
+Backend - Java <br/>
+Database - Mysql
+
+
+# Team members
 
  - Yasith Wimukthi (Team Leader)- [@yasithwimukthi](https://www.linkedin.com/in/yasith-wimukthi-116307189/)
  - Shalitha Alahakoon - [@shalithaalahakoon](https://www.linkedin.com/in/shalitha-alahakoon-60051a212/)

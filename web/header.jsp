@@ -29,14 +29,14 @@
         <ul class="nav navbar-nav" style="width: 934px;margin: 30px;height: 11px;">
             <li class="nav-item" role="presentation"><a class="nav-link " data-bs-hover-animate="jello" href="index.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;height: 51px;width: 121px;">Home</a></li>
             <li class="nav-item" role="presentation"><a href="cakes.jsp" class="nav-link" data-bs-hover-animate="jello"  style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;height: 57px;width: 121px;">Cakes</a></li>
-            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="DecorationUserView.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 167px;">Decorations</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="Decorations.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 167px;">Decorations</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="ItemUserView.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">Items</a></li>
             <li class="nav-item" role="presentation" style="width: 150px;"><a class="nav-link" data-bs-hover-animate="jello" href="#" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 139px;">Contact Us</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" data-bs-hover-animate="jello" href="aboutUs.jsp" style="font-family: 'Dancing Script', cursive;font-size: 25px;color: #af1e2d;width: 119px;">About Us</a></li>
         </ul>
 
     </div>
-    <a href="#" class="fa fa-shopping-cart shadow-none d-table-row ml-auto" style="font-size: 31px;filter: blur(0px) grayscale(0%);color: #51131d;opacity: 1;margin: 10px;" ></a>
+    <a href="#" class="fa fa-shopping-cart shadow-none d-table-row ml-auto" style="font-size: 31px;filter: blur(0px) grayscale(0%);color: #51131d;opacity: 1;margin: 10px;text-decoration: none;" ></a>
     <a  href="loginPage.jsp" class="fa fa-user-circle-o ml-auto" style="font-size: 31px;color: #521721;opacity: 1;margin: 5px; text-decoration: none"></a>
 
     </div>

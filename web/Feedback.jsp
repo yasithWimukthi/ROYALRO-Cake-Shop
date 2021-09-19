@@ -21,7 +21,14 @@
 
 
 <body style="background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));">
+<%
+    String type=(String)session.getAttribute("type");%>
+
+<% if(type.equals("customer")){ %>
 <jsp:include page="header.jsp"></jsp:include>
+<%} else { %>
+<jsp:include page="adminHeader.jsp"></jsp:include>
+<%}%>
 
 <label style="height: 50px;font-size: 36px;margin-left: 300px;font-family: ABeeZee, sans-serif;text-align: center;">Customer Feedback Details</label>
 <div style="width: 1000px;height: 500px;margin-left: 40px;">

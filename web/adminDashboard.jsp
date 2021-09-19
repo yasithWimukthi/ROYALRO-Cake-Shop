@@ -27,7 +27,15 @@
 
 <body style="width: 100%;">
 
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="adminHeader.jsp"></jsp:include>
+<%
+    String type=(String)session.getAttribute("type");
+    if(type.equals("customer")){
+        String redirectURL = "http://localhost:8080/web_war_exploded/index.jsp";
+        response.sendRedirect(redirectURL);
+    }
+
+%>
 <hr>
 <div class="container" style="width: 100%;height: 100%;margin-left: 142px;margin-top: 98px;">
     <div class="row" style="margin: 29px;margin-top: -50px">

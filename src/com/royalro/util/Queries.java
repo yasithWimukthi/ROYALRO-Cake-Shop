@@ -1,6 +1,7 @@
 package com.royalro.util;
 
 public class Queries {
+
     /*Queries for cake management*/
     public static String ADD_CAKE = "INSERT INTO CAKES (name,imagePath,description,category,price,weight) VALUES (?,?,?,?,?,?)";
     public static String GET_ALL_CAKES = "SELECT * FROM CAKES" ;
@@ -16,6 +17,9 @@ public class Queries {
     public static String GET_ALL_PRODUCTS = "SELECT * FROM PRODUCTS";
     public static String SEARCH_PRODUCT_BY_NAME = "SELECT * FROM products WHERE name LIKE ?";
     public static String GET_CATEGORIES = "select distinct p.category from royalro.products p";
+    public static String UPDATE_PRODUCT = "UPDATE PRODUCTS SET name = ?, category = ? , description = ?, brand = ?,companyCode = ?, imagePath = ?,price = ?,quantity = ? WHERE productID = ?";
+    public static String UPDATE_PRODUCT_2 = "UPDATE PRODUCTS SET name = ?, category = ? , description = ?, brand = ?,companyCode = ?,price = ?,quantity = ? WHERE productID = ?";
+    public static String DELETE_ITEM = "DELETE FROM PRODUCTS WHERE productID = ?" ;
 
 
     /*Queries for decorations management*/
@@ -31,4 +35,6 @@ public class Queries {
     /*Queries for user authentication*/
     public static String CREATE_LOGIN = "INSERT INTO LOGIN (email,password) VALUES (?,?)";
     public static String SIGN_UP = "INSERT INTO customers (name,email,mobile) VALUES (?,?,?)";
+    public static String LOGIN = "SELECT * FROM login WHERE email = ? and password = ?";
+    public static final String GET_TYPE =" SELECT * FROM customers WHERE email = ? ";
 }
