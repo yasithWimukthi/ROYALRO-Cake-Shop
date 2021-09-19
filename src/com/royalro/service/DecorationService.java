@@ -53,7 +53,6 @@ public class DecorationService implements IDecorationService{
             while(resultSet.next()){
                 DecorationItem decoration = new DecorationItem();
                 decoration.setDecorationId(resultSet.getInt("decorationId"));
-                System.out.println(resultSet.getInt("decorationId"));
                 decoration.setName(resultSet.getString("name"));
                 decoration.setCategory(resultSet.getString("category"));
                 decoration.setImagePath(resultSet.getString("imagePath"));

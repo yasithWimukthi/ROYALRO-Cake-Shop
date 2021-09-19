@@ -426,7 +426,7 @@
     </div>
 </div>
 
-<%--Cake Details modal--%>
+<%--Decoration Details modal--%>
 <div class="modal fade" id="decorationDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -443,7 +443,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>

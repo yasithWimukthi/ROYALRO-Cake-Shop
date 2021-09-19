@@ -1,15 +1,16 @@
-
 <%@ page import="com.royalro.service.DecorationService" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="com.royalro.model.DecorationItem" %><%--
+<%@ page import="com.royalro.model.DecorationItem" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Sandun Dharmadasa
-  Date: 9/8/2021
-  Time: 8:55 PM
+  Date: 9/19/2021
+  Time: 12:24 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -56,7 +57,7 @@
 <div class="search-container"
      style="position: absolute; margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: right;">
     <form action="searchDecoServlet" method="post">
-        <input type="text" class="search-input" name="key" placeholder="Search Cakes..."
+        <input type="text" class="search-input" name="key" placeholder="Search Decorations..."
                style="border-radius: 15px;background-color: lightgray;border-width: 0;width: 20%;text-align: center;outline: white"/>
         <input type="hidden" value="customer" name="user">
         <button class="btn btn-light search-btn" type="submit" style="background-color: white;">
@@ -74,7 +75,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.jsp"
                                        style="text-decoration: none;color: #5c636a;"><span>Home</span></a></li>
-        <li class="breadcrumb-item"><a href="CakeManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Cakes</span></a>
+        <li class="breadcrumb-item"><a href="DecorationManagementAdmin.jsp" style="text-decoration: none;color: #5c636a;"><span>Decorations</span></a>
         </li>
     </ol>
 </div>
@@ -106,26 +107,28 @@
                                 margin-left: -5px;
                                 padding-left: 10px;
                                 font-family: serif;
-                                border-radius: 10px;">Wedding Decoration</h2>
+
+                                border-radius: 10px;">Wedding Decorations</h2>
+
+
                 <%}%>
+
                 <div class="d-xl-flex justify-content-xl-start"
                      style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                     <%--                loop card from here--%>
-                    <%for (DecorationItem decoration : weddingDecorations) {%>
-                    <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
+                    <%for (DecorationItem decorationItem : weddingDecorations) {%>
+                    <div data-bs-toggle="modal" data-bs-target="#decorationDetails">
                         <div class="card shadow-lg" data-bs-hover-animate="pulse"
                              style="width: 300px;height: 550px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                             <div class="card-body">
-                                <h4 class="card-title" style="color: rgb(104,0,167);"><%=decoration.getName()%>
+                                <h4 class="card-title" style="color: rgb(104,0,167);"><%=decorationItem.getName()%>
                                 </h4>
                                 <img class="d-flex"
-                                     style="background-image: url('assets/img/decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                <h6
-                                        class="text-success card-subtitle mb-2">WQC655 by Wishque Cake</h6>
+                                     style="background-image: url('assets/img/decorations/<%=decorationItem.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                 <p class="card-text"
-                                   style="color: rgb(95,95,95);height: 120px;text-align: justify"><%=decoration.getDescription()%>
+                                   style="color: rgb(95,95,95);height: 120px;text-align: justify"><%=decorationItem.getDescription()%>
                                 </p>
-                                <p class="badge rounded-pill bg-danger" style="text-align: center">Price : <%=decoration.getPrice()%>.00</p>
+                                <p class="badge rounded-pill bg-danger" style="text-align: center">Price : <%=decorationItem.getPrice()%>.00</p>
                                 <button class="btn btn-light text-center d-xl-flex mx-auto justify-content-xl-center"
                                         type="button"
                                         style="margin-left: 0px;background-color: orange;color: rgb(255,255,255);">
@@ -147,21 +150,19 @@
                 <%}%>
                 <div class="d-xl-flex justify-content-xl-start"
                      style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
-                    <%for (DecorationItem decoration : birthdayDecorations) {%>
-                    <div data-bs-toggle="modal" data-bs-target="#cakeDetails">
+                    <%for (DecorationItem decorationItem : birthdayDecorations) {%>
+                    <div data-bs-toggle="modal" data-bs-target="#decorationDetails">
                         <div class="card shadow-lg" data-bs-hover-animate="pulse"
                              style="width: 300px;height: 550px;border-radius: 20px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));margin: 20px;">
                             <div class="card-body">
-                                <h4 class="card-title" style="color: rgb(104,0,167);"><%=decoration.getName()%>
+                                <h4 class="card-title" style="color: rgb(104,0,167);"><%=decorationItem.getName()%>
                                 </h4>
                                 <img class="d-flex"
-                                     style="background-image: url('assets/img/decorations/<%=decoration.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
-                                <h6
-                                        class="text-success card-subtitle mb-2">WQC655 by Wishque Cake</h6>
+                                     style="background-image: url('assets/img/decorations/<%=decorationItem.getImagePath()%>');height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                 <p class="card-text"
-                                   style="color: rgb(95,95,95);height: 120px;text-align: justify"><%=decoration.getDescription()%>
+                                   style="color: rgb(95,95,95);height: 120px;text-align: justify"><%=decorationItem.getDescription()%>
                                 </p>
-                                <p class="badge rounded-pill bg-danger" style="text-align: center">Price : <%=decoration.getPrice()%>.00</p>
+                                <p class="badge rounded-pill bg-danger" style="text-align: center">Price : <%=decorationItem.getPrice()%>.00</p>
                                 <button class="btn btn-light text-center d-xl-flex mx-auto justify-content-xl-center"
                                         type="button"
                                         style="margin-left: 0px;background-color: orange;color: rgb(255,255,255);">
@@ -182,26 +183,12 @@
         </div>
     </div>
 </div>
-</div>
 
-<%--Cake Details modal
-<div class="modal fade" id="cakeDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" >Cake Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </button>
-            </div>
-            <div class="modal-body">
-                Details will display here
-            </div>
-        </div>
-    </div>
-</div>--%>
 <div>
+    <%--footer--%>
     <jsp:include page="footer.jsp"></jsp:include>
 </div>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-init.js"></script>
