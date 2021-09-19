@@ -80,7 +80,7 @@
         <div id="sidebar">
             <ul>
                 <li><a href="index.jsp">Home</a></li>
-                <li><a href="#bannerformmodal" data-bs-toggle="modal" data-bs-target="#addNewDecoration">Add New Decoration</a>
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#addNewDecoration">Add New Decoration</a>
                 </li>
                 <li><a href="#">Categories</a></li>
                 <li><a href="decorationReport.jsp">Reports</a></li>
@@ -419,7 +419,7 @@
     </div>
 </div>
 
-<%--Cake Details modal--%>
+<%--Decoration Details modal--%>
 <div class="modal fade" id="decorationDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -436,7 +436,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>

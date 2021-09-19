@@ -2,15 +2,15 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.royalro.model.DecorationItem" %><%--
   Created by IntelliJ IDEA.
-  User: shalitha
-  Date: 8/15/2021
-  Time: 7:57 PM
+  User: Sandun Dharmadasa
+  Date: 9/19/2021
+  Time: 12:24 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Royalro | Cakes</title>
+    <title>Royalro | Decorations</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -99,7 +99,7 @@
                 <%--            loop categories with cards--%>
                 <%--            get catagories from database and loop throug for each loop--%>
                 <%--            then it will display all the categories--%>
-                <%--            under all the catgorieas shoul display related cakes--%>
+                <%--            under all the catgorieas shoul display related decorations--%>
 
 
                 <h2 style="width: 604px;
@@ -419,7 +419,7 @@
     </div>
 </div>
 
-<%--Cake Details modal--%>
+<%--Decoration Details modal--%>
 <div class="modal fade" id="decorationDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -436,7 +436,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
