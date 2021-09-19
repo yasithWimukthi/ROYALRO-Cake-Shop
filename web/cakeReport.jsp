@@ -18,7 +18,7 @@
 <%
     String type=(String)session.getAttribute("type");
     if(type.equals("customer")){
-        String redirectURL = "http://localhost:8080/web_war_exploded/index.jsp";
+        String redirectURL = "http://localhost:8080/web_war_exploded/home.jsp";
         response.sendRedirect(redirectURL);
     }
 
