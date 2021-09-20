@@ -21,9 +21,9 @@
 
 <body>
 <%
-    String type=(String)session.getAttribute("type");%>
+    String type = (String) session.getAttribute("type");%>
 
-<% if(type.equals("customer")){ %>
+<% if (type.equals("customer")) { %>
 <jsp:include page="header.jsp"></jsp:include>
 <%} else { %>
 <jsp:include page="adminHeader.jsp"></jsp:include>
@@ -32,12 +32,21 @@
 <div style="margin-top: 0px;height: 600px;background-image: linear-gradient(to right,rgb(255,100,193), rgb(255,255,255));">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-lg-8 col-xl-8" style="height: 550px;"><label class="text-center" style="font-size: 50px;margin-top: 30px;margin-left: 250px;font-family: 'Alfa Slab One', cursive;">ABOUT US</label>
-                <p class="text-justify" style="width: 600px;height: 400px;margin-top: 40px;font-size: 30px;font-family: Aladin, cursive;">ROYALRO is a new company which had its beginnings in 2020. We offer a lot of delicious cakes, a lot of attractive decoration services and valuable and quality tools which can use to making cakes. All of these are with the best quality
-                    and you can buy them by purchasing a reasonable price. So they are very worthy. You can buy these cakes, decoration services and, tools by using this web application as well as you can buy them by visiting our shop that situated
+            <div class="col-md-6 col-lg-8 col-xl-8" style="height: 550px;"><label class="text-center"
+                                                                                  style="font-size: 50px;margin-top: 30px;margin-left: 250px;font-family: 'Alfa Slab One', cursive;">ABOUT
+                US</label>
+                <p class="text-justify"
+                   style="width: 600px;height: 400px;margin-top: 40px;font-size: 30px;font-family: Aladin, cursive;">
+                    ROYALRO is a new company which had its beginnings in 2020. We offer a lot of delicious cakes, a lot
+                    of attractive decoration services and valuable and quality tools which can use to making cakes. All
+                    of these are with the best quality
+                    and you can buy them by purchasing a reasonable price. So they are very worthy. You can buy these
+                    cakes, decoration services and, tools by using this web application as well as you can buy them by
+                    visiting our shop that situated
                     in colombo.</p>
             </div>
-            <div class="col-md-6 col-lg-4 col-xl-4"><img src="assets/img/AboutUs.png" style="width: 300px;height: 400px;margin-top: 100px;"></div>
+            <div class="col-md-6 col-lg-4 col-xl-4"><img src="assets/img/AboutUs.png"
+                                                         style="width: 300px;height: 400px;margin-top: 100px;"></div>
         </div>
     </div>
 </div>
