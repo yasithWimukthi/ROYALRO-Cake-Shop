@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>HEADER</title>
+    <title>Admin | Royalro</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script">
@@ -29,9 +29,9 @@
 
 <jsp:include page="adminHeader.jsp"></jsp:include>
 <%
-    String type=(String)session.getAttribute("type");
-    if(type.equals("customer")){
-        String redirectURL = "http://localhost:8080/web_war_exploded/home.jsp";
+    String type = (String) session.getAttribute("type");
+    if (type.equals("customer")) {
+        String redirectURL = "http://localhost:8090/web_war_exploded/home.jsp";
         response.sendRedirect(redirectURL);
     }
 
@@ -39,9 +39,13 @@
 <hr>
 <div class="container" style="width: 100%;height: 100%;margin-left: 142px;margin-top: 98px;">
     <div class="row" style="margin: 29px;margin-top: -50px">
-        <div class="col-xl-2 offset-xl-1" style="margin: 0px;"><a href="cakeAdmin.jsp"><img class="d-xl-flex" src="assets/img/1%20Cake.png" width="150"></a></div>
-        <div class="col offset-xl-1"><a href="DecorationManagementAdmin.jsp"><img src="assets/img/2%20Decorations.png" width="160"></a></div>
-        <div class="col offset-xl-1"><a href="ItemManagementAdmin.jsp"><img src="assets/img/3%20Items.png" width="150"></a></div>
+        <div class="col-xl-2 offset-xl-1" style="margin: 0px;"><a href="cakeAdmin.jsp"><img class="d-xl-flex"
+                                                                                            src="assets/img/1%20Cake.png"
+                                                                                            width="150"></a></div>
+        <div class="col offset-xl-1"><a href="DecorationManagementAdmin.jsp"><img src="assets/img/2%20Decorations.png"
+                                                                                  width="160"></a></div>
+        <div class="col offset-xl-1"><a href="ItemManagementAdmin.jsp"><img src="assets/img/3%20Items.png" width="150"></a>
+        </div>
         <div class="col offset-xl-1"><a href="#"><img src="assets/img/4%20Orders.png" width="150"></a></div>
     </div>
     <div class="row">
