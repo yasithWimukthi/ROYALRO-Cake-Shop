@@ -100,6 +100,18 @@
 
                     <%  ProductService psc2 = new ProductService();
                         List<String> categoriesList2 = psc2.getAllCategories();
+                        if(categoriesList2.isEmpty()){%>
+                        <div style="margin-bottom: 100px" class="alert alert-danger d-flex align-items-center" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>
+                                The product you are looking for cant be found. Please try again.
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="assets/img/noItemFound.png" style="height: 250px;width: 250px">
+                            <H1>Sorry! No Item Found!</H1>
+                        </div>
+                        <%} else{
                         for (String category: categoriesList2) {
                     %>
                     <h2 style="width: 604px;
@@ -126,28 +138,24 @@
                                     <img class="d-flex" src="<%=item.getImagePath()%>" style="object-fit: cover;height: 157px;width: 251px;padding: 0px;margin: 0px;margin-top: 7px;border-radius: 20px;background-repeat: no-repeat;background-size: 100%;background-position: center;padding-bottom: 0px;margin-bottom: 17px;">
                                     <h4 class=" card-subtitle mb-2" style="color: #f00c0c">Price:<%= item.getPrice()%></h4>
                                     <p class="card-text" style="color: rgb(95,95,95);height: 110px;" id="paragraph">
-
                                         Brand: <%= item.getBrand()%><br>
                                         Available Qty: <%= item.getQuantity()%><br>
                                         Description:<%= item.getDescription()%>
                                     </p>
                                     <button class="btn btn-light text-center d-xl-flex mx-auto justify-content-xl-center"  type="button" style="margin-left: 0px;background-color: orange;color: rgb(255,255,255);">Add To Cart</button>
-
-
                                 </div>
                             </div>
                         </div>
                         <%--                            <%=item.getName()%><br>--%>
                         <%}}%>
                     </div>
-                    <%}%>
+                    <%}}%>
                 </div>
             </div>
             <%
             }
             else if(isSearch){
             %>
-
             <%--    Main area after search--%>
             <div class="main-content">
                 <div class="swipe-area" style="background-color: rgb(255,255,255);"></div>
@@ -157,12 +165,10 @@
                     <span class="bar"></span>
                 </a>
                 <div class="content" style="padding-left: 56px;">
-
                     <%--            loop categories with cards--%>
                     <%--            get catagories from database and loop throug for each loop--%>
                     <%--            then it will display all the categories--%>
                     <%--            under all the catgorieas shoul display related cakes--%>
-
                     <%
                         List<ProductItem> categoriesList3 = (List<ProductItem>)request.getAttribute("ItemSearchCategory");
                         for (ProductItem pi: categoriesList3) {
@@ -174,10 +180,8 @@
                                 padding-left: 10px;
                                 font-family: serif;
                                 border-radius: 10px;"><%=pi.getCategory()%></h2>
-
                     <div class="d-xl-flex justify-content-xl-start" style="/*width: 1123px;*/display: flex;flex-wrap: wrap;width: 100%;justify-content: center;align-items: center;margin: 50px 0;">
                         <%--  loop card from here--%>
-
                         <%
                             List<ProductItem> categoriesList2 = (List<ProductItem>)request.getAttribute("ItemSearchResult");
                             for(ProductItem item : categoriesList2) {
@@ -198,8 +202,6 @@
                         </div>
                         <%--                            <%=item.getName()%><br>--%>
                         <%}}%>
-
-
                     </div>
                     <%}
                         if(categoriesList3.isEmpty()){%>
@@ -214,7 +216,6 @@
                         <H1>Sorry! No Item Found!</H1>
                     </div>
                     <%}%>
-
                 </div>
             </div>
             <%}

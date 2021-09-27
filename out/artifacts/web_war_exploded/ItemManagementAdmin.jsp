@@ -254,14 +254,19 @@
                                     >Delete</button>
                                 </div>
                             </div>
-                        <%--                            <%=item.getName()%><br>--%>
+                        <%--<%=item.getName()%><br>--%>
                         <%}}%>
 
 
                     </div>
                     <%}
                         if(categoriesList.isEmpty()){%>
-
+                        <div style="margin-bottom: 100px" class="alert alert-danger d-flex align-items-center" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>
+                                The product you are looking for cant be found. Please try again.
+                            </div>
+                        </div>
                         <div style="text-align: center;">
                             <img src="assets/img/noItemFound.png" style="height: 250px;width: 250px">
                             <H1>Sorry! No Item Found!</H1>
