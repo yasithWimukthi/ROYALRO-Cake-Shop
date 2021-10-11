@@ -47,6 +47,25 @@ Front end - JSP, CSS, Javascript,  jQuery, Bootstrap <br/>
 Backend - Java <br/>
 Database - Mysql
 
+# How to get started with app
+
+## Prerequisites
+<ul>
+ <li>Java JDK 8 or Higher version</li>
+ <li>Tomcat Server 9.3</li>
+ <li>Mysql</li>
+ <li>IDE Ex: Intellij IDEA, Eclipse</li>
+</ul>
+
+## Procedure of setting up prerequisites and run the project
+<ul>
+ <li>Create all table using mysql.</li>
+ <li>Install Intellij IDEA or Eclipse and Tomcat Server 9.3. After installing configure tomcat server with your IDE.</li>
+ <li>Open the project that you have cloned.</li>
+ <li>Edit DBConnection class and insert your port number which is used by mysql.</li>
+ <li>Run the project. Then you will be navigatetd to the landing page. By using the sign up page you can create a account.</li>
+ <li>After the registration, you will be navigated to the home page. After that, you can use the system as you want.</li>
+</ul>
 
 # Team members
 
